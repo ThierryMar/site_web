@@ -5,8 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 :root {
-    --bleu-fonce: #091827;
-    --bleu-secondaire: #132d45;
+    --bleu-fonce: #0B1F3A;
+    --bleu-secondaire: #142C54;
+    --bleu-highlight: #2D4BA0;
+    --bleu-pale: #467DD2;
+    --silver-gray: #D7DCE2;
+    --blanc: #FFFFFF;
     --orange: #ef6b3a;
     --orange-fonce: #d9572a;
 
@@ -250,7 +254,7 @@ nav a:hover::after {
 }
 
 .hero-texte {
-    max-width: 650px;
+    max-width: 1100px;
 }
 
 .surtitre {
@@ -285,7 +289,7 @@ nav a:hover::after {
     margin-bottom: 30px;
 
     font-family: "Open Sans";
-    font-size: clamp(1rem, 3vw, 3rem);
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: normal;
     line-height: 0.92;
     letter-spacing: -0.055em;
