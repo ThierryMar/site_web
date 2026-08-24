@@ -1,0 +1,45 @@
+Note site web :
+
+
+=== Simulation ===
+
+- Ajouter plein de librairies python
+- Ajouter une section sur comment et où installer python
+- Changer les couleurs/code de couleurs de python
+- Pourquoi la simulation ouvre en bas de la page ??
+- Refaire la mise en page de la liste des simulations
+- Obliger les utilisateurs à se connecter 
+- Créer des fonctions préalablement définies.
+- Orbital101 -> user guide et infos
+
+
+=== Style ===
+
+- Utiliser les informations sur le site créer par le prof
+- Utiliser le style de couleur ainsi que les images du site créer par Richard
+- 
+
+=== Sections ===
+
+- Créer une section Downloads (PDF, Vidéos)
+- Créer une section register (www.Spectralcalc.com)
+- Informations -> Contact us
+- Advanced -> Applied
+- Distribution des boîtes en fonction des nouvelles structures
+- Présentation Richard -> insérer dans contact us
+- Créer une section Feedbacks & Testimonials
+- Changer les informations dans l'intro pour ce qui en est sur le document ce qui
+- Quand on clique sur le logo ABB -> renvoie sur le site
+
+
+=== Cours ===
+
+- Information sur le certificat remis à la fin du cours
+- Ajouter Understanding Motion en Space dans la section cours 
+
+
+=== À la fin ===
+
+**Faire une interface " pour téléphone " après
+**Éventuellement regarder pour Octave
+

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Interactive Python simulations for learning the fundamentals of orbital mechanics."
+    >
+
+    <title>Simulations — SpaceOrbitLAB for Beginners</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="simulations.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container navigation">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon" aria-hidden="true">◉</span>
+
+                <span>
+                    SpaceOrbitLAB
+                    <small>For Beginners</small>
+                </span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="introduction.html">Introduction</a>
+
+                <details class="menu-deroulant">
+                    <summary>
+                        Courses
+                        <span class="fleche-menu" aria-hidden="true">⌄</span>
+                    </summary>
+
+                    <div class="sous-menu">
+
+                        <a href="courses.html">
+                            All Courses
+                        </a>
+
+                        <a href="courses.html#course-1">
+                            <span>01</span>
+                            Basic Astronomy and Celestial Mechanics
+                        </a>
+
+                        <a href="courses.html#course-2">
+                            <span>02</span>
+                            Foundations of Astrodynamics
+                        </a>
+
+                        <a href="courses.html#course-3">
+                            <span>03</span>
+                            Advanced Astrodynamics and Space Situational Awareness
+                        </a>
+
+                        <a href="courses.html#course-4">
+                            <span>04</span>
+                            Remote Sensing from Space
+                        </a>
+
+                    </div>
+                </details>
+
+                <a href="Simulations.html" class="lien-actif">Simulations</a>
+                <a href="Informations.html">Information</a>
+            </nav>
+
+            <a href="#simulation-list" class="bouton bouton-navigation">
+                Start Simulating
+            </a>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="entete-page">
+            <div class="container">
+                <p class="surtitre">Interactive Learning</p>
+
+                <h1>Python Simulations</h1>
+
+                <p>
+                    Modify and run Python code directly in your browser to
+                    explore the principles of orbital mechanics.
+                </p>
+            </div>
+        </section>
+
+
+        <section id="simulation-list" class="section catalogue-simulations">
+            <div class="container">
+                <p class="surtitre surtitre-sombre">Simulation Library</p>
+
+                <h2>Choose a Simulation</h2>
+
+                <p class="apercu-description">
+                    Select a simulation, adjust its Python parameters, and
+                    compare the numerical and graphical results.
+                </p>
+
+                <div class="grille-simulations">
+
+                    <a href="#circular-orbit" class="carte-simulation">
+                        <span class="numero-simulation">01</span>
+
+                        <div>
+                            <h3>Circular Orbit</h3>
+
+                            <p>
+                                Calculate the orbital velocity and period of a
+                                satellite at a selected altitude.
+                            </p>
+
+                            <strong>Open Simulation →</strong>
+                        </div>
+                    </a>
+
+                    <a href="#elliptical-orbit" class="carte-simulation">
+                        <span class="numero-simulation">02</span>
+
+                        <div>
+                            <h3>Elliptical Orbit</h3>
+
+                            <p>
+                                Explore how the semi-major axis and eccentricity
+                                influence the shape of an orbit.
+                            </p>
+
+                            <strong>Open Simulation →</strong>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div id="python-status" class="etat-python" role="status">
+                    <span class="indicateur-etat" aria-hidden="true"></span>
+                    <span>Loading the Python environment…</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="circular-orbit" class="section laboratoire-simulation">
+            <div class="container">
+
+                <div class="entete-simulation">
+                    <div>
+                        <p class="surtitre surtitre-sombre">Simulation 01</p>
+                        <h2>Circular Orbit</h2>
+                    </div>
+
+                    <p>
+                        Change <code>altitude_km</code> to observe how altitude
+                        affects orbital velocity and period.
+                    </p>
+                </div>
+
+                <div class="espace-simulation">
+
+                    <div class="panneau-code">
+                        <div class="barre-panneau">
+                            <span>Python Editor</span>
+                            <span class="nom-fichier">circular_orbit.py</span>
+                        </div>
+
+                        <label class="sr-only" for="code-circular">
+                            Python code for the circular orbit simulation
+                        </label>
+
+                        <textarea
+                            id="code-circular"
+                            class="editeur-python"
+                            spellcheck="false"
+                        >import numpy as np
+import matplotlib.pyplot as plt
+
+# Physical constants
+G = 6.67430e-11              # Gravitational constant (m³/kg/s²)
+M_earth = 5.972e24           # Mass of Earth (kg)
+R_earth = 6371.0             # Mean radius of Earth (km)
+
+# Change this value
+altitude_km = 400.0
+
+# Orbital calculations
+orbital_radius_m = (R_earth + altitude_km) * 1000
+velocity_m_s = np.sqrt(G * M_earth / orbital_radius_m)
+period_s = 2 * np.pi * np.sqrt(
+    orbital_radius_m**3 / (G * M_earth)
+)
+
+print(f"Altitude: {altitude_km:.1f} km")
+print(f"Orbital velocity: {velocity_m_s / 1000:.3f} km/s")
+print(f"Orbital period: {period_s / 60:.2f} minutes")
+
+# Orbit visualization
+theta = np.linspace(0, 2 * np.pi, 800)
+radius_km = R_earth + altitude_km
+
+x = radius_km * np.cos(theta)
+y = radius_km * np.sin(theta)
+
+fig, ax = plt.subplots(figsize=(7, 7))
+
+earth = plt.Circle(
+    (0, 0),
+    R_earth,
+    color="#1768a8",
+    label="Earth"
+)
+
+ax.add_patch(earth)
+ax.plot(x, y, color="#ef6b3a", linewidth=2.5, label="Orbit")
+ax.scatter([radius_km], [0], color="#ffffff", edgecolor="#091827",
+           s=70, zorder=5, label="Satellite")
+
+limit = radius_km * 1.2
+ax.set_xlim(-limit, limit)
+ax.set_ylim(-limit, limit)
+ax.set_aspect("equal")
+ax.set_xlabel("X position (km)")
+ax.set_ylabel("Y position (km)")
+ax.set_title("Circular Earth Orbit")
+ax.grid(alpha=0.2)
+ax.legend()</textarea>
+
+                        <div class="actions-simulation">
+                            <button
+                                type="button"
+                                class="bouton bouton-principal bouton-execution"
+                                data-editor="code-circular"
+                                data-console="console-circular"
+                                data-image="image-circular"
+                            >
+                                Run Simulation
+                            </button>
+
+                            <button
+                                type="button"
+                                class="bouton bouton-reinitialiser"
+                                data-reset="code-circular"
+                            >
+                                Reset Code
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="panneau-resultat">
+                        <div class="barre-panneau">
+                            <span>Simulation Result</span>
+                            <span>Matplotlib</span>
+                        </div>
+
+                        <div class="zone-graphique">
+                            <div class="graphique-attente">
+                                Run the code to generate the orbit.
+                            </div>
+
+                            <img
+                                id="image-circular"
+                                class="image-resultat"
+                                alt="Circular orbit simulation result"
+                                hidden
+                            >
+                        </div>
+
+                        <div class="console-simulation">
+                            <p>Python Output</p>
+                            <pre id="console-circular">Waiting for execution…</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="elliptical-orbit" class="section laboratoire-simulation fond-simulation-alternatif">
+            <div class="container">
+
+                <div class="entete-simulation">
+                    <div>
+                        <p class="surtitre surtitre-sombre">Simulation 02</p>
+                        <h2>Elliptical Orbit</h2>
+                    </div>
+
+                    <p>
+                        Change <code>semi_major_axis_km</code> and
+                        <code>eccentricity</code> to modify the orbit.
+                    </p>
+                </div>
+
+                <div class="espace-simulation">
+
+                    <div class="panneau-code">
+                        <div class="barre-panneau">
+                            <span>Python Editor</span>
+                            <span class="nom-fichier">elliptical_orbit.py</span>
+                        </div>
+
+                        <label class="sr-only" for="code-elliptical">
+                            Python code for the elliptical orbit simulation
+                        </label>
+
+                        <textarea
+                            id="code-elliptical"
+                            class="editeur-python"
+                            spellcheck="false"
+                        >import numpy as np
+import matplotlib.pyplot as plt
+
+# Mean radius of Earth
+R_earth = 6371.0  # km
+
+# Change these values
+semi_major_axis_km = 12000.0
+eccentricity = 0.45
+
+if semi_major_axis_km <= 0:
+    raise ValueError("The semi-major axis must be positive.")
+
+if not 0 <= eccentricity < 1:
+    raise ValueError("Eccentricity must be between 0 and 1.")
+
+# Orbital parameters
+periapsis_km = semi_major_axis_km * (1 - eccentricity)
+apoapsis_km = semi_major_axis_km * (1 + eccentricity)
+
+print(f"Semi-major axis: {semi_major_axis_km:.1f} km")
+print(f"Eccentricity: {eccentricity:.3f}")
+print(f"Periapsis radius: {periapsis_km:.1f} km")
+print(f"Apoapsis radius: {apoapsis_km:.1f} km")
+print(f"Periapsis altitude: {periapsis_km - R_earth:.1f} km")
+print(f"Apoapsis altitude: {apoapsis_km - R_earth:.1f} km")
+
+# Polar equation of an ellipse with Earth at one focus
+theta = np.linspace(0, 2 * np.pi, 1000)
+p = semi_major_axis_km * (1 - eccentricity**2)
+r = p / (1 + eccentricity * np.cos(theta))
+
+x = r * np.cos(theta)
+y = r * np.sin(theta)
+
+fig, ax = plt.subplots(figsize=(8, 6))
+
+earth = plt.Circle(
+    (0, 0),
+    R_earth,
+    color="#1768a8",
+    label="Earth"
+)
+
+ax.add_patch(earth)
+ax.plot(x, y, color="#ef6b3a", linewidth=2.5, label="Orbit")
+ax.scatter([0], [0], color="#ffffff", edgecolor="#091827",
+           s=55, zorder=5)
+
+limit = apoapsis_km * 1.15
+ax.set_xlim(-limit, limit)
+ax.set_ylim(-limit, limit)
+ax.set_aspect("equal")
+ax.set_xlabel("X position (km)")
+ax.set_ylabel("Y position (km)")
+ax.set_title("Elliptical Earth Orbit")
+ax.grid(alpha=0.2)
+ax.legend()</textarea>
+
+                        <div class="actions-simulation">
+                            <button
+                                type="button"
+                                class="bouton bouton-principal bouton-execution"
+                                data-editor="code-elliptical"
+                                data-console="console-elliptical"
+                                data-image="image-elliptical"
+                            >
+                                Run Simulation
+                            </button>
+
+                            <button
+                                type="button"
+                                class="bouton bouton-reinitialiser"
+                                data-reset="code-elliptical"
+                            >
+                                Reset Code
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="panneau-resultat">
+                        <div class="barre-panneau">
+                            <span>Simulation Result</span>
+                            <span>Matplotlib</span>
+                        </div>
+
+                        <div class="zone-graphique">
+                            <div class="graphique-attente">
+                                Run the code to generate the orbit.
+                            </div>
+
+                            <img
+                                id="image-elliptical"
+                                class="image-resultat"
+                                alt="Elliptical orbit simulation result"
+                                hidden
+                            >
+                        </div>
+
+                        <div class="console-simulation">
+                            <p>Python Output</p>
+                            <pre id="console-elliptical">Waiting for execution…</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container contenu-footer">
+            <p>Course Project — Orbital Mechanics</p>
+            <p>© 2026 — All Rights Reserved</p>
+            <a href="index.html">Back to Home</a>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v314.0.5/full/pyodide.js"></script>
+    <script src="simulations.js"></script>
+
+</body>
+
+</html>

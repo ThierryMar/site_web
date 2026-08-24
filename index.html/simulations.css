@@ -1,0 +1,360 @@
+/* =========================
+   SIMULATION CATALOGUE
+========================= */
+
+.catalogue-simulations {
+    background-color: var(--fond-clair);
+}
+
+.catalogue-simulations h2 {
+    margin-bottom: 25px;
+}
+
+.grille-simulations {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.carte-simulation {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 25px;
+    min-height: 260px;
+    padding: 35px;
+
+    background-color: #ffffff;
+    border: 1px solid var(--bordure);
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(23, 34, 49, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.carte-simulation:hover {
+    border-color: rgba(239, 107, 58, 0.55);
+    box-shadow: 0 20px 45px rgba(23, 34, 49, 0.12);
+    transform: translateY(-5px);
+}
+
+.numero-simulation {
+    color: var(--orange);
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.14em;
+}
+
+.carte-simulation h3 {
+    margin-bottom: 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.carte-simulation p {
+    color: var(--texte-secondaire);
+}
+
+.carte-simulation strong {
+    color: var(--orange);
+    font-size: 0.75rem;
+}
+
+.etat-python {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: fit-content;
+    margin-top: 35px;
+    padding: 12px 16px;
+
+    color: #415267;
+    background-color: #edf1f5;
+    border-radius: 5px;
+
+    font-size: 0.8rem;
+}
+
+.indicateur-etat {
+    width: 9px;
+    height: 9px;
+    background-color: #d99a27;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(217, 154, 39, 0.15);
+}
+
+.etat-python[data-state="ready"] .indicateur-etat {
+    background-color: #2b9b67;
+    box-shadow: 0 0 0 4px rgba(43, 155, 103, 0.15);
+}
+
+.etat-python[data-state="error"] .indicateur-etat {
+    background-color: #c7483e;
+    box-shadow: 0 0 0 4px rgba(199, 72, 62, 0.15);
+}
+
+
+/* =========================
+   INTERACTIVE LABORATORY
+========================= */
+
+.laboratoire-simulation {
+    scroll-margin-top: 95px;
+    background-color: var(--fond);
+}
+
+.fond-simulation-alternatif {
+    background-color: var(--fond-clair);
+}
+
+.entete-simulation {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: end;
+    margin-bottom: 45px;
+}
+
+.entete-simulation p:last-child {
+    margin-bottom: 7px;
+    color: var(--texte-secondaire);
+    line-height: 1.8;
+}
+
+.entete-simulation code {
+    padding: 2px 6px;
+    color: #bd4c25;
+    background-color: #ece7dc;
+    border-radius: 3px;
+}
+
+.espace-simulation {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    overflow: hidden;
+
+    background-color: #ffffff;
+    border: 1px solid var(--bordure);
+    border-radius: 10px;
+    box-shadow: 0 20px 55px rgba(23, 34, 49, 0.1);
+}
+
+.panneau-code,
+.panneau-resultat {
+    min-width: 0;
+}
+
+.panneau-code {
+    display: flex;
+    flex-direction: column;
+    background-color: #091827;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.panneau-resultat {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f9fb;
+}
+
+.barre-panneau {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    min-height: 52px;
+    padding: 12px 18px;
+
+    color: #9facb9;
+    background-color: #06101c;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.panneau-resultat .barre-panneau {
+    color: #526275;
+    background-color: #e9edf2;
+    border-bottom-color: #d9e0e8;
+}
+
+.nom-fichier {
+    color: var(--orange);
+    text-transform: none;
+}
+
+.editeur-python {
+    width: 100%;
+    min-height: 610px;
+    padding: 24px;
+    resize: vertical;
+
+    color: #dce6ef;
+    background-color: #091827;
+    border: none;
+    outline: none;
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    tab-size: 4;
+}
+
+.editeur-python:focus {
+    box-shadow: inset 0 0 0 2px var(--orange);
+}
+
+.actions-simulation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 18px;
+    background-color: #06101c;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.bouton-execution,
+.bouton-reinitialiser {
+    padding: 12px 17px;
+    cursor: pointer;
+}
+
+.bouton-execution:disabled {
+    cursor: wait;
+    opacity: 0.55;
+    transform: none;
+}
+
+.bouton-reinitialiser {
+    color: #d7e0e8;
+    background-color: transparent;
+    border: 1px solid #526273;
+}
+
+.bouton-reinitialiser:hover {
+    background-color: #142d45;
+}
+
+.zone-graphique {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 520px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.graphique-attente {
+    max-width: 290px;
+    color: #8290a0;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.image-resultat {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.image-resultat[hidden],
+.graphique-attente[hidden] {
+    display: none;
+}
+
+.console-simulation {
+    min-height: 160px;
+    padding: 18px;
+    color: #dce6ef;
+    background-color: #091827;
+}
+
+.console-simulation p {
+    margin-bottom: 10px;
+    color: var(--orange);
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.console-simulation pre {
+    max-height: 230px;
+    margin: 0;
+    overflow: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+
+    color: #c7d2dc;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 980px) {
+    .espace-simulation {
+        grid-template-columns: 1fr;
+    }
+
+    .panneau-code {
+        border-right: none;
+        border-bottom: 1px solid var(--bordure);
+    }
+
+    .editeur-python {
+        min-height: 520px;
+    }
+}
+
+@media (max-width: 760px) {
+    .grille-simulations,
+    .entete-simulation {
+        grid-template-columns: 1fr;
+    }
+
+    .entete-simulation {
+        gap: 25px;
+    }
+
+    .carte-simulation {
+        grid-template-columns: 1fr;
+    }
+
+    .editeur-python {
+        min-height: 480px;
+        padding: 18px;
+        font-size: 0.75rem;
+    }
+
+    .zone-graphique {
+        min-height: 370px;
+        padding: 12px;
+    }
+}
