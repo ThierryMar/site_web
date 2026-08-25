@@ -110,37 +110,39 @@
                     compare the numerical and graphical results.
                 </p>
 
-                <div class="grille-simulations">
+                <div class="selecteur-simulation">
 
-                    <a href="#circular-orbit" class="carte-simulation">
-                        <span class="numero-simulation">01</span>
+                    <div class="champ-simulation">
 
-                        <div>
-                            <h3>Circular Orbit</h3>
+                        <label for="simulation-selector">
+                            Available Simulations
+                        </label>
 
-                            <p>
-                                Calculate the orbital velocity and period of a
-                                satellite at a selected altitude.
-                            </p>
+                        <select id="simulation-selector">
+                            <option value="" selected disabled>
+                                Select a simulation
+                            </option>
 
-                            <strong>Open Simulation →</strong>
-                        </div>
-                    </a>
+                            <option value="#circular-orbit">
+                                01 — Circular Orbit
+                            </option>
 
-                    <a href="#elliptical-orbit" class="carte-simulation">
-                        <span class="numero-simulation">02</span>
+                            <option value="#elliptical-orbit">
+                                02 — Elliptical Orbit
+                            </option>
+                        </select>
 
-                        <div>
-                            <h3>Elliptical Orbit</h3>
+                    </div>
 
-                            <p>
-                                Explore how the semi-major axis and eccentricity
-                                influence the shape of an orbit.
-                            </p>
-
-                            <strong>Open Simulation →</strong>
-                        </div>
-                    </a>
+                    <button
+                        id="open-simulation"
+                        class="bouton bouton-principal bouton-ouvrir-simulation"
+                        type="button"
+                        disabled
+                    >
+                        Open Simulation
+                        <span aria-hidden="true">→</span>
+                    </button>
 
                 </div>
 

@@ -8,8 +8,11 @@ let pyodideInstance = null;
 
 const originalCode = new Map();
 
-const statusElement = document.getElementById("python-status");
-const statusText = statusElement.querySelector("span:last-child");
+const statusElement =
+    document.getElementById("python-status");
+
+const statusText =
+    statusElement.querySelector("span:last-child");
 
 
 /* =========================
@@ -78,11 +81,17 @@ async function executeSimulation(button) {
     const consoleId = button.dataset.console;
     const imageId = button.dataset.image;
 
-    const editor = document.getElementById(editorId);
-    const consoleOutput = document.getElementById(consoleId);
-    const resultImage = document.getElementById(imageId);
+    const editor =
+        document.getElementById(editorId);
 
-    const placeholder = resultImage.previousElementSibling;
+    const consoleOutput =
+        document.getElementById(consoleId);
+
+    const resultImage =
+        document.getElementById(imageId);
+
+    const placeholder =
+        resultImage.previousElementSibling;
 
 
     if (!pyodideInstance) {
@@ -93,7 +102,8 @@ async function executeSimulation(button) {
     }
 
 
-    const initialButtonText = button.textContent.trim();
+    const initialButtonText =
+        button.textContent.trim();
 
     button.disabled = true;
     button.textContent = "Running…";
@@ -110,7 +120,7 @@ async function executeSimulation(button) {
 
 
     /*
-     * The Python code written in the editor is transferred
+     * Transfer the Python code from the editor
      * to the Pyodide environment.
      */
 
@@ -126,7 +136,8 @@ async function executeSimulation(button) {
      * 1. Executes the user's code.
      * 2. Captures print() output.
      * 3. Captures Python errors.
-     * 4. Converts the Matplotlib figure to a Base64 image.
+     * 4. Converts the Matplotlib figure
+     *    into a Base64 image.
      */
 
     const executionWrapper = `
@@ -183,7 +194,7 @@ finally:
 
 
         /*
-         * Conversion of the Python dictionary
+         * Convert the Python dictionary
          * into a JavaScript object.
          */
 
@@ -322,6 +333,66 @@ document
             }
         );
     });
+
+
+/* =========================
+   SIMULATION SELECTOR
+========================= */
+
+const simulationSelector =
+    document.getElementById(
+        "simulation-selector"
+    );
+
+const openSimulationButton =
+    document.getElementById(
+        "open-simulation"
+    );
+
+
+if (simulationSelector && openSimulationButton) {
+
+    /*
+     * Enable the button after the user
+     * selects a simulation.
+     */
+
+    simulationSelector.addEventListener(
+        "change",
+        () => {
+            openSimulationButton.disabled =
+                !simulationSelector.value;
+        }
+    );
+
+
+    /*
+     * Scroll to the selected simulation.
+     */
+
+    openSimulationButton.addEventListener(
+        "click",
+        () => {
+            const selectedSection =
+                document.querySelector(
+                    simulationSelector.value
+                );
+
+            if (selectedSection) {
+                selectedSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                window.history.replaceState(
+                    null,
+                    "",
+                    simulationSelector.value
+                );
+            }
+        }
+    );
+}
 
 
 /* =========================
