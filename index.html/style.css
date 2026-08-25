@@ -312,7 +312,6 @@ nav a:hover::after {
 .hero-boutons {
     display: flex;
     align-items: center;
-    color: var(--gold);
     gap: 30px;
 }
 
@@ -1746,26 +1745,29 @@ RESPONSIVE DESIGN
 }
 
 
-/* INSTRUCTOR PHOTO */
+/* =========================
+   INSTRUCTOR PHOTO
+========================= */
 
 .professeur-photo {
     position: sticky;
     top: 125px;
 
     width: 100%;
-    max-width: 400px;
+    max-width: 340px;
     margin: 0;
     overflow: hidden;
     justify-self: end;
 
     background-color: white;
     border: 1px solid var(--bordure);
-    border-radius: 0px;
+    border-radius: 0;
     box-shadow: 0 20px 45px rgba(11, 31, 58, 0.18);
 }
 
 .professeur-photo img {
     display: block;
+
     width: 100%;
     height: auto;
 }
@@ -1779,7 +1781,9 @@ RESPONSIVE DESIGN
 }
 
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
 
 .bouton-professeur {
     display: inline-flex;
@@ -1799,13 +1803,11 @@ RESPONSIVE DESIGN
 }
 
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 760px) {
-
-    .professeur-entete {
-        margin-bottom: 35px;
-    }
 
     .professeur-contenu {
         grid-template-columns: 1fr;
@@ -1813,8 +1815,12 @@ RESPONSIVE DESIGN
     }
 
     .professeur-photo {
-    width: 100%;
-    max-width: 280px;
+        position: static;
+        grid-row: 1;
+
+        width: 280px;
+        max-width: 100%;
+        justify-self: center;
     }
 
 }
