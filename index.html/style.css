@@ -194,12 +194,12 @@ nav a:hover::after {
 .bouton-principal {
     padding: 16px 20px;
 
-    background-color: var(--orange);
+    background-color: var(--gold);
     color: white;
 }
 
 .bouton-principal:hover {
-    background-color: var(--orange-fonce);
+    background-color: var(--gold-fonce);
 }
 
 
