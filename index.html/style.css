@@ -324,6 +324,31 @@ nav a:hover::after {
     font-size: 0.8rem;
 }
 
+.hero-watermark {
+    position: absolute;
+
+    /* EASY POSITION CONTROL */
+    top: 40px;
+    right: 50px;
+
+    /* EASY SIZE CONTROL */
+    width: 120px;
+    height: 120px;
+
+    background-image: url("./Images/ABB.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* WATERMARK EFFECT */
+    opacity: 0.25;
+
+    /* Prevent it from interfering with clicks */
+    pointer-events: none;
+
+    z-index: 1;
+}
+
 
 /* =========================
    ILLUSTRATION ORBITALE
