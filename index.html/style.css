@@ -1752,7 +1752,7 @@ RESPONSIVE DESIGN
     top: 125px;
 
     width: 100%;
-    max-width: 280px;
+    max-width: 28px;
     margin: 0;
     overflow: hidden;
     justify-self: end;
@@ -1767,7 +1767,7 @@ RESPONSIVE DESIGN
     display: block;
 
     width: 100%;
-    height: 350px;
+    height: 35px;
 
     object-fit: cover;
     object-position: center top;
