@@ -216,7 +216,6 @@ nav a:hover::after {
     color: white;
 
     background-color: #06101c;
-    background-image: url("./Images/SpaceOrbitLAB-v07.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
