@@ -450,9 +450,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 20px;
 
-    padding: 28px 32px;
+    padding: 14px 22px;
     cursor: pointer;
 
     list-style: none;
@@ -473,51 +473,28 @@
 }
 
 .resume-python h2 {
-    margin: 6px 0 8px;
+    margin: 3px 0;
 
     color: white;
     font-family: "Open Sans", Arial, sans-serif;
-    font-size: clamp(1.7rem, 3vw, 2.5rem);
-    line-height: 1.15;
+    font-size: clamp(1.25rem, 2vw, 1.7rem);
+    line-height: 1.2;
+}
+
+.resume-python .surtitre {
+    margin: 0;
+    font-size: 0.65rem;
 }
 
 .resume-python p:last-child {
-    margin: 0;
-    color: rgba(255, 255, 255, 0.72);
+    margin: 2px 0 0;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.82rem;
 }
 
 .surtitre-python {
     margin: 0;
     color: #8dccff;
-}
-
-
-/* PLUS AND MINUS ICON */
-
-.icone-onglet-python {
-    display: flex;
-    flex: 0 0 auto;
-    align-items: center;
-    justify-content: center;
-
-    width: 48px;
-    height: 48px;
-
-    color: white;
-    background-color: var(--orange);
-    border-radius: 50%;
-
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1;
-
-    transition:
-        transform 0.25s ease,
-        background-color 0.2s ease;
-}
-
-.onglet-python[open] .icone-onglet-python {
-    transform: rotate(45deg);
 }
 
 
