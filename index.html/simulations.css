@@ -497,6 +497,34 @@
     color: #8dccff;
 }
 
+.icone-onglet-python {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    color: var(--orange);
+    border: 2px solid var(--orange);
+    border-radius: 50%;
+
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* Rotation du + lorsque l’onglet est ouvert */
+.onglet-python[open] .icone-onglet-python {
+    color: white;
+    background-color: var(--orange);
+    transform: rotate(45deg);
+}
 
 /* OPEN CONTENT */
 
