@@ -372,3 +372,39 @@
         padding: 12px;
     }
 }
+/* =========================
+   LOADED SIMULATION
+========================= */
+
+.zone-simulation-chargee {
+    margin-top: 45px;
+    scroll-margin-top: 95px;
+}
+
+.simulation-placeholder {
+    margin: 0;
+    padding: 45px 25px;
+
+    color: var(--texte-secondaire);
+    background-color: #ffffff;
+    border: 1px dashed var(--bordure);
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+.zone-simulation-chargee .laboratoire-simulation {
+    padding: 25px 0 0;
+    background-color: transparent;
+}
+
+.zone-simulation-chargee
+.laboratoire-simulation > .container {
+    width: 100%;
+}
+
+.zone-simulation-chargee
+.laboratoire-simulation[hidden],
+.simulation-placeholder[hidden] {
+    display: none;
+}

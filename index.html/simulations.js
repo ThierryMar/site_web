@@ -19,6 +19,7 @@ const statusText =
    PYTHON STATUS
 ========================= */
 
+
 function setGlobalStatus(message, state) {
     statusText.textContent = message;
     statusElement.dataset.state = state;
@@ -349,12 +350,26 @@ const openSimulationButton =
         "open-simulation"
     );
 
+const simulationDisplay =
+    document.getElementById(
+        "simulation-display"
+    );
 
-if (simulationSelector && openSimulationButton) {
+const simulationPlaceholder =
+    document.getElementById(
+        "simulation-placeholder"
+    );
+
+
+if (
+    simulationSelector &&
+    openSimulationButton &&
+    simulationDisplay
+) {
 
     /*
-     * Enable the button after the user
-     * selects a simulation.
+     * Enable the button after selecting
+     * a simulation.
      */
 
     simulationSelector.addEventListener(
@@ -367,7 +382,7 @@ if (simulationSelector && openSimulationButton) {
 
 
     /*
-     * Scroll to the selected simulation.
+     * Display the selected simulation.
      */
 
     openSimulationButton.addEventListener(
@@ -378,25 +393,70 @@ if (simulationSelector && openSimulationButton) {
                     simulationSelector.value
                 );
 
-            if (selectedSection) {
-                selectedSection.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
+            if (!selectedSection) {
+                return;
+            }
+
+
+            /*
+             * Hide every simulation.
+             */
+
+            document
+                .querySelectorAll(
+                    ".laboratoire-simulation"
+                )
+                .forEach((section) => {
+                    section.hidden = true;
                 });
 
-                window.history.replaceState(
-                    null,
-                    "",
-                    simulationSelector.value
-                );
+
+            /*
+             * Move the selected simulation
+             * below the dropdown menu.
+             */
+
+            simulationDisplay.appendChild(
+                selectedSection
+            );
+
+            selectedSection.hidden = false;
+
+
+            /*
+             * Hide the initial placeholder.
+             */
+
+            if (simulationPlaceholder) {
+                simulationPlaceholder.hidden = true;
             }
+
+
+            /*
+             * Scroll to the displayed simulation.
+             */
+
+            simulationDisplay.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+
+            /*
+             * Update the URL.
+             */
+
+            window.history.replaceState(
+                null,
+                "",
+                simulationSelector.value
+            );
         }
     );
 }
 
-
 /* =========================
-   START PYTHON
+START PYTHON
 ========================= */
 
 initializePython();

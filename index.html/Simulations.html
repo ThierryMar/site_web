@@ -78,6 +78,17 @@
             <a href="#simulation-list" class="bouton bouton-navigation">
                 Start Simulating
             </a>
+            <a
+                href="https://www.abb.com/global/en?utm_source=social-media&utm_medium=Group-channels"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="./Images/ABB.png"
+                    alt="ABB"
+                    class="logo-abb"
+                >
+</a>
 
         </div>
     </header>
@@ -150,11 +161,28 @@
                     <span class="indicateur-etat" aria-hidden="true"></span>
                     <span>Loading the Python environment…</span>
                 </div>
+                                <div
+                    id="simulation-display"
+                    class="zone-simulation-chargee"
+                    aria-live="polite"
+                >
+                    <p
+                        id="simulation-placeholder"
+                        class="simulation-placeholder"
+                    >
+                        Select a simulation from the menu above to display it here.
+                    </p>
+                </div>
             </div>
         </section>
 
 
-        <section id="circular-orbit" class="section laboratoire-simulation">
+        <section 
+        id="circular-orbit"
+        class="section laboratoire-simulation"
+        hidden
+        >
+        
             <div class="container">
 
                 <div class="entete-simulation">
@@ -290,7 +318,11 @@ ax.legend()</textarea>
         </section>
 
 
-        <section id="elliptical-orbit" class="section laboratoire-simulation fond-simulation-alternatif">
+        <section 
+        id="elliptical-orbit" 
+        class="section laboratoire-simulation fond-simulation-alternatif"
+        hidden
+        >
             <div class="container">
 
                 <div class="entete-simulation">
