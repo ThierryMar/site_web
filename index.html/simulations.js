@@ -360,11 +360,19 @@ const simulationPlaceholder =
         "simulation-placeholder"
     );
 
+const simulationStorage =
+    document.getElementById(
+        "simulation-storage"
+    );
+
+let currentSimulation = null;
+
 
 if (
     simulationSelector &&
     openSimulationButton &&
-    simulationDisplay
+    simulationDisplay &&
+    simulationStorage
 ) {
 
     /*
@@ -394,26 +402,35 @@ if (
                 );
 
             if (!selectedSection) {
+                console.error(
+                    "Simulation not found:",
+                    simulationSelector.value
+                );
+
                 return;
             }
 
 
             /*
-             * Hide every simulation.
+             * Return the currently displayed
+             * simulation to the hidden storage.
              */
 
-            document
-                .querySelectorAll(
-                    ".laboratoire-simulation"
-                )
-                .forEach((section) => {
-                    section.hidden = true;
-                });
+            if (
+                currentSimulation &&
+                currentSimulation !== selectedSection
+            ) {
+                currentSimulation.hidden = true;
+
+                simulationStorage.appendChild(
+                    currentSimulation
+                );
+            }
 
 
             /*
              * Move the selected simulation
-             * below the dropdown menu.
+             * into the visible display zone.
              */
 
             simulationDisplay.appendChild(
@@ -421,6 +438,9 @@ if (
             );
 
             selectedSection.hidden = false;
+
+            currentSimulation =
+                selectedSection;
 
 
             /*
@@ -454,9 +474,3 @@ if (
         }
     );
 }
-
-/* =========================
-START PYTHON
-========================= */
-
-initializePython();
