@@ -11,6 +11,7 @@
     --bleu-pale: #467DD2;
     --silver-gray: #D7DCE2;
     --gold: #D4A017;
+    --gold-fonce: #967012;
     --orange: #ef6b3a;
     --orange-fonce: #d9572a;
 
@@ -164,6 +165,20 @@ nav a:hover::after {
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.35);
 }
+
+.navigation-droite {
+        justify-self: end;
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo-abb {
+        width: 70px;
+        height: auto;
+        display: block;
+    }
 
 
 /* =========================
@@ -779,20 +794,6 @@ a:focus-visible {
 
     .bouton-navigation {
         display: none;
-    }
-
-    .navigation-droite {
-        justify-self: end;
-
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .logo-abb {
-        width: 70px;
-        height: auto;
-        display: block;
     }
 
     .hero-contenu {
