@@ -40,22 +40,39 @@ function setRunButtonsDisabled(disabled) {
 ========================= */
 
 async function initializePython() {
+
     setRunButtonsDisabled(true);
 
     setGlobalStatus(
-        "Loading Python, NumPy, and Matplotlib…",
+        "Loading Python environment…",
         "loading"
     );
 
     try {
-        pyodideInstance = await loadPyodide({
-            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.29.0/full/"
-        });
 
+        pyodideInstance = await loadPyodide();
+
+        // Python packages
         await pyodideInstance.loadPackage([
             "numpy",
-            "matplotlib"
+            "matplotlib",
+            "scipy",
+            "astropy"
         ]);
+
+        // SOL library
+        const response = await fetch("Python/SOL.py");
+
+        if (!response.ok) {
+            throw new Error("Unable to load SOL.py");
+        }
+
+        const solCode = await response.text();
+
+        pyodideInstance.FS.writeFile(
+            "/home/pyodide/SOL.py",
+            solCode
+        );
 
         setGlobalStatus(
             "Python is ready. You can run the simulations.",
@@ -65,10 +82,11 @@ async function initializePython() {
         setRunButtonsDisabled(false);
 
     } catch (error) {
-        console.error("Pyodide loading error:", error);
+
+        console.error(error);
 
         setGlobalStatus(
-            "Python could not be loaded. Check the browser console.",
+            "Python could not be loaded.",
             "error"
         );
     }

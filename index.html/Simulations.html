@@ -326,6 +326,114 @@
                     <span class="indicateur-etat" aria-hidden="true"></span>
                     <span>Loading the Python environment…</span>
                 </div>
+
+                <!-- =========================
+                    AVAILABLE FUNCTIONS
+                ========================= -->
+
+                <details class="onglet-fonctions">
+
+                    <summary class="resume-fonctions">
+
+                        <div>
+                            <p class="surtitre surtitre-fonctions">
+                                Python Library
+                            </p>
+
+                            <h3>Available Functions</h3>
+                        </div>
+
+                        <span class="icone-onglet-fonctions" aria-hidden="true">
+                            +
+                        </span>
+
+                    </summary>
+
+
+                    <div class="contenu-fonctions">
+
+                        <p class="intro-fonctions">
+                            The following functions are already implemented and can be used
+                            directly in the simulations.
+                        </p>
+
+
+                        <div class="liste-fonctions">
+
+                            <div class="fonction-python">
+                                <code>RotX(angle)</code>
+
+                                <p>
+                                    Creates a rotation matrix around the X-axis.
+                                </p>
+                            </div>
+
+
+                            <div class="fonction-python">
+                                <code>RotZ(angle)</code>
+
+                                <p>
+                                    Creates a rotation matrix around the Z-axis.
+                                </p>
+                            </div>
+
+
+                            <div class="fonction-python">
+                                <code>true_to_eccentric_anomaly(nu, e)</code>
+
+                                <p>
+                                    Converts the true anomaly into the eccentric anomaly
+                                    for an elliptical orbit.
+                                </p>
+                            </div>
+
+
+                            <div class="fonction-python">
+                                <code>solve_kepler(M, e, tol=1e-12, max_iter=50)</code>
+
+                                <p>
+                                    Solves Kepler's equation to determine the eccentric
+                                    anomaly from the mean anomaly and eccentricity.
+                                </p>
+                            </div>
+
+
+                            <div class="fonction-python">
+                                <code>coe_to_rv(a, e, i, RAAN, argp, nu, mu)</code>
+
+                                <p>
+                                    Converts classical orbital elements into position
+                                    and velocity vectors.
+                                </p>
+                            </div>
+
+
+                            <div class="fonction-python">
+                                <code>
+                                    propagate_2bk_from_coe(...)
+                                </code>
+
+                                <p>
+                                    Propagates a two-body orbit from its initial classical
+                                    orbital elements over a specified time array.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="exemple-import-fonctions">
+
+                            <strong>Example</strong>
+
+                            <code>from SOL import RotX, RotZ, solve_kepler</code>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
                                 <div
                     id="simulation-display"
                     class="zone-simulation-chargee"
