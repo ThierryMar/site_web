@@ -61,7 +61,7 @@ async function initializePython() {
         ]);
 
         // SOL library
-        const response = await fetch("Python/SOL.py");
+        const response = await fetch("./SOL.py");
 
         if (!response.ok) {
             throw new Error("Unable to load SOL.py");
