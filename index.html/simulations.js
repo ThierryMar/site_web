@@ -48,7 +48,9 @@ async function initializePython() {
     );
 
     try {
-        pyodideInstance = await loadPyodide();
+        pyodideInstance = await loadPyodide({
+            indexURL: "https://cdn.jsdelivr.net/pyodide/v0.29.0/full/"
+        });
 
         await pyodideInstance.loadPackage([
             "numpy",
@@ -63,10 +65,10 @@ async function initializePython() {
         setRunButtonsDisabled(false);
 
     } catch (error) {
-        console.error(error);
+        console.error("Pyodide loading error:", error);
 
         setGlobalStatus(
-            "Python could not be loaded. Check your internet connection and reload the page.",
+            "Python could not be loaded. Check the browser console.",
             "error"
         );
     }
