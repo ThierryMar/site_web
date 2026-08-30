@@ -1767,11 +1767,10 @@ RESPONSIVE DESIGN
 ========================= */
 
 .professeur-photo {
-    position: sticky;
-    top: 125px;
+    position: static;
 
     width: 100%;
-    max-width: 340px;
+    max-width: 400px;
     margin: 0;
     overflow: hidden;
     justify-self: end;
