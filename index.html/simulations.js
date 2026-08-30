@@ -237,6 +237,8 @@ _image_base64 = ""
 try:
     plt.close("all")
 
+    plt.show = lambda *args, **kwargs: None
+
     with contextlib.redirect_stdout(_stdout_buffer):
         exec(_user_code, {})
 
