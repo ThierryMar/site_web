@@ -1872,10 +1872,9 @@ RESPONSIVE DESIGN
 
 .missions-entete > p:last-child {
     max-width: 750px;
-
     margin: 0;
 
-    color: rgba(255, 255, 255, 0.68);
+    color: var(--texte-secondaire);
 
     line-height: 1.7;
 }
@@ -1907,9 +1906,8 @@ RESPONSIVE DESIGN
 
     overflow: hidden;
 
-    border: 1px solid rgba(255, 255, 255, 0.12);
-
-    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--bordure);
+    background: #ffffff;
 
     transition:
         transform 0.2s ease,
@@ -1922,7 +1920,7 @@ RESPONSIVE DESIGN
 
     border-color: rgba(255, 255, 255, 0.24);
 
-    background: rgba(255, 255, 255, 0.065);
+    background: #ffffff;
 }
 
 
@@ -1937,7 +1935,7 @@ RESPONSIVE DESIGN
 .mission-titre h4 {
     margin: 0;
 
-    color: #ffffff;
+    color: var(--bleu-fonce);
 
     font-size: 1rem;
     font-weight: 400;
@@ -1950,13 +1948,13 @@ RESPONSIVE DESIGN
 }
 
 .mission-titre h4 span {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--texte-secondaire);
 }
 
 .mission-annees {
     margin: 5px 0 0;
 
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--texte-secondaire);
 
     font-family: monospace;
     font-size: 0.72rem;
