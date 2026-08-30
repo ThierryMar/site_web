@@ -65,7 +65,7 @@ async function initializePython() {
 
 
         /* =========================
-        2. PYTHON LIBRARIES
+           2. PYTHON LIBRARIES
         ========================= */
 
         setGlobalStatus(
@@ -73,40 +73,24 @@ async function initializePython() {
             "loading"
         );
 
-        console.log("Loading NumPy and Matplotlib...");
+        console.log(
+            "Loading NumPy, SciPy and Matplotlib..."
+        );
 
         await pyodideInstance.loadPackage([
             "numpy",
-            "matplotlib",
-            "micropip"
+            "scipy",
+            "matplotlib"
         ]);
 
-        console.log("Core Python libraries loaded");
-
-
-        /* =========================
-        3. PYVISTA
-        ========================= */
-
-        setGlobalStatus(
-            "Loading PyVista…",
-            "loading"
+        console.log(
+            "Core Python libraries loaded"
         );
 
-        console.log("Loading PyVista...");
-
-        await pyodideInstance.runPythonAsync(`
-        import micropip
-        await micropip.install("pyvista")
-        `);
-
-        console.log("PyVista loaded");
-
 
         /* =========================
-        4. SOL LIBRARY
+           3. SOL LIBRARY
         ========================= */
-
 
         setGlobalStatus(
             "Loading SOL library…",
@@ -117,22 +101,28 @@ async function initializePython() {
 
 
         /*
-        * Function used to load a Python file
-        * from the website into Pyodide.
-        */
+         * Function used to load a Python file
+         * from the website into Pyodide.
+         */
+
         async function loadPythonFile(
             websitePath,
             pyodidePath
         ) {
-            const response = await fetch(websitePath);
+
+            const response =
+                await fetch(websitePath);
 
             if (!response.ok) {
+
                 throw new Error(
                     `${websitePath} not found — HTTP ${response.status}`
                 );
+
             }
 
-            const code = await response.text();
+            const code =
+                await response.text();
 
             pyodideInstance.FS.writeFile(
                 pyodidePath,
@@ -145,30 +135,27 @@ async function initializePython() {
 
 
         /*
-        * Create SOL_Tools package folder
-        * inside Pyodide.
-        */
+         * Create SOL_Tools package folder
+         * inside Pyodide.
+         */
+
         try {
+
             pyodideInstance.FS.mkdir(
                 "/home/pyodide/SOL_Tools"
             );
+
         } catch (error) {
+
             // Folder may already exist.
+
         }
 
 
         /*
-        * Load main SOL library.
-        */
-        await loadPythonFile(
-            "./SOL.py",
-            "/home/pyodide/SOL.py"
-        );
+         * Load SOL_Tools package.
+         */
 
-
-        /*
-        * Load SOL_Tools package.
-        */
         await loadPythonFile(
             "./SOL_Tools/__init__.py",
             "/home/pyodide/SOL_Tools/__init__.py"
@@ -180,15 +167,24 @@ async function initializePython() {
         );
 
         await loadPythonFile(
+            "./SOL_Tools/Math_tools.py",
+            "/home/pyodide/SOL_Tools/Math_tools.py"
+        );
+
+        await loadPythonFile(
             "./SOL_Tools/Orbit_tools.py",
             "/home/pyodide/SOL_Tools/Orbit_tools.py"
         );
 
-        await loadPythonFile(
-            "./SOL_Tools/Plot_tools.py",
-            "/home/pyodide/SOL_Tools/Plot_tools.py"
-        );
 
+        /*
+         * Load main SOL library.
+         */
+
+        await loadPythonFile(
+            "./SOL.py",
+            "/home/pyodide/SOL.py"
+        );
 
         console.log("SOL library loaded");
 
@@ -201,7 +197,17 @@ async function initializePython() {
 
         await pyodideInstance.runPythonAsync(`
 import SOL
+
 print("SOL imported successfully")
+print("Earth mu:", SOL.Earth.mu)
+print(
+    "OrbitPropagation_2BN available:",
+    hasattr(SOL, "OrbitPropagation_2BN")
+)
+print(
+    "OrbitPropagation_2BK available:",
+    hasattr(SOL, "OrbitPropagation_2BK")
+)
         `);
 
         console.log("SOL import successful");
