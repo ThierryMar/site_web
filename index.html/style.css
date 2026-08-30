@@ -1891,9 +1891,9 @@ RESPONSIVE DESIGN
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(3, minmax(0, 1fr));
 
-    gap: 28px;
+    gap: 24px;
 }
 
 
@@ -1980,18 +1980,16 @@ RESPONSIVE DESIGN
 ========================= */
 
 .mission-visuels {
-    display: grid;
+    display :flex;
+    flex-direction:column;
 
-    grid-template-columns:
-        1.35fr 0.85fr;
+    gap: 14px;
 
-    gap: 12px;
-
-    height: 260px;
-
-    padding: 0 20px;
+    padding:0 20px;
 }
-
+.mission-image-principale {
+    height: 190px;
+}
 
 .mission-image-principale,
 .mission-image-instrument {
@@ -2111,12 +2109,20 @@ RESPONSIVE DESIGN
         padding-top: 35px;
     }
 
+    .grille-missions {
+        grid-template-columns: 1fr;
+    }
+
     .mission-visuels {
-        grid-template-columns: 1fr 1fr;
-
-        height: 190px;
-
         padding: 0 12px;
+    }
+
+    .mission-image-principale {
+        height: 190px;
+    }
+
+    .mission-image-instrument {
+        height: 120px;
     }
 
     .mission-titre {
@@ -2125,7 +2131,6 @@ RESPONSIVE DESIGN
 
     .mission-logo {
         min-height: 85px;
-
         margin-top: 15px;
     }
 
@@ -2133,61 +2138,4 @@ RESPONSIVE DESIGN
         max-width: 150px;
         max-height: 55px;
     }
-
-}
-
-
-/* =========================
-   HOVER ON IMAGES
-========================= */
-
-.mission-image-principale img,
-.mission-image-instrument img {
-    transition: transform 0.35s ease;
-}
-
-.mission-carte:hover
-.mission-image-principale img {
-    transform: scale(1.025);
-}
-
-.mission-carte:hover
-.mission-image-instrument img {
-    transform: scale(1.025);
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1000px) {
-
-    .grille-missions {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
-    }
-
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 650px) {
-
-    .grille-missions {
-        grid-template-columns: 1fr;
-    }
-
-    .mission-visuels {
-        height: 210px;
-    }
-
-    .missions-professeur {
-        margin-top: 40px;
-        padding-top: 30px;
-    }
-
 }
