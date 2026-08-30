@@ -156,10 +156,6 @@ async function initializePython() {
          * Load SOL_Tools package.
          */
 
-        await loadPythonFile(
-            "./SOL_Tools/__init__.py",
-            "/home/pyodide/SOL_Tools/__init__.py"
-        );
 
         await loadPythonFile(
             "./SOL_Tools/AstroConstants.py",
