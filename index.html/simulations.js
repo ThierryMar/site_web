@@ -65,11 +65,11 @@ async function initializePython() {
 
 
         /* =========================
-           2. NUMPY + MATPLOTLIB
+        2. PYTHON LIBRARIES
         ========================= */
 
         setGlobalStatus(
-            "Loading NumPy and Matplotlib…",
+            "Loading Python libraries…",
             "loading"
         );
 
@@ -77,42 +77,120 @@ async function initializePython() {
 
         await pyodideInstance.loadPackage([
             "numpy",
-            "matplotlib"
+            "matplotlib",
+            "micropip"
         ]);
 
-        console.log("NumPy and Matplotlib loaded");
+        console.log("Core Python libraries loaded");
 
 
         /* =========================
-           3. SOL.PY
+        3. PYVISTA
         ========================= */
+
+        setGlobalStatus(
+            "Loading PyVista…",
+            "loading"
+        );
+
+        console.log("Loading PyVista...");
+
+        await pyodideInstance.runPythonAsync(`
+        import micropip
+        await micropip.install("pyvista")
+        `);
+
+        console.log("PyVista loaded");
+
+
+        /* =========================
+        4. SOL LIBRARY
+        ========================= */
+
 
         setGlobalStatus(
             "Loading SOL library…",
             "loading"
         );
 
-        console.log("Loading SOL.py...");
+        console.log("Loading SOL library...");
 
-        const response = await fetch("./SOL.py");
 
-        if (!response.ok) {
-            throw new Error(
-                `SOL.py not found — HTTP ${response.status}`
+        /*
+        * Function used to load a Python file
+        * from the website into Pyodide.
+        */
+        async function loadPythonFile(
+            websitePath,
+            pyodidePath
+        ) {
+            const response = await fetch(websitePath);
+
+            if (!response.ok) {
+                throw new Error(
+                    `${websitePath} not found — HTTP ${response.status}`
+                );
+            }
+
+            const code = await response.text();
+
+            pyodideInstance.FS.writeFile(
+                pyodidePath,
+                code,
+                {
+                    encoding: "utf8"
+                }
             );
         }
 
-        const solCode = await response.text();
 
-        pyodideInstance.FS.writeFile(
-            "/home/pyodide/SOL.py",
-            solCode,
-            {
-                encoding: "utf8"
-            }
+        /*
+        * Create SOL_Tools package folder
+        * inside Pyodide.
+        */
+        try {
+            pyodideInstance.FS.mkdir(
+                "/home/pyodide/SOL_Tools"
+            );
+        } catch (error) {
+            // Folder may already exist.
+        }
+
+
+        /*
+        * Load main SOL library.
+        */
+        await loadPythonFile(
+            "./SOL.py",
+            "/home/pyodide/SOL.py"
         );
 
-        console.log("SOL.py loaded");
+
+        /*
+        * Load SOL_Tools package.
+        */
+        await loadPythonFile(
+            "./SOL_Tools/__init__.py",
+            "/home/pyodide/SOL_Tools/__init__.py"
+        );
+
+        await loadPythonFile(
+            "./SOL_Tools/AstroConstants.py",
+            "/home/pyodide/SOL_Tools/AstroConstants.py"
+        );
+
+        await loadPythonFile(
+            "./SOL_Tools/Orbit_tools.py",
+            "/home/pyodide/SOL_Tools/Orbit_tools.py"
+        );
+
+        await loadPythonFile(
+            "./SOL_Tools/Plot_tools.py",
+            "/home/pyodide/SOL_Tools/Plot_tools.py"
+        );
+
+
+        console.log("SOL library loaded");
 
 
         /* =========================

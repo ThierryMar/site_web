@@ -421,6 +421,38 @@
                                 </p>
                             </div>
 
+                            <div class="fonction-python">
+                            <code>
+                                OrbitPropagation_2BN(...)
+                            </code>
+
+                            <p>
+                                Propagates an orbit using the two-body Newtonian model.
+                            </p>
+                        </div>
+
+
+                        <div class="fonction-python">
+                            <code>
+                                OrbitPropagation_2BK(...)
+                            </code>
+
+                            <p>
+                                Propagates an orbit using the two-body Keplerian model.
+                            </p>
+                        </div>
+
+
+                        <div class="fonction-python">
+                            <code>
+                                DrawEarth3D(...)
+                            </code>
+
+                            <p>
+                                Creates a three-dimensional representation of the Earth
+                                for orbital visualization using PyVista.
+                            </p>
+                        </div>
                         </div>
 
 
@@ -428,7 +460,7 @@
 
                             <strong>Example</strong>
 
-                            <code>from SOL import RotX, RotZ, solve_kepler</code>
+                            <code>from SOL import RotX, OrbitPropagation_2BK, DrawEarth3D</code>
 
                         </div>
 
@@ -596,7 +628,7 @@ ax.legend()</textarea>
 
 
         <section 
-            id="circular-orbit"
+            id="elliptical-orbit"
             class="section laboratoire-simulation"
             data-live-simulation
             hidden
