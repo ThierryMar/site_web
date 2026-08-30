@@ -43,36 +43,95 @@ async function initializePython() {
 
     setRunButtonsDisabled(true);
 
-    setGlobalStatus(
-        "Loading Python environment…",
-        "loading"
-    );
-
     try {
 
-        pyodideInstance = await loadPyodide();
+        /* =========================
+           1. PYODIDE
+        ========================= */
 
-        // Python packages
+        setGlobalStatus(
+            "Loading Python environment…",
+            "loading"
+        );
+
+        console.log("Loading Pyodide...");
+
+        pyodideInstance = await loadPyodide({
+            indexURL:
+                "https://cdn.jsdelivr.net/pyodide/v0.29.0/full/"
+        });
+
+        console.log("Pyodide loaded successfully");
+
+
+        /* =========================
+           2. NUMPY + MATPLOTLIB
+        ========================= */
+
+        setGlobalStatus(
+            "Loading NumPy and Matplotlib…",
+            "loading"
+        );
+
+        console.log("Loading NumPy and Matplotlib...");
+
         await pyodideInstance.loadPackage([
             "numpy",
-            "matplotlib",
-            "scipy",
-            "astropy"
+            "matplotlib"
         ]);
 
-        // SOL library
+        console.log("NumPy and Matplotlib loaded");
+
+
+        /* =========================
+           3. SOL.PY
+        ========================= */
+
+        setGlobalStatus(
+            "Loading SOL library…",
+            "loading"
+        );
+
+        console.log("Loading SOL.py...");
+
         const response = await fetch("./SOL.py");
 
         if (!response.ok) {
-            throw new Error("Unable to load SOL.py");
+            throw new Error(
+                `SOL.py not found — HTTP ${response.status}`
+            );
         }
 
         const solCode = await response.text();
 
         pyodideInstance.FS.writeFile(
             "/home/pyodide/SOL.py",
-            solCode
+            solCode,
+            {
+                encoding: "utf8"
+            }
         );
+
+        console.log("SOL.py loaded");
+
+
+        /* =========================
+           4. TEST SOL
+        ========================= */
+
+        console.log("Testing SOL import...");
+
+        await pyodideInstance.runPythonAsync(`
+import SOL
+print("SOL imported successfully")
+        `);
+
+        console.log("SOL import successful");
+
+
+        /* =========================
+           READY
+        ========================= */
 
         setGlobalStatus(
             "Python is ready. You can run the simulations.",
@@ -83,10 +142,13 @@ async function initializePython() {
 
     } catch (error) {
 
-        console.error(error);
+        console.error(
+            "Python initialization error:",
+            error
+        );
 
         setGlobalStatus(
-            "Python could not be loaded.",
+            `Initialization error: ${error.message}`,
             "error"
         );
     }
