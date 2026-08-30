@@ -1,11 +1,15 @@
 import numpy as np
-import pyvista as pv
 
 # Fonction SOL Richard
 
-from SOL_Tools.AstroConstants import *
-from SOL_Tools.Orbit_tools import OrbitPropagation_2BN, OrbitPropagation_2BK
-from SOL_Tools.Plot_tools import DrawEarth3D
+
+from SOL_Tools.AstroConstants import Earth
+
+
+from SOL_Tools.Orbit_tools import (
+    OrbitPropagation_2BN,
+    OrbitPropagation_2BK
+)
 
 
 
