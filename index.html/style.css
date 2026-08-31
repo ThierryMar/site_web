@@ -118,7 +118,7 @@ a {
 }
 
 .logo-icon {
-    color: var(--orange);
+    color: var(--gold);
     font-size: 1.8rem;
 }
 
@@ -147,7 +147,7 @@ nav a::after {
 
     height: 1px;
 
-    background-color: var(--orange);
+    background-color: var(--gold);
 
     transform: scaleX(0);
     transition: transform 0.2s ease;
@@ -277,7 +277,7 @@ nav a:hover::after {
 
     margin-bottom: 24px;
 
-    color: #b4c0cb;
+    color: var(--silver-gray);
 
     font-size: 0.68rem;
     font-weight: bold;
@@ -291,7 +291,7 @@ nav a:hover::after {
     width: 32px;
     height: 1px;
 
-    background-color: var(--orange);
+    background-color: var(--gold);
 }
 
 .surtitre-sombre {
@@ -410,10 +410,10 @@ nav a:hover::after {
     width: 10px;
     height: 10px;
 
-    border: 2px solid var(--orange);
+    border: 2px solid var(--gold);
     border-radius: 50%;
 
-    box-shadow: 0 0 14px var(--orange);
+    box-shadow: 0 0 14px var(--gold);
 }
 
 .satellite-1 {
@@ -457,7 +457,7 @@ nav a:hover::after {
 }
 
 .statistique strong {
-    color: var(--orange);
+    color: var(--gold);
 
     font-family: "Open Sans";
     font-size: 1.8rem;
@@ -581,7 +581,7 @@ nav a:hover::after {
 
     margin-bottom: 70px;
 
-    color: var(--orange);
+    color: var(--gold);
 
     font-size: 0.75rem;
     letter-spacing: 0.14em;
@@ -681,7 +681,7 @@ nav a:hover::after {
 }
 
 .liste-objectifs li span {
-    color: var(--orange);
+    color: var(--gold);
 
     font-family: "Open Sans";
     font-size: 0.65rem;
@@ -752,7 +752,7 @@ nav a:hover::after {
 ========================= */
 
 a:focus-visible {
-    outline: 2px solid var(--orange);
+    outline: 2px solid var(--gold);
     outline-offset: 4px;
 }
 
@@ -1043,7 +1043,7 @@ nav .lien-actif::after {
 }
 
 .carte-lien > span {
-    color: var(--orange);
+    color: var(--gold);
 
     font-size: 0.7rem;
     letter-spacing: 0.15em;
@@ -1063,7 +1063,7 @@ nav .lien-actif::after {
 }
 
 .carte-lien strong {
-    color: var(--orange);
+    color: var(--gold);
     font-size: 0.75rem;
 }
 
@@ -1095,7 +1095,7 @@ nav .lien-actif::after {
 .sommaire p {
     margin-bottom: 10px;
 
-    color: var(--orange);
+    color: var(--gold);
 
     font-size: 0.7rem;
     font-weight: bold;
@@ -1109,7 +1109,7 @@ nav .lien-actif::after {
 }
 
 .sommaire a:hover {
-    color: var(--orange);
+    color: var(--gold);
 }
 
 .article-principal {
@@ -1144,14 +1144,14 @@ nav .lien-actif::after {
     padding: 25px;
 
     background-color: #ece7dc;
-    border-left: 3px solid var(--orange);
+    border-left: 3px solid var(--gold);
 }
 
 .encadre-information strong {
     display: block;
     margin-bottom: 10px;
 
-    color: var(--orange);
+    color: var(--gold);
 
     font-size: 0.75rem;
     letter-spacing: 0.1em;
@@ -1523,7 +1523,7 @@ nav .lien-actif::after {
 }
 
 .numero-simulation {
-    color: var(--orange);
+    color: var(--gold);
 
     font-size: 0.7rem;
     font-weight: bold;
@@ -1551,7 +1551,7 @@ nav .lien-actif::after {
 }
 
 .liste-fonctionnalites strong {
-    color: var(--orange);
+    color: var(--gold);
 }
 
 
@@ -1623,7 +1623,7 @@ nav .lien-actif::after {
 
 .bouton-orbits101:hover {
     color: #ffffff;
-    background-color: var(--orange);
+    background-color: var(--gold);
 }
 
 .action-orbits101 small {
@@ -1670,7 +1670,7 @@ RESPONSIVE DESIGN
 }
 
 .surtitre-professeur {
-    color: var(--orange);
+    color: var(--gold);
 }
 
 
@@ -1758,7 +1758,7 @@ RESPONSIVE DESIGN
     position: absolute;
     left: 0;
 
-    color: var(--orange);
+    color: var(--gold);
 }
 
 
@@ -1809,12 +1809,12 @@ RESPONSIVE DESIGN
     margin-top: 15px;
 
     color: white;
-    background-color: var(--orange);
+    background-color: var(--gold);
 }
 
 .bouton-professeur:hover {
     color: white;
-    background-color: var(--orange-fonce);
+    background-color: var(--gold-fonce);
     transform: translateY(-2px);
 }
 
@@ -1953,7 +1953,7 @@ RESPONSIVE DESIGN
 
 
 .mission-titre h4 strong {
-    color: var(--orange);
+    color: var(--gold);
 
     font-weight: 700;
 }
@@ -2075,7 +2075,7 @@ RESPONSIVE DESIGN
 /* Keyboard accessibility */
 
 .mission-logo:focus-visible {
-    outline: 3px solid var(--orange);
+    outline: 3px solid var(--gold);
     outline-offset: -3px;
 }
 
