@@ -203,6 +203,11 @@ async function initializePython() {
         )
 
         print(
+            "Rates_Newton available:",
+            hasattr(SOL, "Rates_Newton")
+        )
+
+        print(
             "OrbitPropagation_2BK available:",
             hasattr(SOL, "OrbitPropagation_2BK")
         )
@@ -213,8 +218,23 @@ async function initializePython() {
         )
 
         print(
-            "coe_to_rv available:",
-            hasattr(SOL, "coe_to_rv")
+            "COE_to_SV available:",
+            hasattr(SOL, "COE_to_SV")
+        )
+
+        print(
+            "sind available:",
+            hasattr(SOL, "sind")
+        )
+
+        print(
+            "cosd available:",
+            hasattr(SOL, "cosd")
+        )
+
+        print(
+            "tand available:",
+            hasattr(SOL, "tand")
         )
 
         print(
@@ -223,13 +243,13 @@ async function initializePython() {
         )
 
         print(
-            "RotZ available:",
-            hasattr(SOL, "RotZ")
+            "RotY available:",
+            hasattr(SOL, "RotY")
         )
 
         print(
-            "propagate_2bk_from_coe available:",
-            hasattr(SOL, "propagate_2bk_from_coe")
+            "RotZ available:",
+            hasattr(SOL, "RotZ")
         )
         `);
 
@@ -347,7 +367,7 @@ try:
     plt.show = lambda *args, **kwargs: None
 
     with contextlib.redirect_stdout(_stdout_buffer):
-        exec(_user_code, {})
+        exec(_user_code, globals())
 
     if plt.get_fignums():
         _image_buffer = io.BytesIO()
