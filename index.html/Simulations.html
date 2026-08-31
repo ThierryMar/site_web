@@ -352,115 +352,173 @@
 
                     </summary>
 
+
                     <div class="contenu-fonctions">
 
                         <p class="intro-fonctions">
-                            The following functions are already implemented and can be used
-                            directly in the simulations.
+                            The following constants and functions are already implemented
+                            in the SpaceOrbitLAB Python library and can be used directly
+                            in the simulations.
                         </p>
 
 
                         <div class="liste-fonctions">
 
+
+                            <!-- EARTH CONSTANTS -->
+
                             <div class="fonction-python">
+
+                                <code>Earth.mu</code>
+
+                                <p>
+                                    Earth's standard gravitational parameter in km³/s².
+                                </p>
+
+                            </div>
+
+
+                            <!-- TRIGONOMETRIC FUNCTIONS -->
+
+                            <div class="fonction-python">
+
+                                <code>sind(angle)</code>
+
+                                <p>
+                                    Computes the sine of an angle expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            <div class="fonction-python">
+
+                                <code>cosd(angle)</code>
+
+                                <p>
+                                    Computes the cosine of an angle expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            <div class="fonction-python">
+
+                                <code>tand(angle)</code>
+
+                                <p>
+                                    Computes the tangent of an angle expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            <!-- ROTATION MATRICES -->
+
+                            <div class="fonction-python">
+
                                 <code>RotX(angle)</code>
 
                                 <p>
                                     Creates a rotation matrix around the X-axis.
+                                    The angle is expressed in degrees.
                                 </p>
+
                             </div>
 
 
                             <div class="fonction-python">
+
+                                <code>RotY(angle)</code>
+
+                                <p>
+                                    Creates a rotation matrix around the Y-axis.
+                                    The angle is expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            <div class="fonction-python">
+
                                 <code>RotZ(angle)</code>
 
                                 <p>
                                     Creates a rotation matrix around the Z-axis.
+                                    The angle is expressed in degrees.
                                 </p>
+
                             </div>
 
 
+                            <!-- KEPLER SOLVER -->
+
                             <div class="fonction-python">
-                                <code>true_to_eccentric_anomaly(nu, e)</code>
+
+                                <code>KeplerSolver(M, e)</code>
 
                                 <p>
-                                    Converts the true anomaly into the eccentric anomaly
-                                    for an elliptical orbit.
+                                    Solves Kepler's equation from the mean anomaly and
+                                    eccentricity. Returns the eccentric anomaly and true anomaly.
                                 </p>
+
                             </div>
 
 
+                            <!-- COE TO STATE VECTOR -->
+
                             <div class="fonction-python">
-                                <code>solve_kepler(M, e, tol=1e-12, max_iter=50)</code>
+
+                                <code>COE_to_SV(a, e, i, RAAN, argp, nu, mu)</code>
 
                                 <p>
-                                    Solves Kepler's equation to determine the eccentric
-                                    anomaly from the mean anomaly and eccentricity.
+                                    Converts classical orbital elements into inertial
+                                    position and velocity vectors.
                                 </p>
+
                             </div>
 
 
+                            <!-- NEWTONIAN PROPAGATION -->
+
                             <div class="fonction-python">
-                                <code>coe_to_rv(a, e, i, RAAN, argp, nu, mu)</code>
+
+                                <code>OrbitPropagation_2BN(SV, time_s)</code>
 
                                 <p>
-                                    Converts classical orbital elements into position
-                                    and velocity vectors.
+                                    Propagates an orbit by numerically solving Newton's
+                                    two-body equations of motion.
                                 </p>
+
                             </div>
 
 
+                            <!-- KEPLERIAN PROPAGATION -->
+
                             <div class="fonction-python">
-                                <code>
-                                    propagate_2bk_from_coe(...)
-                                </code>
+
+                                <code>OrbitPropagation_2BK(a, e, i, RAAN, w, nu0, t_array, mu)</code>
 
                                 <p>
-                                    Propagates a two-body orbit from its initial classical
-                                    orbital elements over a specified time array.
+                                    Propagates an elliptical orbit from classical orbital
+                                    elements using the two-body Keplerian model.
                                 </p>
+
                             </div>
 
-                            <div class="fonction-python">
-                            <code>
-                                OrbitPropagation_2BN(...)
-                            </code>
 
-                            <p>
-                                Propagates an orbit using the two-body Newtonian model.
-                            </p>
                         </div>
 
 
-                        <div class="fonction-python">
-                            <code>
-                                OrbitPropagation_2BK(...)
-                            </code>
-
-                            <p>
-                                Propagates an orbit using the two-body Keplerian model.
-                            </p>
-                        </div>
-
-
-                        <div class="fonction-python">
-                            <code>
-                                DrawEarth3D(...)
-                            </code>
-
-                            <p>
-                                Creates a three-dimensional representation of the Earth
-                                for orbital visualization using PyVista.
-                            </p>
-                        </div>
-                        </div>
-
+                        <!-- IMPORT EXAMPLE -->
 
                         <div class="exemple-import-fonctions">
 
                             <strong>Example</strong>
 
-                            <code>from SOL import RotX, OrbitPropagation_2BK, DrawEarth3D</code>
+                            <code>
+                                from SOL import Earth, RotX, KeplerSolver, COE_to_SV, OrbitPropagation_2BK
+                            </code>
 
                         </div>
 
@@ -525,33 +583,47 @@
                         >import numpy as np
 import matplotlib.pyplot as plt
 
-# Physical constants
-G = 6.67430e-11              # Gravitational constant (m³/kg/s²)
-M_earth = 5.972e24           # Mass of Earth (kg)
-R_earth = 6371.0             # Mean radius of Earth (km)
+from SOL import Earth
+
+# Earth constants
+mu = Earth.mu                 # km³/s²
+R_earth = Earth.r1_km         # km
 
 # Change this value
 altitude_km = 400.0
 
-# Orbital calculations
-orbital_radius_m = (R_earth + altitude_km) * 1000
-velocity_m_s = np.sqrt(G * M_earth / orbital_radius_m)
-period_s = 2 * np.pi * np.sqrt(
-    orbital_radius_m**3 / (G * M_earth)
+# Orbital radius
+radius_km = R_earth + altitude_km
+
+# Orbital velocity
+velocity_km_s = np.sqrt(
+    mu / radius_km
+)
+
+# Orbital period
+period_s = (
+    2 * np.pi
+    * np.sqrt(radius_km**3 / mu)
 )
 
 print(f"Altitude: {altitude_km:.1f} km")
-print(f"Orbital velocity: {velocity_m_s / 1000:.3f} km/s")
+print(f"Orbital radius: {radius_km:.1f} km")
+print(f"Orbital velocity: {velocity_km_s:.3f} km/s")
 print(f"Orbital period: {period_s / 60:.2f} minutes")
 
 # Orbit visualization
-theta = np.linspace(0, 2 * np.pi, 800)
-radius_km = R_earth + altitude_km
+theta = np.linspace(
+    0,
+    2 * np.pi,
+    800
+)
 
 x = radius_km * np.cos(theta)
 y = radius_km * np.sin(theta)
 
-fig, ax = plt.subplots(figsize=(7, 7))
+fig, ax = plt.subplots(
+    figsize=(7, 7)
+)
 
 earth = plt.Circle(
     (0, 0),
@@ -561,18 +633,55 @@ earth = plt.Circle(
 )
 
 ax.add_patch(earth)
-ax.plot(x, y, color="#ef6b3a", linewidth=2.5, label="Orbit")
-ax.scatter([radius_km], [0], color="#ffffff", edgecolor="#091827",
-           s=70, zorder=5, label="Satellite")
+
+ax.plot(
+    x,
+    y,
+    color="#ef6b3a",
+    linewidth=2.5,
+    label="Orbit"
+)
+
+ax.scatter(
+    [radius_km],
+    [0],
+    color="#ffffff",
+    edgecolor="#091827",
+    s=70,
+    zorder=5,
+    label="Satellite"
+)
 
 limit = radius_km * 1.2
-ax.set_xlim(-limit, limit)
-ax.set_ylim(-limit, limit)
+
+ax.set_xlim(
+    -limit,
+    limit
+)
+
+ax.set_ylim(
+    -limit,
+    limit
+)
+
 ax.set_aspect("equal")
-ax.set_xlabel("X position (km)")
-ax.set_ylabel("Y position (km)")
-ax.set_title("Circular Earth Orbit")
-ax.grid(alpha=0.2)
+
+ax.set_xlabel(
+    "X position (km)"
+)
+
+ax.set_ylabel(
+    "Y position (km)"
+)
+
+ax.set_title(
+    "Circular Earth Orbit"
+)
+
+ax.grid(
+    alpha=0.2
+)
+
 ax.legend()</textarea>
 
                         <div class="actions-simulation">
@@ -660,46 +769,143 @@ ax.legend()</textarea>
                         </label>
 
                         <textarea
-                            id="code-elliptical"
-                            class="editeur-python"
-                            spellcheck="false"
-                        >import numpy as np
+                        id="code-elliptical"
+                        class="editeur-python"
+                        spellcheck="false"
+>import numpy as np
 import matplotlib.pyplot as plt
 
-# Mean radius of Earth
-R_earth = 6371.0  # km
+from SOL import Earth, OrbitPropagation_2BK
 
-# Change these values
-semi_major_axis_km = 12000.0
-eccentricity = 0.45
+# =========================
+# ORBITAL PARAMETERS
+# =========================
 
-if semi_major_axis_km <= 0:
-    raise ValueError("The semi-major axis must be positive.")
+# Semi-major axis [km]
+a = 12000.0
 
-if not 0 <= eccentricity < 1:
-    raise ValueError("Eccentricity must be between 0 and 1.")
+# Eccentricity [-]
+e = 0.45
 
-# Orbital parameters
-periapsis_km = semi_major_axis_km * (1 - eccentricity)
-apoapsis_km = semi_major_axis_km * (1 + eccentricity)
+# Inclination [deg]
+i = 0.0
 
-print(f"Semi-major axis: {semi_major_axis_km:.1f} km")
-print(f"Eccentricity: {eccentricity:.3f}")
-print(f"Periapsis radius: {periapsis_km:.1f} km")
-print(f"Apoapsis radius: {apoapsis_km:.1f} km")
-print(f"Periapsis altitude: {periapsis_km - R_earth:.1f} km")
-print(f"Apoapsis altitude: {apoapsis_km - R_earth:.1f} km")
+# Right Ascension of the Ascending Node [deg]
+RAAN = 0.0
 
-# Polar equation of an ellipse with Earth at one focus
-theta = np.linspace(0, 2 * np.pi, 1000)
-p = semi_major_axis_km * (1 - eccentricity**2)
-r = p / (1 + eccentricity * np.cos(theta))
+# Argument of perigee [deg]
+w = 0.0
 
-x = r * np.cos(theta)
-y = r * np.sin(theta)
+# Initial true anomaly [deg]
+nu0 = 0.0
 
-fig, ax = plt.subplots(figsize=(8, 6))
+# Earth's gravitational parameter [km^3/s^2]
+mu = Earth.mu
 
+# Earth's equatorial radius [km]
+R_earth = Earth.r1_km
+
+
+# =========================
+# VALIDATION
+# =========================
+
+if a <= 0:
+    raise ValueError(
+        "The semi-major axis must be positive."
+    )
+
+if not 0 <= e < 1:
+    raise ValueError(
+        "Eccentricity must be between 0 and 1."
+    )
+
+
+# =========================
+# ORBITAL PERIOD
+# =========================
+
+period_s = 2 * np.pi * np.sqrt(
+    a**3 / mu
+)
+
+# Time array for one complete orbit
+t_array = np.linspace(
+    0,
+    period_s,
+    1000
+)
+
+
+# =========================
+# ORBIT PROPAGATION
+# =========================
+
+ECI_pos, ECI_vel, nu = OrbitPropagation_2BK(
+    a,
+    e,
+    i,
+    RAAN,
+    w,
+    nu0,
+    t_array,
+    mu
+)
+
+
+# =========================
+# ORBIT INFORMATION
+# =========================
+
+periapsis_km = a * (1 - e)
+apoapsis_km = a * (1 + e)
+
+print(f"Semi-major axis: {a:.1f} km")
+print(f"Eccentricity: {e:.3f}")
+
+print(
+    f"Periapsis radius: "
+    f"{periapsis_km:.1f} km"
+)
+
+print(
+    f"Apoapsis radius: "
+    f"{apoapsis_km:.1f} km"
+)
+
+print(
+    f"Periapsis altitude: "
+    f"{periapsis_km - R_earth:.1f} km"
+)
+
+print(
+    f"Apoapsis altitude: "
+    f"{apoapsis_km - R_earth:.1f} km"
+)
+
+print(
+    f"Orbital period: "
+    f"{period_s / 60:.2f} minutes"
+)
+
+
+# =========================
+# POSITION DATA
+# =========================
+
+x = ECI_pos[0, :]
+y = ECI_pos[1, :]
+
+
+# =========================
+# VISUALIZATION
+# =========================
+
+fig, ax = plt.subplots(
+    figsize=(8, 7)
+)
+
+# Earth
 earth = plt.Circle(
     (0, 0),
     R_earth,
@@ -708,18 +914,62 @@ earth = plt.Circle(
 )
 
 ax.add_patch(earth)
-ax.plot(x, y, color="#ef6b3a", linewidth=2.5, label="Orbit")
-ax.scatter([0], [0], color="#ffffff", edgecolor="#091827",
-           s=55, zorder=5)
+
+# Orbit
+ax.plot(
+    x,
+    y,
+    color="#ef6b3a",
+    linewidth=2.5,
+    label="Orbit"
+)
+
+# Initial satellite position
+ax.scatter(
+    [x[0]],
+    [y[0]],
+    color="#ffffff",
+    edgecolor="#091827",
+    s=70,
+    zorder=5,
+    label="Satellite"
+)
+
+
+# =========================
+# GRAPH SETTINGS
+# =========================
 
 limit = apoapsis_km * 1.15
-ax.set_xlim(-limit, limit)
-ax.set_ylim(-limit, limit)
+
+ax.set_xlim(
+    -limit,
+    limit
+)
+
+ax.set_ylim(
+    -limit,
+    limit
+)
+
 ax.set_aspect("equal")
-ax.set_xlabel("X position (km)")
-ax.set_ylabel("Y position (km)")
-ax.set_title("Elliptical Earth Orbit")
-ax.grid(alpha=0.2)
+
+ax.set_xlabel(
+    "ECI X position (km)"
+)
+
+ax.set_ylabel(
+    "ECI Y position (km)"
+)
+
+ax.set_title(
+    "Elliptical Earth Orbit"
+)
+
+ax.grid(
+    alpha=0.2
+)
+
 ax.legend()</textarea>
 
                         <div class="actions-simulation">
