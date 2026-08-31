@@ -2138,3 +2138,11 @@ RESPONSIVE DESIGN
         max-height: 55px;
     }
 }
+
+
+.image-mopitt {
+    width: 115%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+}
