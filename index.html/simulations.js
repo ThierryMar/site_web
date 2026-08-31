@@ -186,24 +186,51 @@ async function initializePython() {
 
 
         /* =========================
-           4. TEST SOL
+        4. TEST SOL
         ========================= */
 
         console.log("Testing SOL import...");
 
         await pyodideInstance.runPythonAsync(`
-import SOL
+        import SOL
 
-print("SOL imported successfully")
-print("Earth mu:", SOL.Earth.mu)
-print(
-    "OrbitPropagation_2BN available:",
-    hasattr(SOL, "OrbitPropagation_2BN")
-)
-print(
-    "OrbitPropagation_2BK available:",
-    hasattr(SOL, "OrbitPropagation_2BK")
-)
+        print("SOL imported successfully")
+        print("Earth mu:", SOL.Earth.mu)
+
+        print(
+            "OrbitPropagation_2BN available:",
+            hasattr(SOL, "OrbitPropagation_2BN")
+        )
+
+        print(
+            "OrbitPropagation_2BK available:",
+            hasattr(SOL, "OrbitPropagation_2BK")
+        )
+
+        print(
+            "KeplerSolver available:",
+            hasattr(SOL, "KeplerSolver")
+        )
+
+        print(
+            "coe_to_rv available:",
+            hasattr(SOL, "coe_to_rv")
+        )
+
+        print(
+            "RotX available:",
+            hasattr(SOL, "RotX")
+        )
+
+        print(
+            "RotZ available:",
+            hasattr(SOL, "RotZ")
+        )
+
+        print(
+            "propagate_2bk_from_coe available:",
+            hasattr(SOL, "propagate_2bk_from_coe")
+        )
         `);
 
         console.log("SOL import successful");
