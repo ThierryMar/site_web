@@ -466,7 +466,7 @@ nav a:hover::after {
 
 .statistique-ligne {
     padding-top: 8px;
-    border-top: 2px solid var(--gold);
+    border-top: none;
     color: var(--silver-gray);
     font-size: 0.72rem;
     letter-spacing: 0.12em;
