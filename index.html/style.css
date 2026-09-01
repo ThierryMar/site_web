@@ -465,10 +465,10 @@ nav a:hover::after {
 }
 
 .statistique-ligne {
-    padding-top: 8px;
-    border-top: none;
     color: var(--silver-gray);
-    font-size: 0.72rem;
+    font-family: "Open Sans";
+    font-size: 1.0rem;
+    font-weight: normal;
     letter-spacing: 0.12em;
 }
 
@@ -476,7 +476,7 @@ nav a:hover::after {
     color: var(--gold);
 
     font-family: "Open Sans";
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: normal;
 }
 
