@@ -441,7 +441,7 @@ nav a:hover::after {
 
     display: flex;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-top: none;
 }
 
 .statistique {
@@ -454,21 +454,36 @@ nav a:hover::after {
     padding: 24px 35px 24px 0;
     margin-right: 35px;
 
-    border-right: 1px solid rgba(255, 255, 255, 0.14);
+    border-right: none;
+}
+
+.statistique-bloc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.statistique-ligne {
+    padding-top: 8px;
+    border-top: 2px solid var(--gold);
+    color: var(--silver-gray);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
 }
 
 .statistique strong {
     color: var(--gold);
 
     font-family: "Open Sans";
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: normal;
 }
 
 .statistique span {
     color: #97a5b3;
-
-    font-size: 0.68rem;
+    font-weight: bold;
+    font-size: 1.0rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
