@@ -1557,7 +1557,7 @@ nav .lien-actif::after {
 
 .liste-fonctionnalites li {
     display: flex;
-    justify-content: space-between;
+    justify-content: 3-between;
     gap: 20px;
 
     padding: 14px 0;
