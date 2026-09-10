@@ -436,25 +436,13 @@ nav a:hover::after {
 ========================= */
 
 .statistiques {
-    position: relative;
-    z-index: 2;
-
     display: flex;
-
-    border-top: none;
+    align-items: center;
 }
 
 .statistique {
-    min-width: 200px;
-
-    display: flex;
-    align-items: center;
-    gap: 14px;
-
-    padding: 24px 35px 24px 0;
+    padding: 0 35px 0 0;
     margin-right: 35px;
-
-    border-right: none;
 }
 
 .statistique-bloc {
@@ -467,9 +455,8 @@ nav a:hover::after {
 .statistique-ligne {
     color: var(--silver-gray);
     font-family: "Open Sans";
-    font-size: 1.0rem;
-    font-weight: normal;
-    letter-spacing: 0.12em;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 .statistique strong {
