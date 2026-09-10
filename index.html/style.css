@@ -180,6 +180,12 @@ nav a:hover::after {
         display: block;
     }
 
+    .splash-icon {
+        width: 50px;
+        height: auto;
+        display: block;
+    }
+
 
 /* =========================
    BOUTONS
