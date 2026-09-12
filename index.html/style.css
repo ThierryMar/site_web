@@ -1826,10 +1826,59 @@ RESPONSIVE DESIGN
 }
 
 .pdf-button {
-    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: 100%;
+    max-width: 520px;
+
+    padding: 14px 18px;
+
+    color: var(--bleu-fonce);
+    background-color: #f7f9fc;
+
+    border: 1px solid #ccd7e5;
+    border-left: 4px solid var(--gold);
     border-radius: 8px;
+
+    font-weight: 600;
     text-decoration: none;
-    font-weight: bold;
+
+    box-shadow: 0 3px 10px rgba(11, 31, 58, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.pdf-button::after {
+    content: "↓ PDF";
+
+    flex-shrink: 0;
+
+    color: var(--gold-fonce);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.pdf-button:hover {
+    color: white;
+    background-color: var(--bleu-fonce);
+    border-color: var(--bleu-fonce);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(11, 31, 58, 0.16);
+}
+
+.pdf-button:hover::after {
+    color: var(--gold);
 }
 
 
