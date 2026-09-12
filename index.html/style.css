@@ -1149,11 +1149,9 @@ nav .lien-actif::after {
 }
 
 .encadre-information {
-    margin-top: 35px;
-    padding: 25px;
-
-    background-color: #ece7dc;
-    border-left: 3px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .encadre-information strong {
@@ -1825,6 +1823,13 @@ RESPONSIVE DESIGN
     color: white;
     background-color: var(--gold-fonce);
     transform: translateY(-2px);
+}
+
+.pdf-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 
