@@ -1,0 +1,47 @@
+{
+  "name": "spaceorbitlab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check:env": "node scripts/check-env.mjs",
+    "payload": "payload",
+    "generate:types": "payload generate:types",
+    "generate:importmap": "payload generate:importmap",
+    "migrate:create": "node scripts/migrate.mjs migrate:create",
+    "migrate": "node scripts/migrate.mjs migrate",
+    "migrate:status": "node scripts/migrate.mjs migrate:status",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@payloadcms/db-postgres": "3.89.0",
+    "@payloadcms/next": "3.89.0",
+    "@payloadcms/richtext-lexical": "3.89.0",
+    "@next/env": "16.3.5",
+    "graphql": "^16.11.0",
+    "next": "16.3.5",
+    "payload": "3.89.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "stripe": "22.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.3.5",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3"
+  }
+}

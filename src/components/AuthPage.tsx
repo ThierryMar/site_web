@@ -1,0 +1,3 @@
+export function AuthPage({ title, description, children }: { title: string; description: string; children: React.ReactNode }) {
+  return <><h1>{title}</h1><p className="auth-description">{description}</p>{children}</>
+}
