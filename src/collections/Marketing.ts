@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { marketingAccess, titleFields, urlField } from './contentFields'
+import { isDownloadUrl } from '../lib/download-url'
 
 const marketing = {
   admin: { group: 'Site marketing', useAsTitle: 'title', defaultColumns: ['title', 'order', '_status'] },
@@ -42,7 +43,11 @@ export const Downloads: CollectionConfig = {
   fields: [
     ...titleFields(),
     { name: 'description', type: 'textarea' },
-    urlField('downloadUrl', 'URL du fichier à télécharger', true),
+    {
+      name: 'downloadUrl', label: 'URL du fichier à télécharger', type: 'text', required: true,
+      admin: { description: 'URL HTTP(S) ou chemin local commençant par /, par exemple /legacy/Fichiers/document.pdf. Encoder les espaces avec %20.' },
+      validate: (value: unknown) => isDownloadUrl(value) || 'Utilisez une URL HTTP(S) ou un chemin local valide.',
+    },
     { name: 'format', label: 'Format du fichier', type: 'text' },
   ],
 }
