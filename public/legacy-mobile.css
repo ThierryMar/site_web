@@ -1,0 +1,32 @@
+/* Mobile compatibility only. The historical /legacy/style.css stays byte-identical. */
+@media (max-width: 760px) {
+  .grille-liens,
+  .grille-contenu {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .sommaire {
+    position: static;
+  }
+
+  .hero-texte,
+  .article-principal {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3.4rem);
+  }
+
+  .statistiques {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .statistique-ligne {
+    min-width: 0;
+    max-width: 100%;
+  }
+}

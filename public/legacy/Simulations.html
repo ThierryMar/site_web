@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Interactive Python simulations for learning the fundamentals of orbital mechanics."
+    >
+
+    <title>Simulations — SpaceOrbitLAB</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="/legacy/style.css">
+    <link rel="stylesheet" href="/legacy/simulations.css">
+<link rel="stylesheet" href="/account-menu.css" /></head>
+
+<body>
+
+    <header class="header">
+        <div class="container navigation">
+
+            <a href="/" class="logo">
+                <img
+                    src="/legacy/Images/splash.png"
+                    alt="Logo"
+                    class="splash-icon"
+                >   
+
+                <span>
+                    SpaceOrbitLAB
+                </span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/introduction">Introduction</a>
+
+                <details class="menu-deroulant">
+                    <summary>
+                        Courses
+                        <span class="fleche-menu" aria-hidden="true">⌄</span>
+                    </summary>
+
+                    <div class="sous-menu">
+
+                        <a href="/courses">
+                            All Courses
+                        </a>
+
+                        <a href="/courses#course-1">
+                            <span>01</span>
+                            Basic Astronomy and Celestial Mechanics
+                        </a>
+
+                        <a href="/courses#course-2">
+                            <span>02</span>
+                            Foundations of Astrodynamics
+                        </a>
+
+                        <a href="/courses#course-3">
+                            <span>03</span>
+                            Advanced Astrodynamics and Space Situational Awareness
+                        </a>
+
+                        <a href="/courses#course-4">
+                            <span>04</span>
+                            Remote Sensing from Space
+                        </a>
+
+                    </div>
+                </details>
+
+                <a href="/simulations" class="lien-actif">Simulations</a>
+
+                <a href="/downloads">Download</a>
+
+                <a href="/contact">Contact Us</a>
+            </nav>
+
+            <div class="navigation-droite">
+
+                <details class="account-menu">
+        <summary>Account <span aria-hidden="true">▾</span></summary>
+        <div class="account-menu-links">
+            <a href="/connexion">Sign in</a>
+            <a href="/inscription">Create an account</a>
+            <a href="/mon-compte">My account &amp; settings</a>
+        </div>
+    </details>
+
+                <a
+                    href="https://www.abb.com/global/en/areas/automation/measurement-analytics/analytical/space-defense-systems"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="/legacy/Images/ABB.png"
+                        alt="ABB"
+                        class="logo-abb"
+                    >
+                </a>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="entete-page">
+            <div class="container">
+                <p class="surtitre">Interactive Learning</p>
+
+                <h1>Python Simulations</h1>
+
+                <p>
+                    Modify and run Python code directly in your browser to
+                    explore the principles of orbital mechanics.
+                </p>
+            </div>
+        </section>
+
+       
+
+        <section class="section prerequis-python">
+
+            <div class="container">
+
+                <details class="onglet-python">
+
+                    <summary class="resume-python">
+
+                        <div>
+                            <p class="surtitre surtitre-python">
+                                Before You Begin
+                            </p>
+
+                            <h2>Python Prerequisites</h2>
+
+                        </div>
+
+                        <span
+                            class="icone-onglet-python"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+
+                    </summary>
+
+
+                    <div class="contenu-onglet-python">
+
+                        <div class="entete-prerequis-python">
+
+                            <h3>Basic Python Knowledge Recommended</h3>
+
+                            <p>
+                                These simulations allow you to modify and execute
+                                Python code directly in your browser. A basic
+                                understanding of Python syntax will help you change
+                                parameters, understand calculations, and interpret
+                                the results.
+                            </p>
+
+                        </div>
+
+
+                        <div class="note-python">
+
+                            <strong>No local installation is required</strong>
+
+                            <p>
+                                Python runs directly on this page through Pyodide.
+                                However, users should be familiar with variables,
+                                mathematical operations, functions, lists, and basic
+                                Python syntax.
+                            </p>
+
+                        </div>
+
+
+                        <div class="liste-ressources-python">
+
+                            <a
+                                href="https://www.python.org/about/gettingstarted/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="ressource-python"
+                            >
+                                <span>01</span>
+
+                                <div>
+                                    <h3>Python for Beginners</h3>
+
+                                    <p>
+                                        Discover introductory resources for learning
+                                        Python and writing your first programs.
+                                    </p>
+
+                                    <strong>Visit Python.org →</strong>
+                                </div>
+                            </a>
+
+
+                            <a
+                                href="https://docs.python.org/3/tutorial/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="ressource-python"
+                            >
+                                <span>02</span>
+
+                                <div>
+                                    <h3>Official Python Tutorial</h3>
+
+                                    <p>
+                                        Learn Python syntax, data structures, control
+                                        flow, functions, modules, and other essential
+                                        concepts.
+                                    </p>
+
+                                    <strong>Open Tutorial →</strong>
+                                </div>
+                            </a>
+
+
+                            <a
+                                href="https://docs.python.org/3/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="ressource-python"
+                            >
+                                <span>03</span>
+
+                                <div>
+                                    <h3>Python Documentation</h3>
+
+                                    <p>
+                                        Consult the official documentation, language
+                                        reference, standard library, and frequently
+                                        asked questions.
+                                    </p>
+
+                                    <strong>View Documentation →</strong>
+                                </div>
+                            </a>
+
+
+                            <a
+                                href="https://www.python.org/downloads/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="ressource-python"
+                            >
+                                <span>04</span>
+
+                                <div>
+                                    <h3>Download Python</h3>
+
+                                    <p>
+                                        Download Python if you would like to create
+                                        and run programs outside this website.
+                                    </p>
+
+                                    <strong>Download Python →</strong>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+            </div>
+
+        </section>
+        <section id="simulation-list" class="section catalogue-simulations">
+            <div class="container">
+                <p class="surtitre surtitre-sombre">Simulation Library</p>
+
+                <h2>Choose a Simulation</h2>
+
+                <p class="apercu-description">
+                    Select a simulation, adjust its Python parameters, and
+                    compare the numerical and graphical results.
+                </p>
+
+                <div class="selecteur-simulation">
+
+                    <div class="champ-simulation">
+
+                        <label for="simulation-selector">
+                            Available Simulations
+                        </label>
+
+                        <select id="simulation-selector">
+                            <option value="" selected disabled>
+                                Select a simulation
+                            </option>
+
+                            <option value="#circular-orbit">
+                                01 — Circular Orbit
+                            </option>
+
+                            <option value="#elliptical-orbit">
+                                02 — Elliptical Orbit
+                            </option>
+                        </select>
+
+                    </div>
+
+                    <button
+                        id="open-simulation"
+                        class="bouton bouton-principal bouton-ouvrir-simulation"
+                        type="button"
+                        disabled
+                    >
+                        Open Simulation
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                </div>
+
+                <div id="python-status" class="etat-python" role="status">
+                    <span class="indicateur-etat" aria-hidden="true"></span>
+                    <span>Loading the Python environment…</span>
+                </div>
+
+                
+
+                <details class="onglet-fonctions">
+
+                    <summary class="resume-fonctions">
+
+                        <div>
+                            <p class="surtitre surtitre-fonctions">
+                                Python Library
+                            </p>
+
+                            <h3>Available Functions</h3>
+                        </div>
+
+                        <span
+                            class="icone-onglet-fonctions"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+
+                    </summary>
+
+
+                    <div class="contenu-fonctions">
+
+                        <p class="intro-fonctions">
+                            The following constants and functions are already implemented
+                            in the SpaceOrbitLAB Python library and can be used directly
+                            in the simulations.
+                        </p>
+
+
+                        <div class="liste-fonctions">
+
+
+                            
+
+                            <div class="fonction-python">
+
+                                <code>Earth.mu</code>
+
+                                <p>
+                                    Earth's standard gravitational parameter in km³/s².
+                                </p>
+
+                            </div>
+
+
+                            
+
+                            <div class="fonction-python">
+
+                                <code>sind(angle)</code>
+
+                                <p>
+                                    Computes the sine of an angle expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            <div class="fonction-python">
+
+                                <code>cosd(angle)</code>
+
+                                <p>
+                                    Computes the cosine of an angle expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            <div class="fonction-python">
+
+                                <code>tand(angle)</code>
+
+                                <p>
+                                    Computes the tangent of an angle expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            
+
+                            <div class="fonction-python">
+
+                                <code>RotX(angle)</code>
+
+                                <p>
+                                    Creates a rotation matrix around the X-axis.
+                                    The angle is expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            <div class="fonction-python">
+
+                                <code>RotY(angle)</code>
+
+                                <p>
+                                    Creates a rotation matrix around the Y-axis.
+                                    The angle is expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            <div class="fonction-python">
+
+                                <code>RotZ(angle)</code>
+
+                                <p>
+                                    Creates a rotation matrix around the Z-axis.
+                                    The angle is expressed in degrees.
+                                </p>
+
+                            </div>
+
+
+                            
+
+                            <div class="fonction-python">
+
+                                <code>KeplerSolver(M, e)</code>
+
+                                <p>
+                                    Solves Kepler's equation from the mean anomaly and
+                                    eccentricity. Returns the eccentric anomaly and true anomaly.
+                                </p>
+
+                            </div>
+
+
+                            
+
+                            <div class="fonction-python">
+
+                                <code>COE_to_SV(a, e, i, RAAN, argp, nu, mu)</code>
+
+                                <p>
+                                    Converts classical orbital elements into inertial
+                                    position and velocity vectors.
+                                </p>
+
+                            </div>
+
+
+                            
+
+                            <div class="fonction-python">
+
+                                <code>OrbitPropagation_2BN(SV, time_s)</code>
+
+                                <p>
+                                    Propagates an orbit by numerically solving Newton's
+                                    two-body equations of motion.
+                                </p>
+
+                            </div>
+
+
+                            
+
+                            <div class="fonction-python">
+
+                                <code>OrbitPropagation_2BK(a, e, i, RAAN, w, nu0, t_array, mu)</code>
+
+                                <p>
+                                    Propagates an elliptical orbit from classical orbital
+                                    elements using the two-body Keplerian model.
+                                </p>
+
+                            </div>
+
+
+                        </div>
+
+
+                        
+
+                        <div class="exemple-import-fonctions">
+
+                            <strong>Example</strong>
+
+                            <code>
+                                from SOL import Earth, RotX, KeplerSolver, COE_to_SV, OrbitPropagation_2BK
+                            </code>
+
+                        </div>
+
+                    </div>
+
+                </details>
+
+                                <div
+                    id="simulation-display"
+                    class="zone-simulation-chargee"
+                    aria-live="polite"
+                >
+                    <p
+                        id="simulation-placeholder"
+                        class="simulation-placeholder"
+                    >
+                        Select a simulation from the menu above to display it here.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <div id="simulation-storage" hidden>
+
+        <section 
+        id="circular-orbit"
+        class="section laboratoire-simulation"
+        hidden
+        >
+        
+            <div class="container">
+
+                <div class="entete-simulation">
+                    <div>
+                        <p class="surtitre surtitre-sombre">Simulation 01</p>
+                        <h2>Circular Orbit</h2>
+                    </div>
+
+                    <p>
+                        Change <code>altitude_km</code> to observe how altitude
+                        affects orbital velocity and period.
+                    </p>
+                </div>
+
+                <div class="espace-simulation">
+
+                    <div class="panneau-code">
+                        <div class="barre-panneau">
+                            <span>Python Editor</span>
+                            <span class="nom-fichier">circular_orbit.py</span>
+                        </div>
+
+                        <label class="sr-only" for="code-circular">
+                            Python code for the circular orbit simulation
+                        </label>
+
+                        <textarea
+                            id="code-circular"
+                            class="editeur-python"
+                            spellcheck="false"
+                        >import numpy as np
+import matplotlib.pyplot as plt
+
+from SOL import Earth
+
+# Earth constants
+mu = Earth.mu                 # km³/s²
+R_earth = Earth.r1_km         # km
+
+# Change this value
+altitude_km = 400.0
+
+# Orbital radius
+radius_km = R_earth + altitude_km
+
+# Orbital velocity
+velocity_km_s = np.sqrt(
+    mu / radius_km
+)
+
+# Orbital period
+period_s = (
+    2 * np.pi
+    * np.sqrt(radius_km**3 / mu)
+)
+
+print(f"Altitude: {altitude_km:.1f} km")
+print(f"Orbital radius: {radius_km:.1f} km")
+print(f"Orbital velocity: {velocity_km_s:.3f} km/s")
+print(f"Orbital period: {period_s / 60:.2f} minutes")
+
+# Orbit visualization
+theta = np.linspace(
+    0,
+    2 * np.pi,
+    800
+)
+
+x = radius_km * np.cos(theta)
+y = radius_km * np.sin(theta)
+
+fig, ax = plt.subplots(
+    figsize=(7, 7)
+)
+
+earth = plt.Circle(
+    (0, 0),
+    R_earth,
+    color="#1768a8",
+    label="Earth"
+)
+
+ax.add_patch(earth)
+
+ax.plot(
+    x,
+    y,
+    color="#ef6b3a",
+    linewidth=2.5,
+    label="Orbit"
+)
+
+ax.scatter(
+    [radius_km],
+    [0],
+    color="#ffffff",
+    edgecolor="#091827",
+    s=70,
+    zorder=5,
+    label="Satellite"
+)
+
+limit = radius_km * 1.2
+
+ax.set_xlim(
+    -limit,
+    limit
+)
+
+ax.set_ylim(
+    -limit,
+    limit
+)
+
+ax.set_aspect("equal")
+
+ax.set_xlabel(
+    "X position (km)"
+)
+
+ax.set_ylabel(
+    "Y position (km)"
+)
+
+ax.set_title(
+    "Circular Earth Orbit"
+)
+
+ax.grid(
+    alpha=0.2
+)
+
+ax.legend()</textarea>
+
+                        <div class="actions-simulation">
+                            <button
+                                type="button"
+                                class="bouton bouton-principal bouton-execution"
+                                data-editor="code-circular"
+                                data-console="console-circular"
+                                data-image="image-circular"
+                            >
+                                Run Simulation
+                            </button>
+
+                            <button
+                                type="button"
+                                class="bouton bouton-reinitialiser"
+                                data-reset="code-circular"
+                            >
+                                Reset Code
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="panneau-resultat">
+                        <div class="barre-panneau">
+                            <span>Simulation Result</span>
+                            <span>Matplotlib</span>
+                        </div>
+
+                        <div class="zone-graphique">
+                            <div class="graphique-attente">
+                                Run the code to generate the orbit.
+                            </div>
+
+                            <img
+                                id="image-circular"
+                                class="image-resultat"
+                                alt="Circular orbit simulation result"
+                                hidden
+                            >
+                        </div>
+
+                        <div class="console-simulation">
+                            <p>Python Output</p>
+                            <pre id="console-circular">Waiting for execution…</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section 
+            id="elliptical-orbit"
+            class="section laboratoire-simulation"
+            data-live-simulation
+            hidden
+        >
+            <div class="container">
+
+                <div class="entete-simulation">
+                    <div>
+                        <p class="surtitre surtitre-sombre">Simulation 02</p>
+                        <h2>Elliptical Orbit</h2>
+                    </div>
+
+                    <p>
+                        Change <code>semi_major_axis_km</code> and
+                        <code>eccentricity</code> to modify the orbit.
+                    </p>
+                </div>
+
+                <div class="espace-simulation">
+
+                    <div class="panneau-code">
+                        <div class="barre-panneau">
+                            <span>Python Editor</span>
+                            <span class="nom-fichier">elliptical_orbit.py</span>
+                        </div>
+
+                        <label class="sr-only" for="code-elliptical">
+                            Python code for the elliptical orbit simulation
+                        </label>
+
+                        <textarea
+                        id="code-elliptical"
+                        class="editeur-python"
+                        spellcheck="false"
+>import numpy as np
+import matplotlib.pyplot as plt
+
+from SOL import Earth, OrbitPropagation_2BK
+
+# =========================
+# ORBITAL PARAMETERS
+# =========================
+
+# Semi-major axis [km]
+a = 12000.0
+
+# Eccentricity [-]
+e = 0.45
+
+# Inclination [deg]
+i = 0.0
+
+# Right Ascension of the Ascending Node [deg]
+RAAN = 0.0
+
+# Argument of perigee [deg]
+w = 0.0
+
+# Initial true anomaly [deg]
+nu0 = 0.0
+
+# Earth's gravitational parameter [km^3/s^2]
+mu = Earth.mu
+
+# Earth's equatorial radius [km]
+R_earth = Earth.r1_km
+
+
+# =========================
+# VALIDATION
+# =========================
+
+if a <= 0:
+    raise ValueError(
+        "The semi-major axis must be positive."
+    )
+
+if not 0 <= e < 1:
+    raise ValueError(
+        "Eccentricity must be between 0 and 1."
+    )
+
+
+# =========================
+# ORBITAL PERIOD
+# =========================
+
+period_s = 2 * np.pi * np.sqrt(
+    a**3 / mu
+)
+
+# Time array for one complete orbit
+t_array = np.linspace(
+    0,
+    period_s,
+    1000
+)
+
+
+# =========================
+# ORBIT PROPAGATION
+# =========================
+
+ECI_pos, ECI_vel, nu = OrbitPropagation_2BK(
+    a,
+    e,
+    i,
+    RAAN,
+    w,
+    nu0,
+    t_array,
+    mu
+)
+
+
+# =========================
+# ORBIT INFORMATION
+# =========================
+
+periapsis_km = a * (1 - e)
+apoapsis_km = a * (1 + e)
+
+print(f"Semi-major axis: {a:.1f} km")
+print(f"Eccentricity: {e:.3f}")
+
+print(
+    f"Periapsis radius: "
+    f"{periapsis_km:.1f} km"
+)
+
+print(
+    f"Apoapsis radius: "
+    f"{apoapsis_km:.1f} km"
+)
+
+print(
+    f"Periapsis altitude: "
+    f"{periapsis_km - R_earth:.1f} km"
+)
+
+print(
+    f"Apoapsis altitude: "
+    f"{apoapsis_km - R_earth:.1f} km"
+)
+
+print(
+    f"Orbital period: "
+    f"{period_s / 60:.2f} minutes"
+)
+
+
+# =========================
+# POSITION DATA
+# =========================
+
+x = ECI_pos[0, :]
+y = ECI_pos[1, :]
+
+
+# =========================
+# VISUALIZATION
+# =========================
+
+fig, ax = plt.subplots(
+    figsize=(8, 7)
+)
+
+# Earth
+earth = plt.Circle(
+    (0, 0),
+    R_earth,
+    color="#1768a8",
+    label="Earth"
+)
+
+ax.add_patch(earth)
+
+# Orbit
+ax.plot(
+    x,
+    y,
+    color="#ef6b3a",
+    linewidth=2.5,
+    label="Orbit"
+)
+
+# Initial satellite position
+ax.scatter(
+    [x[0]],
+    [y[0]],
+    color="#ffffff",
+    edgecolor="#091827",
+    s=70,
+    zorder=5,
+    label="Satellite"
+)
+
+
+# =========================
+# GRAPH SETTINGS
+# =========================
+
+limit = apoapsis_km * 1.15
+
+ax.set_xlim(
+    -limit,
+    limit
+)
+
+ax.set_ylim(
+    -limit,
+    limit
+)
+
+ax.set_aspect("equal")
+
+ax.set_xlabel(
+    "ECI X position (km)"
+)
+
+ax.set_ylabel(
+    "ECI Y position (km)"
+)
+
+ax.set_title(
+    "Elliptical Earth Orbit"
+)
+
+ax.grid(
+    alpha=0.2
+)
+
+ax.legend()</textarea>
+
+                        <div class="actions-simulation">
+                            <button
+                                type="button"
+                                class="bouton bouton-principal bouton-execution"
+                                data-editor="code-elliptical"
+                                data-console="console-elliptical"
+                                data-image="image-elliptical"
+                            >
+                                Run Simulation
+                            </button>
+
+                            <button
+                                type="button"
+                                class="bouton bouton-reinitialiser"
+                                data-reset="code-elliptical"
+                            >
+                                Reset Code
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="panneau-resultat">
+                        <div class="barre-panneau">
+                            <span>Simulation Result</span>
+                            <span>Matplotlib</span>
+                        </div>
+
+                        <div class="zone-graphique">
+                            <div class="graphique-attente">
+                                Run the code to generate the orbit.
+                            </div>
+
+                            <img
+                                id="image-elliptical"
+                                class="image-resultat"
+                                alt="Elliptical orbit simulation result"
+                                hidden
+                            >
+                        </div>
+
+                        <div class="console-simulation">
+                            <p>Python Output</p>
+                            <pre id="console-elliptical">Waiting for execution…</pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        </div>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container contenu-footer">
+            <p>Course Project — Orbital Mechanics</p>
+            <p>© 2026 — All Rights Reserved</p>
+            <a href="/">Back to Home</a>
+        </div>
+    </footer>
+
+        <script src="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js"></script>
+        <script src="/legacy/simulations.js"></script>
+
+</body>
+
+</html>

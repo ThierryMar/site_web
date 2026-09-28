@@ -1,6 +1,7 @@
 # SpaceOrbitLAB — Plan et suivi des phases
 
-Dernière mise à jour : **13 septembre 2026**.
+Dernière mise à jour : **27 septembre 2026**. Les tableaux d’inventaire datés du 13 septembre
+restent historiques ; les lots récents sont détaillés dans le journal ci-dessous.
 
 Ce document sert de référence pour suivre le projet depuis son socle actuel jusqu’à la plateforme complète. Il doit être mis à jour après chaque lot de travail, validation ou changement de périmètre.
 
@@ -255,6 +256,8 @@ Ordre principal : **socle → plateformes → comptes et contenus → marketing 
 
 | Date | Phase | Réalisation / constat | Validation et limite | Prochaine action |
 | --- | --- | --- | --- | --- |
+| 2026-09-27 | 2 / 5 — Production publiée | Version locale déployée sur `spaceorbitlab.vercel.app`, CMS intégré sur `/admin`, configuration de production ajoutée. | Vercel READY ; pages et CMS HTTP 200, contenu visible, écran de connexion vérifié, cours privés HTTP 403. Voir `DEPLOIEMENT_VERCEL.md`. Base actuellement partagée avec le local ; domaine personnalisé inchangé. | Isoler les futures expérimentations de données et poursuivre la migration du frontend. |
+| 2026-09-27 | 5 — En cours | Pages `/introduction` et `/courses` reliées à Payload ; import de onze sections et quatre aperçus, deux présentations de pages et quatre cours privés en brouillon. Navigation et redirections historiques ajoutées. | Lint, types, 18 tests, build, import sans doublons, HTTP et navigateur ordinateur/mobile validés localement. Voir `MIGRATION_MARKETING.md`. Aucun déploiement. | Reprendre l’accueil complet, Contact/biographie, puis les simulations. |
 | 2026-09-18 | Migration progressive | Sauvegarde GitHub `dda87fb`, page `/downloads` reliée à Payload, import de cinq ressources et de la présentation, fichiers publics conservés et redirections 308. | Lint, TypeScript, 16 tests, build et recette navigateur ordinateur/mobile réussis. Import réel puis réexécution sans doublons. Voir `MIGRATION_DOWNLOADS.md`. Aucun déploiement de production. | Migrer ensuite les autres pages et prévoir le téléversement CMS avec stockage adapté. |
 | 2026-09-13 | 1 | Installation dans un dossier vierge et validation du socle local; revue des fichiers à versionner. | Installation figée, lint, types, 7/7 tests et build réussis sous Node 24.19.0 / pnpm 11.19.0. Configuration fictive pour compiler, aucun test de connexion distante. | Renseigner l’identité Git puis enregistrer le commit; phase non clôturée tant que le commit manque. |
 | 2026-09-13 | 1 | Socle Next.js/Payload, migration, Stripe préparatoire, consentement GA4 et CI présents. | Tâche initiale : lint, types, build, 7 tests et HTTP réussis. Version locale non commitée lors de l’inventaire; services distants non validés ici. | Versionner puis valider les plateformes. |
@@ -273,3 +276,13 @@ Limites ou blocages (responsable et condition de reprise) :
 Décisions prises :
 Prochaine action :
 ```
+
+### 27 septembre 2026 — reprise du frontend historique publiée
+
+Accueil, Contact, Objectives et Simulations restaurés depuis le dépôt. CSS
+original conservé octet pour octet ; correctif mobile indépendant. Pages
+Introduction, Courses et Downloads toujours alimentées par Payload.
+Déploiement Vercel READY `dpl_8wJcaK4DyeYKRkoNnsz89kaZvrU8` sur le domaine
+spaceorbitlab.com. 20 tests, lint et build réussis ; simulation circulaire
+exécutée en production et rendu mobile contrôlé. L’édition CMS des nouvelles
+pages statiques reste à réaliser. Voir [le détail](REPRISE_FRONTEND_HISTORIQUE.md).

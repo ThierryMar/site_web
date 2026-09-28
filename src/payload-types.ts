@@ -65,6 +65,7 @@ export interface Config {
   auth: {
     admins: AdminAuthOperations;
     users: UserAuthOperations;
+    'payload-mcp-api-keys': PayloadMcpApiKeyAuthOperations;
   };
   blocks: {};
   collections: {
@@ -80,6 +81,7 @@ export interface Config {
     'course-resources': CourseResource;
     exercises: Exercise;
     quizzes: Quiz;
+    'payload-mcp-api-keys': PayloadMcpApiKey;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -106,6 +108,7 @@ export interface Config {
     'course-resources': CourseResourcesSelect<false> | CourseResourcesSelect<true>;
     exercises: ExercisesSelect<false> | ExercisesSelect<true>;
     quizzes: QuizzesSelect<false> | QuizzesSelect<true>;
+    'payload-mcp-api-keys': PayloadMcpApiKeysSelect<false> | PayloadMcpApiKeysSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -121,7 +124,7 @@ export interface Config {
   widgets: {
     collections: CollectionsWidget;
   };
-  user: Admin | User;
+  user: Admin | User | PayloadMcpApiKey;
   jobs: {
     tasks: unknown;
     workflows: unknown;
@@ -146,6 +149,24 @@ export interface AdminAuthOperations {
   };
 }
 export interface UserAuthOperations {
+  forgotPassword: {
+    email: string;
+    password: string;
+  };
+  login: {
+    email: string;
+    password: string;
+  };
+  registerFirstUser: {
+    email: string;
+    password: string;
+  };
+  unlock: {
+    email: string;
+    password: string;
+  };
+}
+export interface PayloadMcpApiKeyAuthOperations {
   forgotPassword: {
     email: string;
     password: string;
@@ -196,6 +217,7 @@ export interface Admin {
 export interface User {
   id: number;
   name?: string | null;
+  verificationEmailSentAt?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -203,6 +225,8 @@ export interface User {
   resetPasswordExpiration?: string | null;
   salt?: string | null;
   hash?: string | null;
+  _verified?: boolean | null;
+  _verificationToken?: string | null;
   loginAttempts?: number | null;
   lockUntil?: string | null;
   sessions?:
@@ -544,6 +568,9 @@ export interface Download {
   slug: string;
   order: number;
   description?: string | null;
+  /**
+   * URL HTTP(S) ou chemin local commençant par /, par exemple /legacy/Fichiers/document.pdf. Encoder les espaces avec %20.
+   */
   downloadUrl: string;
   format?: string | null;
   updatedAt: string;
@@ -579,6 +606,213 @@ export interface Simulation {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * API keys control which collections, resources, tools, and prompts MCP clients can access
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-mcp-api-keys".
+ */
+export interface PayloadMcpApiKey {
+  id: number;
+  /**
+   * The user that the API key is associated with.
+   */
+  user: number | Admin;
+  /**
+   * A useful label for the API key.
+   */
+  label?: string | null;
+  /**
+   * The purpose of the API key.
+   */
+  description?: string | null;
+  pages?: {
+    /**
+     * Allow clients to find pages.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create pages.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update pages.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete pages.
+     */
+    delete?: boolean | null;
+  };
+  intro?: {
+    /**
+     * Allow clients to find intro.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create intro.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update intro.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete intro.
+     */
+    delete?: boolean | null;
+  };
+  courseOverviews?: {
+    /**
+     * Allow clients to find course-overviews.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create course-overviews.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update course-overviews.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete course-overviews.
+     */
+    delete?: boolean | null;
+  };
+  downloads?: {
+    /**
+     * Allow clients to find downloads.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create downloads.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update downloads.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete downloads.
+     */
+    delete?: boolean | null;
+  };
+  simulations?: {
+    /**
+     * Allow clients to find simulations.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create simulations.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update simulations.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete simulations.
+     */
+    delete?: boolean | null;
+  };
+  courses?: {
+    /**
+     * Allow clients to find courses.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create courses.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update courses.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete courses.
+     */
+    delete?: boolean | null;
+  };
+  lessons?: {
+    /**
+     * Allow clients to find lessons.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create lessons.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update lessons.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete lessons.
+     */
+    delete?: boolean | null;
+  };
+  courseResources?: {
+    /**
+     * Allow clients to find course-resources.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create course-resources.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update course-resources.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete course-resources.
+     */
+    delete?: boolean | null;
+  };
+  exercises?: {
+    /**
+     * Allow clients to find exercises.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create exercises.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update exercises.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete exercises.
+     */
+    delete?: boolean | null;
+  };
+  quizzes?: {
+    /**
+     * Allow clients to find quizzes.
+     */
+    find?: boolean | null;
+    /**
+     * Allow clients to create quizzes.
+     */
+    create?: boolean | null;
+    /**
+     * Allow clients to update quizzes.
+     */
+    update?: boolean | null;
+    /**
+     * Allow clients to delete quizzes.
+     */
+    delete?: boolean | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  enableAPIKey?: boolean | null;
+  apiKey?: string | null;
+  apiKeyIndex?: string | null;
+  collection: 'payload-mcp-api-keys';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -651,6 +885,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'quizzes';
         value: number | Quiz;
+      } | null)
+    | ({
+        relationTo: 'payload-mcp-api-keys';
+        value: number | PayloadMcpApiKey;
       } | null);
   globalSlug?: string | null;
   user:
@@ -661,6 +899,10 @@ export interface PayloadLockedDocument {
     | {
         relationTo: 'users';
         value: number | User;
+      }
+    | {
+        relationTo: 'payload-mcp-api-keys';
+        value: number | PayloadMcpApiKey;
       };
   updatedAt: string;
   createdAt: string;
@@ -679,6 +921,10 @@ export interface PayloadPreference {
     | {
         relationTo: 'users';
         value: number | User;
+      }
+    | {
+        relationTo: 'payload-mcp-api-keys';
+        value: number | PayloadMcpApiKey;
       };
   key?: string | null;
   value?:
@@ -733,6 +979,7 @@ export interface AdminsSelect<T extends boolean = true> {
  */
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
+  verificationEmailSentAt?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -740,6 +987,8 @@ export interface UsersSelect<T extends boolean = true> {
   resetPasswordExpiration?: T;
   salt?: T;
   hash?: T;
+  _verified?: T;
+  _verificationToken?: T;
   loginAttempts?: T;
   lockUntil?: T;
   sessions?:
@@ -924,6 +1173,100 @@ export interface QuizzesSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-mcp-api-keys_select".
+ */
+export interface PayloadMcpApiKeysSelect<T extends boolean = true> {
+  user?: T;
+  label?: T;
+  description?: T;
+  pages?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  intro?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  courseOverviews?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  downloads?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  simulations?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  courses?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  lessons?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  courseResources?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  exercises?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  quizzes?:
+    | T
+    | {
+        find?: T;
+        create?: T;
+        update?: T;
+        delete?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  enableAPIKey?: T;
+  apiKey?: T;
+  apiKeyIndex?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

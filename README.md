@@ -5,6 +5,10 @@ Stripe et Google Analytics 4, destiné à Vercel. Le frontend est en anglais.
 
 ## État du projet
 
+Dernier lot frontend (27 septembre 2026) : pages **Introduction** et **Courses**
+reprises du site GitHub et alimentées par Payload. Voir le
+[guide de migration et d’édition](docs/MIGRATION_MARKETING.md).
+
 Le [plan détaillé et suivi des phases](docs/SUIVI_PHASES.md) présente l’état actuel,
 les étapes vers la plateforme complète, les critères de validation et le journal d’avancement.
 
@@ -60,6 +64,26 @@ La création publique de comptes est fermée pour ce socle; seuls les administra
 La vérification du courriel et la récupération par email nécessitent un adaptateur email à configurer ultérieurement.
 L'API locale de Payload contourne les droits par défaut : transmettre `user` et `overrideAccess: false`
 dans les futures opérations effectuées pour un étudiant.
+
+## MCP Payload
+
+Le plugin officiel `@payloadcms/plugin-mcp` expose `/api/mcp`. Les dix collections de
+contenu sont disponibles; les comptes `admins` et `users` ne sont pas exposés comme outils.
+Seuls les administrateurs peuvent créer des clés, chacune liée à son propriétaire.
+Les permissions de lecture, création, modification et suppression sont désactivées
+par défaut et se règlent séparément pour chaque collection et chaque clé.
+
+Après installation, appliquer la migration avec `pnpm migrate` sur la base cible,
+puis redémarrer le serveur. Dans `/admin`, ouvrir **MCP → API Keys**, créer une clé,
+activer son utilisation et sélectionner les permissions nécessaires.
+
+Configurer le client MCP en transport HTTP avec l'URL
+`http://localhost:3000/api/mcp` (ou l'origine du déploiement) et l'en-tête
+`Authorization: Bearer <clé API>`. Conserver la clé dans le gestionnaire de secrets
+du client, jamais dans le dépôt. Les appels utilisent les droits de l'administrateur
+propriétaire et les permissions de la clé.
+
+Référence : [documentation du plugin MCP](https://payloadcms.com/docs/plugins/mcp).
 
 ## Configurer les plateformes
 
@@ -162,3 +186,9 @@ Aucune nouvelle migration n'est nécessaire : les champs d'authentification exis
 Recette avec une base de développement : créer un compte, se connecter, ouvrir `/mon-compte`,
 se déconnecter, demander un courriel, utiliser le lien puis vérifier que l'ancien mot de passe
 et le lien déjà utilisé sont refusés. Tester également le verrouillage après cinq échecs.
+
+## Frontend historique publié
+
+Le site public reprend le CSS original et les pages du frontend historique.
+Voir [la reprise graphique et ses validations](docs/REPRISE_FRONTEND_HISTORIQUE.md)
+et [le déploiement Vercel](docs/DEPLOIEMENT_VERCEL.md).

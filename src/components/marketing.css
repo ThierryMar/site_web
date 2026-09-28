@@ -1,0 +1,23 @@
+.marketing-page{max-width:1200px;overflow:visible}
+.marketing-skip{position:absolute;top:-100px;color:#081422;background:#edf3fb;padding:12px;z-index:10}
+.marketing-skip:focus{top:12px}
+.marketing-heading{padding:72px 0 44px;border-bottom:1px solid #29475f}
+.marketing-heading h1{max-width:900px;font-size:clamp(36px,5.5vw,64px);margin:0 0 24px}
+.marketing-heading p{max-width:740px;font-size:20px;line-height:1.7;color:#b8c9db;margin:0}
+.marketing-layout{display:grid;grid-template-columns:minmax(180px,260px) minmax(0,1fr);gap:64px;align-items:start;margin-top:48px}
+.marketing-toc{position:sticky;top:24px;display:grid;gap:14px;max-height:calc(100vh - 48px);overflow-y:auto;padding:4px 12px 12px 4px}
+.marketing-toc p{margin:0 0 8px;font-weight:700}
+.marketing-toc a{color:#b8c9db;font-size:14px;line-height:1.5;text-decoration:none}
+.marketing-toc a:hover{color:#8fd8fa;text-decoration:underline;text-underline-offset:4px}
+.marketing-section{padding-bottom:40px;margin-bottom:40px;border-bottom:1px solid #29475f;scroll-margin-top:32px;overflow-wrap:anywhere}
+.marketing-section h2{font-size:clamp(25px,3.4vw,34px);line-height:1.25;margin:0 0 24px}
+.marketing-section h3{font-size:21px;line-height:1.4;margin:32px 0 12px}
+.marketing-section p,.marketing-section li{font-size:17px;line-height:1.8;color:#c5d4e2}
+.marketing-section li{padding-left:4px;margin-bottom:8px}
+.marketing-section ul,.marketing-section ol{padding-left:24px}
+.marketing-section .marketing-summary{font-size:20px;color:#edf3fb}
+.marketing-section strong{color:#edf3fb}
+.marketing-page a:not(.brand):not(.marketing-skip){color:#8fd8fa}
+.marketing-footer{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin:40px 0 80px}
+.marketing-message{padding:48px 0;line-height:1.7}
+@media(max-width:800px){.marketing-layout{grid-template-columns:1fr;gap:32px}.marketing-toc{position:static;max-height:none;padding-bottom:28px;border-bottom:1px solid #29475f}.marketing-heading{padding-top:48px}.marketing-page{padding:28px 20px}}

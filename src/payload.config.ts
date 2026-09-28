@@ -1,6 +1,7 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { postgresAdapter } from '@payloadcms/db-postgres'
+import { mcpPlugin } from '@payloadcms/plugin-mcp'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { buildConfig } from 'payload'
 import { Admins } from './collections/Admins'
@@ -16,6 +17,23 @@ const migrating = process.env.PAYLOAD_MIGRATING === 'true'
 export default buildConfig({
   admin: { user: 'admins', importMap: { baseDir: dirname } },
   collections: [Admins, Users, Pages, Intro, CourseOverviews, Downloads, Simulations, Courses, Lessons, CourseResources, Exercises, Quizzes],
+  plugins: [
+    mcpPlugin({
+      userCollection: 'admins',
+      collections: {
+        pages: { enabled: true },
+        intro: { enabled: true },
+        'course-overviews': { enabled: true },
+        downloads: { enabled: true },
+        simulations: { enabled: true },
+        courses: { enabled: true },
+        lessons: { enabled: true },
+        'course-resources': { enabled: true },
+        exercises: { enabled: true },
+        quizzes: { enabled: true },
+      },
+    }),
+  ],
   editor: lexicalEditor(),
   email: transactionalEmail,
   secret: process.env.PAYLOAD_SECRET || '',

@@ -1,15 +1,10 @@
-import Link from 'next/link'
+import templates from '@/content/legacy-templates.json'
 
-export function SiteHeader({ active }: { active?: 'home' | 'downloads' }) {
-  return (
-    <header className="site-header">
-      <Link className="brand" href="/">SpaceOrbitLAB</Link>
-      <nav className="site-nav" aria-label="Main navigation">
-        <Link href="/" aria-current={active === 'home' ? 'page' : undefined}>Home</Link>
-        <Link href="/downloads" aria-current={active === 'downloads' ? 'page' : undefined}>Downloads</Link>
-        <Link href="/connexion">Sign in</Link>
-        <Link href="/mon-compte">My account</Link>
-      </nav>
-    </header>
-  )
+export function SiteHeader({ active, isAuthenticated = false }: { active?: 'home' | 'downloads' | 'introduction' | 'courses' | 'contact'; isAuthenticated?: boolean }) {
+  const html = templates.headers[active ?? 'default']
+  const header = isAuthenticated
+    ? html.replace(/<details class="account-menu">[\s\S]*?<\/details>/, '<a class="account-dashboard" href="/dashboard">Dashboard</a>')
+    : html
+  // Trusted source-controlled markup, never user-provided HTML.
+  return <header className="header" dangerouslySetInnerHTML={{ __html: header }} />
 }

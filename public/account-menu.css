@@ -1,0 +1,13 @@
+.account-menu { position: relative; color: var(--silver-gray); font-size: .85rem; }
+.account-dashboard { display: flex; align-items: center; padding: 10px 14px; border: 1px solid var(--gold); color: var(--silver-gray); font-size: .85rem; white-space: nowrap; }
+.account-dashboard:hover { color: var(--gold); }
+.account-dashboard:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.account-menu summary { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--gold); cursor: pointer; list-style: none; white-space: nowrap; }
+.account-menu summary::-webkit-details-marker { display: none; }
+.account-menu summary:hover, .account-menu[open] summary { color: var(--gold); }
+.account-menu summary:focus-visible, .account-menu a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.account-menu-links { position: absolute; top: calc(100% + 8px); right: 0; z-index: 200; width: 230px; max-width: 85vw; padding: 8px; background: var(--fond-clair); border: 1px solid var(--bordure); border-radius: 8px; box-shadow: 0 12px 32px #0003; }
+.account-menu-links a { display: block; padding: 12px; color: var(--bleu-fonce); font-size: .85rem; white-space: normal; }
+.account-menu-links a:hover { background: var(--fond); color: var(--gold-fonce); }
+.auth-page .account-menu { color: var(--bleu-fonce); }
+@media (max-width: 760px) { .navigation-droite { gap: 16px; } .account-menu-links { left: 0; right: auto; } }

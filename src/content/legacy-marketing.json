@@ -1,0 +1,2441 @@
+{
+  "source": "ThierryMar/site_web@ff40fd1",
+  "introduction": {
+    "page": {
+      "title": "Introduction to Orbital Mechanics",
+      "slug": "introduction",
+      "content": {
+        "root": {
+          "type": "root",
+          "version": 1,
+          "direction": null,
+          "format": "",
+          "indent": 0,
+          "children": [
+            {
+              "version": 1,
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "version": 1,
+                  "text": "Discover the fundamental principles used to describe the motion of objects in space.",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": ""
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sections": [
+      {
+        "title": "Course Overview",
+        "slug": "course-description",
+        "order": 10,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "This course bridges theory and practice in astrodynamics. You will learn how to model, simulate and analyze the motion of spacecraft and satellites in realistic environments, account for uncertainties, assess conjunction risks and apply these skills to mission design and operations. Through interactive lectures, hands-on computations and case studies, you will develop the analytical and programming skills required to tackle real challenges in spaceflight, navigation and space domain awareness.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "You will learn to...",
+        "slug": "YouWillLearnTo",
+        "order": 20,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "list",
+                "listType": "bullet",
+                "tag": "ul",
+                "start": 1,
+                "children": [
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Propagate orbits using analytical and numerical methods",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Model perturbations and assess their impact",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 3,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Analyze relative motion and rendezvous dynamics",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 4,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Propagate covariance and compute collision probability",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 5,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Work with real catalogs of space debris and background stars",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 6,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Apply astrodynamics to remote sensing mission analysis",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "Course highlights",
+        "slug": "Highlights",
+        "order": 30,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "list",
+                "listType": "bullet",
+                "tag": "ul",
+                "start": 1,
+                "children": [
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Advanced concepts explained with clarity",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Extensive hands-on exercises and projects",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 3,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Real-world datasets and professional toolkits",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 4,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Industry-relevant workflows and case studies",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "At the end...",
+                    "detail": 0,
+                    "format": 1,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Certificate of completion for your achievement",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "Course Vision",
+        "slug": "Vision",
+        "order": 40,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "From equations to orbits, from models to missions",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Develop the analytical rigor of a scientist, the practical mindset of an engineer, and the computational skills required to solve the astrodynamics challenges of the modern space age. Transform mathematical theory into operational capability through a program designed by a scientist, engineer, educator, and practitioner with experience spanning three decades in academia, industry, defence, and the international space community.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "FROM EQUATIONS TO SPACE OPERATIONS",
+        "slug": "Equation2Space",
+        "order": 50,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Modern space missions depend on professionals who can transform the mathematics of celestial mechanics into operational decisions. From orbit determination and mission design to conjunction assessment, collision avoidance, and Space Situational Awareness (SSA) / Space Domain Awareness (SDA), the demand for engineers and scientists trained in advanced astrodynamics has never been greater.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "This professional training program bridges the gap between theory and practice by combining rigorous physical foundations with hands-on computational implementation using MATLAB/Octave, and Python. Participants learn not only the “why” behind orbital dynamics, but also the “how” used daily by flight dynamics engineers, mission analysts, SSA specialists, and spacecraft operators supporting real missions.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Designed for aerospace engineers, researchers, graduate students, and space professionals, the course progresses from classical orbital mechanics to contemporary topics including perturbation theory, numerical orbit propagation, orbit determination, relative motion, conjunction analysis, collision probability estimation, space debris modeling, and remote sensing mission applications.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Unlike traditional courses that stop at deriving equations, this program emphasizes implementation. Every major concept is reinforced through realistic case studies, numerical simulations, and scientific programming exercises. Participants build working computational tools while developing the physical intuition needed to understand and validate their results.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "This program is created to complement—not replace—professional astrodynamics platforms such as Systems Tool Kit (STK). Participants will develop a deep understanding of the underlying orbital mechanics, perturbation models, estimation techniques, and numerical algorithms that power these tools, enabling them to use commercial software with greater confidence, rigor, and technical judgment.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "BY THE END OF THE COURSE, YOU WILL BE ABLE TO:",
+        "slug": "EndOfCourse",
+        "order": 60,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "list",
+                "listType": "bullet",
+                "tag": "ul",
+                "start": 1,
+                "children": [
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Model and propagate spacecraft trajectories using analytical and numerical methods.",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Analyze perturbations affecting operational spacecraft.",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 3,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Design orbital maneuvers and transfer trajectories.",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 4,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Perform conjunction assessment and collision risk analysis.",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 5,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Understand and model the orbital debris environment.",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 6,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Apply covariance analysis and uncertainty propagation techniques.",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 7,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Implement professional astrodynamics workflows in MATLAB/Octave, and Python.",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 8,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Transform equations into engineering decisions for real-world space missions.",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "WHO SHOULD ATTEND?",
+        "slug": "WhoShouldAttend",
+        "order": 70,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "list",
+                "listType": "bullet",
+                "tag": "ul",
+                "start": 1,
+                "children": [
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Aerospace engineers and scientists",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Mission analysts and flight dynamics specialists",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 3,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Space Domain Awareness professionals",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 4,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Satellite operators",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 5,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Graduate students and researchers",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 6,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Professionals transitioning into the space sector",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "WHY THIS COURSE IS DIFFERENT",
+        "slug": "WhyIsDifferent",
+        "order": 80,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "There is no shortage of astrodynamics textbooks. What is rare is a course that teaches participants how to transform theory into operational capability. Most courses focus on equations. Most online programs focus on software tools. This course teaches both.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Every major concept is derived from first principles, implemented in code, validated against realistic scenarios, and connected directly to the workflows used by mission analysts, spacecraft operators, and Space Domain Awareness teams. Participants do not simply learn orbital mechanics—they learn how modern astrodynamics is actually practiced.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "WHAT MAKES THIS PROGRAM UNIQUE",
+        "slug": "Uniqueness",
+        "order": 90,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Learn by Building",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Every topic is accompanied by executable MATLAB, Octave, and Python examples. Participants implement orbit propagators, perturbation models, conjunction assessment algorithms, covariance propagation methods, and collision probability calculations rather than treating them as black boxes.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Real Operational Workflows",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "The curriculum reflects the analytical processes used throughout the space industry:",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "list",
+                "listType": "bullet",
+                "tag": "ul",
+                "start": 1,
+                "children": [
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Orbit propagation and mission analysis",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Space Situational Awareness (SSA/SDA)",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 3,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Conjunction assessment and Collision avoidance",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 4,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Space debris analysis",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 5,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Remote sensing mission design",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "From University Classroom to Industry Practice",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Developed from advanced astrodynamics courses taught at Laval University and adapted for professional audiences, including presentation as a technical short course at the AMOS Conference, the premier international conference dedicated to Space Situational Awareness.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Understand Why, Not Just How",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Participants learn the physical and mathematical foundations behind every model, algorithm, and numerical method. This enables them to design, evaluate, troubleshoot, and improve the computational tools used in operational environments.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Immediate Professional Relevance",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "The techniques covered are directly applicable to organizations involved in spacecraft operations, mission analysis, space surveillance, Earth observation, defense applications, and advanced aerospace research.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "The result",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Graduates leave with more than theoretical knowledge. They leave with a practical toolkit, working software implementations, and the confidence to really understand and tackle the astrodynamics challenges of modern space operations.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "WHY LEARNING ASTRODYNAMICS FROM PROFESSIONAL SOFTWARE IS SO DIFFICULT",
+        "slug": "WhyDifficult",
+        "order": 100,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Professional astrodynamics software is extremely powerful, but it is designed primarily to solve operational problems—not to teach the physics behind them.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Complex calculations are often performed behind the interface, making it difficult to see how orbital mechanics, perturbation models, reference frames, numerical methods, and estimation techniques actually work together.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Without this foundation, it can be challenging to understand why a model was selected, recognize when an assumption is no longer valid, or determine whether a result is physically meaningful.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "This program takes the opposite approach: understand the physics first, implement the methods yourself, and then use professional software with greater confidence, technical judgment, and understanding.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "title": "\"A PICTURE IS WORTH A THOUSAND WORDS\"",
+        "slug": "Picture1000Words",
+        "order": 110,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Orbital mechanics becomes much easier to understand when equations can be seen in action. Interactive simulations transform abstract mathematical concepts into trajectories, geometries, and motions that can be explored visually.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "By changing orbital parameters and immediately observing their effects, you can develop an intuitive understanding of concepts that are often difficult to grasp from equations alone.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Throughout the program, visualization and simulation are used alongside theory to connect mathematical models with the physical behavior of real orbital systems.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "courses": {
+    "page": {
+      "title": "Course Content",
+      "slug": "courses",
+      "content": {
+        "root": {
+          "type": "root",
+          "version": 1,
+          "direction": null,
+          "format": "",
+          "indent": 0,
+          "children": [
+            {
+              "version": 1,
+              "direction": null,
+              "format": "",
+              "indent": 0,
+              "type": "paragraph",
+              "children": [
+                {
+                  "type": "text",
+                  "version": 1,
+                  "text": "Explore four progressive courses covering celestial mechanics, astrodynamics, space situational awareness, and remote sensing from space.",
+                  "detail": 0,
+                  "format": 0,
+                  "mode": "normal",
+                  "style": ""
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sections": [
+      {
+        "title": "Basic Astronomy and Celestial Mechanics",
+        "slug": "course-1",
+        "order": 10,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Students will study the structure of the Solar System, Newton’s laws, universal gravitation, Kepler’s laws, and the classical two-body problem.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Course Objective",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "By the end of this course, students will be able to explain the motion of celestial bodies using the fundamental laws of mechanics and gravitation.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Main Topics",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "list",
+                "listType": "bullet",
+                "tag": "ul",
+                "start": 1,
+                "children": [
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Structure and scale of the Solar System",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Celestial coordinate systems",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 3,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Newton’s laws and universal gravitation",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 4,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Kepler’s laws of planetary motion",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 5,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "The classical two-body problem",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 6,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Energy and angular momentum",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Key Question",
+                    "detail": 0,
+                    "format": 1,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "How do the laws of mechanics explain the motion of planets and satellites?",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "summary": "This first course introduces the astronomical, physical, and mathematical foundations required to understand the motion of celestial bodies."
+      },
+      {
+        "title": "Foundations of Astrodynamics",
+        "slug": "course-2",
+        "order": 20,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Students will learn to work with state vectors, reference frames, classical orbital elements, Keplerian propagation, and basic orbital maneuvers.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Course Objective",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "By the end of this course, students will be able to characterize an orbit, interpret its classical elements, and perform introductory trajectory calculations.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Main Topics",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "list",
+                "listType": "bullet",
+                "tag": "ul",
+                "start": 1,
+                "children": [
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Position and velocity state vectors",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Orbital reference frames and time systems",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 3,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Classical orbital elements",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 4,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Circular, elliptical, and escape trajectories",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 5,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Keplerian orbit propagation",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 6,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Introduction to orbital maneuvers",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Key Question",
+                    "detail": 0,
+                    "format": 1,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "How can a satellite’s position and velocity be used to predict its future trajectory?",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "summary": "The second course introduces the tools used to describe, calculate, and predict the trajectory of an artificial satellite or spacecraft."
+      },
+      {
+        "title": "Applied Astrodynamics and Space Situational Awareness",
+        "slug": "course-3",
+        "order": 30,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Students will also discover the principles of Space Situational Awareness, including satellite tracking, orbit prediction, conjunction analysis, and the monitoring of space debris.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Course Objective",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "By the end of this course, students will be able to analyze perturbed trajectories, apply numerical propagation methods, and explain how orbital data supports safe operations in space.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Main Topics",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "list",
+                "listType": "bullet",
+                "tag": "ul",
+                "start": 1,
+                "children": [
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Earth oblateness and the J2 perturbation",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Atmospheric drag and solar radiation pressure",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 3,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Third-body gravitational effects",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 4,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Numerical orbit propagation",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 5,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Satellite tracking and orbit determination",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 6,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Conjunction analysis and space debris monitoring",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Key Question",
+                    "detail": 0,
+                    "format": 1,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "How can we predict and monitor satellite trajectories in a perturbed orbital environment?",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "summary": "This third course extends the two-body model by introducing the perturbations and numerical methods required to analyze real satellite trajectories."
+      },
+      {
+        "title": "Remote Sensing from Space: Orbit-to-Image Physics",
+        "slug": "course-4",
+        "order": 40,
+        "content": {
+          "root": {
+            "type": "root",
+            "version": 1,
+            "direction": null,
+            "format": "",
+            "indent": 0,
+            "children": [
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Students will examine how orbital altitude, viewing geometry, sensor characteristics, and radiometric conditions influence image coverage, spatial resolution, and revisit time.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Course Objective",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "By the end of this course, students will be able to relate an orbital configuration and sensor design to the geometry and quality of a remotely sensed image.",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "heading",
+                "tag": "h3",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Main Topics",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "list",
+                "listType": "bullet",
+                "tag": "ul",
+                "start": 1,
+                "children": [
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 1,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Principles of satellite remote sensing",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 2,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Observation geometry and line of sight",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 3,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Ground sampling distance and spatial resolution",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 4,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Swath width, coverage, and revisit time",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 5,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "Radiometric and spectral considerations",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  },
+                  {
+                    "version": 1,
+                    "direction": null,
+                    "format": "",
+                    "indent": 0,
+                    "type": "listitem",
+                    "value": 6,
+                    "children": [
+                      {
+                        "type": "text",
+                        "version": 1,
+                        "text": "From orbital position to image geolocation",
+                        "detail": 0,
+                        "format": 0,
+                        "mode": "normal",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "Key Question",
+                    "detail": 0,
+                    "format": 1,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              },
+              {
+                "version": 1,
+                "direction": null,
+                "format": "",
+                "indent": 0,
+                "type": "paragraph",
+                "children": [
+                  {
+                    "type": "text",
+                    "version": 1,
+                    "text": "How do the orbit and sensor characteristics determine what can be observed in a satellite image?",
+                    "detail": 0,
+                    "format": 0,
+                    "mode": "normal",
+                    "style": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "summary": "The fourth course connects satellite orbit design with the physical principles of Earth observation and image acquisition from space."
+      }
+    ]
+  }
+}
