@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { coeSections } from '@/content/coe-exercises'
 import { coeCorrections, coeCorrectionConstants } from '@/content/coe-corrections'
 import { coeProgress, type CoeAnswers } from '@/lib/coe-progress'
@@ -10,6 +10,13 @@ export function CoeExercises({ english }: { english: boolean }) {
   const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState<CoeAnswers>({})
   const [review, setReview] = useState(false)
+  const reviewHeading = useRef<HTMLHeadingElement>(null)
+  useEffect(() => {
+    if (review) {
+      reviewHeading.current?.focus()
+      reviewHeading.current?.scrollIntoView({ block: 'start' })
+    }
+  }, [review])
   const { completed, total: count, complete } = coeProgress(answers)
   const showCorrections = review && complete
   const section = coeSections[step]
@@ -19,7 +26,7 @@ export function CoeExercises({ english }: { english: boolean }) {
     <p aria-live="polite">{completed} / {count} {english ? 'questions answered' : 'questions répondues'}</p>
     <progress value={completed} max={count} aria-label={english ? 'Questions answered' : 'Questions répondues'} />
     {review ? <>
-      <h2>{showCorrections ? english ? 'Provisional answer key — pending validation' : 'Corrigé provisoire — à valider' : english ? 'Your answers' : 'Vos réponses'}</h2>
+      <h2 ref={reviewHeading} tabIndex={-1}>{showCorrections ? english ? 'Provisional answer key — pending validation' : 'Corrigé provisoire — à valider' : english ? 'Your answers' : 'Vos réponses'}</h2>
       {showCorrections && <div role="note">
         <p><strong>{english ? 'This answer key was prepared without an official solution. It is provisional and must be validated. Written calculations are compared with a model answer, without automatic grading.' : 'Ce corrigé a été préparé sans solution officielle. Il est provisoire et doit être validé. Les calculs rédigés sont accompagnés d’une réponse modèle, sans notation automatique.'}</strong></p>
         <p lang="en">{coeCorrectionConstants}</p>
