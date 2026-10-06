@@ -1,5 +1,16 @@
 # Déploiement Vercel — 27 septembre 2026
 
+## Quiz COE — 6 octobre 2026
+
+- Production publiée sur `https://spaceorbitlab.com`, état **READY**.
+- Déploiement : `dpl_sn2B89pbKvrGFhdHKb8fXn6bZxyK`.
+- URL immuable : `https://spaceorbitlab-xncg74ai1-space-orbit-lab.vercel.app`.
+- Source Git : `fbe0bbd` sur `main`, après récupération des deux commits distants et push.
+- Quiz « SOL Part II - COE exercices » dans Dashboard / Mes quiz : 14 sections du PDF, recommandation Orbit101, réponses interactives sans correction automatique.
+- Publication depuis un instantané Git dans `D:/codex-deploy-cache/spaceorbitlab-coe-20261006/site`, sans secrets locaux ni images de travail écartées.
+- Vérifications : 28 tests, ESLint, TypeScript et compilation Vercel réussis ; accueil, health et connexion en HTTP 200 ; quiz anonyme redirigé vers connexion ; lien Dashboard et contenu du quiz confirmés avec un compte temporaire authentifié.
+- Compte de vérification supprimé, aucun courriel envoyé, aucune migration ni réimportation des contenus.
+
 - Site : https://spaceorbitlab.vercel.app
 - CMS Payload : https://spaceorbitlab.vercel.app/admin
 - Équipe / projet : `space-orbit-lab/spaceorbitlab`.
