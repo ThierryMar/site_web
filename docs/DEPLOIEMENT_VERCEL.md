@@ -2,6 +2,15 @@
 
 ## Quiz COE — 6 octobre 2026
 
+### Note finale et dernier résultat
+
+- Publication `dpl_9wsyUHm8moAZo9k66KKKXax2Csn8`, production READY ; source `0b269d6`.
+- URL immuable : `https://spaceorbitlab-5i0d6t190-space-orbit-lab.vercel.app`.
+- Les 43 questions sont notées côté serveur (1 point par question, toutes sous-réponses correctes ; valeurs numériques à 1 %, angles à 0,1° et interprétation circulaire du vecteur arrondi acceptée). Les anciennes réponses libres sont remplacées par des champs structurés.
+- Dernière note, pourcentage, date, version du barème et réponses conservés dans le compte ; rappel dans Mes quiz, consultation du corrigé et nouvelle tentative. Une nouvelle soumission remplace le dernier résultat ; le résultat reste disponible après rechargement ou nouvelle session.
+- Migration additive `20261006_134519_coe_result` appliquée : colonne JSONB `users.last_coe_result`. Identité et score calculés côté serveur, champ non modifiable via les API génériques.
+- Vérifications : 33 tests, types, lint et build réussis ; deux soumissions via navigateur en production, comparaison de la note et des données persistées, résistance à une modification par API, nouvelle session, rechargement, rappel Dashboard et mobile sans débordement. Compte temporaire supprimé ; aucun courriel envoyé.
+
 ### Corrigé provisoire
 
 - Mise à jour publiée : `dpl_GcZgWydMSRCUhcEfgb1YrzbK7nz9`, production READY, source `f576e60`.
