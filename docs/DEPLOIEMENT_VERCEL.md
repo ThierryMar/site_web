@@ -2,6 +2,14 @@
 
 ## Quiz COE — 6 octobre 2026
 
+### Corrigé provisoire
+
+- Mise à jour publiée : `dpl_GcZgWydMSRCUhcEfgb1YrzbK7nz9`, production READY, source `f576e60`.
+- URL immuable : `https://spaceorbitlab-iihx1hw9l-space-orbit-lab.vercel.app`.
+- Corrigé des 43 questions, réponses attendues et explications, marqué provisoire et à valider. Disponible après réponse à toutes les questions et fin du quiz ; positionnement et focus au début du corrigé.
+- Choix comparés au corrigé provisoire ; réponses libres accompagnées de modèles sans note automatique. Constantes affichées, ambiguïtés des orbites dégénérées et vitesses arrondies expliquées.
+- Vérifications : 31 tests, TypeScript, ESLint et build Vercel ; parcours navigateur réel en production, blocage avant complétion, affichage des 43 corrections, focus du titre, mobile sans débordement et aucune erreur navigateur. Comptes temporaires supprimés, aucun courriel envoyé.
+
 - Production publiée sur `https://spaceorbitlab.com`, état **READY**.
 - Déploiement : `dpl_sn2B89pbKvrGFhdHKb8fXn6bZxyK`.
 - URL immuable : `https://spaceorbitlab-xncg74ai1-space-orbit-lab.vercel.app`.
