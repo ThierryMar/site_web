@@ -45,6 +45,7 @@
 .dashboard-overview-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 28px; margin-top: 30px; }
 .dashboard-panel { padding: 28px; border: 1px solid var(--bordure); border-radius: 8px; background: #fffdf8; }
 .dashboard-panel p, .dashboard-utilities p { color: var(--dash-muted); font-size: 13px; line-height: 1.8; }
+.dashboard-panel .dashboard-quiz-score { color: var(--dash-ink, #142c54); font-size: clamp(22px, 2vw, 28px); font-weight: 700; line-height: 1.4; }
 .dashboard-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
 .dashboard-section-heading h2 { margin: 0; }
 .dashboard-badge { display: inline-block; padding: 4px 10px; border-radius: 20px; background: #ebe7dc; color: #58604e; font-size: 11px; white-space: nowrap; }

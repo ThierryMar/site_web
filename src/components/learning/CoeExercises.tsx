@@ -42,7 +42,7 @@ export function CoeExercises({ english, lastResult }: { english: boolean; lastRe
     <p role="note"><strong>{english ? 'Using the Orbit101 application is recommended to complete this quiz.' : 'L’utilisation de l’application Orbit101 est recommandée pour réaliser ce quiz.'}</strong></p>
     <p>{english ? 'Each question is worth one point; all its components must be correct. Numeric tolerance: 1% (0.1° for angles). The intended circular interpretation is accepted for the rounded state vector. Your latest submitted result is saved to your account.' : 'Chaque question vaut un point ; toutes ses sous-réponses doivent être correctes. Tolérance numérique : 1 % (0,1° pour les angles). L’interprétation circulaire prévue est acceptée pour le vecteur arrondi. Votre dernier résultat soumis est enregistré dans votre compte.'}</p>
     {result && <section aria-label={english ? 'Last saved result' : 'Dernier résultat enregistré'}>
-      <h2>{english ? 'Last saved result' : 'Dernier résultat enregistré'} : {result.score} / {result.total} — {result.percentage} %</h2>
+      <h2 className="dashboard-quiz-score">{english ? 'Last saved result' : 'Dernier résultat enregistré'} : {result.score} / {result.total} — {result.percentage} %</h2>
       <p>{new Intl.DateTimeFormat(english ? 'en-CA' : 'fr-CA', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/New_York' }).format(new Date(result.completedAt))} · {english ? 'Provisional grade — pending validation' : 'Note provisoire — à valider'}</p>
       <button className="dashboard-button" disabled={pending} onClick={() => { setAnswers(result.answers); setReview(true); setError('') }}>{english ? 'View my last result' : 'Voir mon dernier résultat'}</button>
       <button className="dashboard-button" disabled={pending} onClick={() => { setAnswers({}); setReview(false); setStep(0); setError('') }}>{english ? 'Retake the quiz' : 'Recommencer le quiz'}</button>
@@ -52,7 +52,7 @@ export function CoeExercises({ english, lastResult }: { english: boolean; lastRe
     <progress value={completed} max={count} aria-label={english ? 'Questions answered' : 'Questions répondues'} />
     {review ? <>
       <h2 ref={reviewHeading} tabIndex={-1}>{showCorrections ? english ? 'Provisional answer key — pending validation' : 'Corrigé provisoire — à valider' : english ? 'Your answers' : 'Vos réponses'}</h2>
-      {showCorrections && result && answers === result.answers && <p role="status"><strong>{english ? 'Final grade' : 'Note finale'} : {result.score} / {result.total} — {result.percentage} % · {english ? 'Saved to your account' : 'Enregistrée dans votre compte'}</strong></p>}
+      {showCorrections && result && answers === result.answers && <p className="dashboard-quiz-score" role="status"><strong>{english ? 'Final grade' : 'Note finale'} : {result.score} / {result.total} — {result.percentage} % · {english ? 'Saved to your account' : 'Enregistrée dans votre compte'}</strong></p>}
       {showCorrections && <div role="note">
         <p><strong>{english ? 'This answer key and grade are provisional and must be validated against the official solution.' : 'Ce corrigé et la note sont provisoires et doivent être validés avec la solution officielle.'}</strong></p>
         <p lang="en">{coeCorrectionConstants}</p>
