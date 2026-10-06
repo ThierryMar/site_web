@@ -2,6 +2,12 @@
 
 ## Quiz COE — 6 octobre 2026
 
+### Quiz regroupés par cours
+
+- Publication `dpl_5m4hU9zwWJ3Cb46kKVKp9vCSGURR`, production READY, source `2afab31`.
+- Mes quiz affiche quatre sections correspondant aux quatre cours du site. SOL Part II - COE exercices est dans le cours 2, Foundations of Astrodynamics, avec le quiz d’entraînement existant et le rappel du dernier résultat.
+- Vérifications : types, ESLint et compilation Vercel réussis ; navigateur de production confirme quatre sections, une seule entrée COE dans le cours 2, sections vides explicites, accès au quiz et mobile sans débordement. Compte temporaire supprimé, aucun courriel envoyé. Aucune migration.
+
 ### Note finale et dernier résultat
 
 - Publication `dpl_9wsyUHm8moAZo9k66KKKXax2Csn8`, production READY ; source `0b269d6`.
