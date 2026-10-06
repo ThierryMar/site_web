@@ -217,6 +217,15 @@ export interface Admin {
 export interface User {
   id: number;
   name?: string | null;
+  lastCoeResult?:
+    | {
+        [k: string]: unknown;
+      }
+    | unknown[]
+    | string
+    | number
+    | boolean
+    | null;
   verificationEmailSentAt?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -979,6 +988,7 @@ export interface AdminsSelect<T extends boolean = true> {
  */
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
+  lastCoeResult?: T;
   verificationEmailSentAt?: T;
   updatedAt?: T;
   createdAt?: T;

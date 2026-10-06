@@ -7,6 +7,7 @@ import config from '@payload-config'
 import { DashboardShell } from '@/components/DashboardShell'
 import { CoeExercises } from '@/components/learning/CoeExercises'
 import { getAccountLanguage } from '@/lib/account-language'
+import { readCoeResult } from '@/lib/grade-coe'
 import '../../dashboard.css'
 
 export const metadata: Metadata = { title: 'SOL Part II - COE exercices', robots: { index: false, follow: false } }
@@ -19,6 +20,6 @@ export default async function CoeQuizPage() {
   return <DashboardShell section="quizzes" name={user.name ?? ''} email={user.email}>
     <Link className="dashboard-text-link" href="/dashboard?section=quizzes">← {t('Mes quiz')}</Link>
     <div className="dashboard-heading"><h1>SOL Part II - COE exercices</h1></div>
-    <CoeExercises english={locale === 'en'} />
+    <CoeExercises english={locale === 'en'} lastResult={readCoeResult(user.lastCoeResult)} />
   </DashboardShell>
 }

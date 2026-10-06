@@ -62,6 +62,7 @@ export const Users: CollectionConfig = {
   },
   fields: [
     { name: 'name', type: 'text' },
+    { name: 'lastCoeResult', label: 'Dernier résultat COE', type: 'json', admin: { readOnly: true }, access: { create: () => false, update: () => false } },
     // A verified student must not replace their email through the generic API.
     { name: 'email', type: 'email', required: true, access: { update: ({ req }) => req.user?.collection === 'admins' } },
     { name: '_verified', type: 'checkbox', access: {

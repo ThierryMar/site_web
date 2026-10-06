@@ -11,6 +11,7 @@ import { ProfileForm } from '@/components/ProfileForm'
 import { CourseLibrary } from '@/components/learning/CourseLibrary'
 import { loadDownloads } from '@/lib/load-downloads'
 import { isDownloadUrl } from '@/lib/download-url'
+import { readCoeResult } from '@/lib/grade-coe'
 import './dashboard.css'
 
 export const metadata: Metadata = { title: 'Dashboard', robots: { index: false, follow: false } }
@@ -43,6 +44,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
   const learning = section in learningSections ? learningSections[section as keyof typeof learningSections] : null
   const downloads = section === 'downloads' ? await loadDownloads() : null
   const librarySection = section === 'courses' || section === 'lessons' || section === 'quizzes' ? section : null
+  const coeResult = section === 'quizzes' ? readCoeResult(user.lastCoeResult) : null
 
   return <DashboardShell section={section} name={user.name ?? ''} email={user.email}>
     {section === 'overview' && <>
@@ -61,6 +63,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
     {learning && <><div className="dashboard-heading"><h1>{t(learning.title)}</h1><p>{t(learning.description)}</p></div>{librarySection ? <CourseLibrary payload={payload} user={user} view={librarySection} t={t} /> : <section className="dashboard-empty"><OrbitDiagram /><span className="dashboard-badge">{t("À venir")}</span><h2>{t(learning.empty)}</h2><p>{t(learning.detail)}</p><div className="dashboard-actions"><Link className="dashboard-button" href="/dashboard?section=courses">{t("Ouvrir mes cours")}</Link><Link className="dashboard-text-link" href="/dashboard?section=downloads">{t("Explorer les ressources")}</Link></div></section>}</>}
     {section === 'quizzes' && <section className="dashboard-panel">
       <h2>SOL Part II - COE exercices</h2>
+      {coeResult && <p><strong>{locale === 'en' ? 'Last result' : 'Dernier résultat'} : {coeResult.score} / {coeResult.total} — {coeResult.percentage} %</strong> · {locale === 'en' ? 'Provisional grade' : 'Note provisoire'}</p>}
       <p>{locale === 'en' ? 'Using the Orbit101 application is recommended to complete this quiz.' : 'L’utilisation de l’application Orbit101 est recommandée pour réaliser ce quiz.'}</p>
       <p>{locale === 'en' ? '14 sections: orbital elements, orbit visualization and calculation exercises.' : '14 sections : éléments orbitaux, visualisation des orbites et exercices de calcul.'}</p>
       <Link className="dashboard-button" href="/dashboard/quizzes/sol-part-ii-coe-exercices">{locale === 'en' ? 'Open the quiz' : 'Ouvrir le quiz'}</Link>
