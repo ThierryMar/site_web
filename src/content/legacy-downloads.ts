@@ -26,10 +26,16 @@ export const legacyDownloads = [
     filename: 'SOL Part I.II – Basic Astronomy & Celestial mechanics [up to 2.11]_.pdf',
   },
   {
+    title: 'SOL Part II', slug: 'sol-part-ii', order: 45,
+    description: 'Foundations of Astrodynamics. Course notes, sections 2.18 to 5.',
+    format: 'PDF', directory: 'Fichiers',
+    filename: 'SꙨL Part II – Foundations of astrodynamics_2.18 up to 5].pdf',
+  },
+  {
     title: 'Orbits101', slug: 'orbits101', order: 50,
-    description: 'An orbital mechanics simulator developed by Richard L. Lachance. Explore satellite trajectories, modify orbital parameters, and visualize orbits in different reference frames. Beta 0.96 installer.',
-    format: 'ZIP', directory: 'Telechargement',
-    filename: 'Orbits101 Installer Beta 0.96.zip',
+    description: 'Orbits101 orbital mechanics simulator. Installer Beta 0.98.',
+    format: 'ZIP', directory: 'Fichiers',
+    filename: 'Orbits101 Installer Beta 0.98 (1).zip',
   },
 ] as const
 

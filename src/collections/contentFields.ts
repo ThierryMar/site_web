@@ -9,7 +9,8 @@ export const marketingAccess: CollectionConfig['access'] = {
   delete: isAdmin,
 }
 
-// Student access will be added alongside course enrollments.
+// Default for private material. Courses, Lessons and Quizzes override read for
+// the published example module; general enrollment access is still deferred.
 export const courseAccess: CollectionConfig['access'] = {
   read: isAdmin, readVersions: isAdmin, create: isAdmin, update: isAdmin, delete: isAdmin,
 }

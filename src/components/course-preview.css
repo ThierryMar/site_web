@@ -1,0 +1,12 @@
+#course-2 blockquote { padding: 18px 24px; margin: 24px 0; background: #e9eef4; border-left: 3px solid #d4a017; color: #142c54; font-family: 'Cambria Math', Cambria, Georgia, serif; font-size: 21px; line-height: 1.7; overflow-wrap: anywhere; }
+#course-2 { scroll-margin-top: 110px; }
+.course-preview-figures { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin: 28px 0; }
+.course-preview-figures figure { margin: 0; min-width: 0; padding: 20px; background: #fff; border: 1px solid #d5dde5; border-radius: 5px; }
+.course-preview-figures img { display: block; width: 100%; height: 230px; object-fit: contain; }
+.course-preview-figures figcaption { margin-top: 16px; color: #26384a; font-size: 13px; line-height: 1.7; }
+.course-preview-figures figcaption span { color: #586677; font-size: 11px; }
+@media (max-width: 600px) { .course-preview-figures { grid-template-columns: 1fr; } .course-preview-figures img { height: auto; max-height: 270px; } }
+.course-preview-access { margin-top: 28px; }
+.course-preview-access > p { font-size: 13px; color: #586677; margin-top: 14px; }
+.course-preview-access > p a { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 520px) { #course-2 blockquote { font-size: 18px; padding: 16px; } }

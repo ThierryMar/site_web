@@ -1,0 +1,426 @@
+{
+  "source": "SꙨL Part II – Section 1 – Astrodynamics Laws.pptx",
+  "total": 20,
+  "images": [
+    {
+      "id": "image14-png",
+      "filename": "image14.png",
+      "caption": "Rocket launch trajectory seen from the ground",
+      "alt": "Rocket launch trajectory seen from the ground",
+      "lesson": "astrodynamics-mission-and-notation",
+      "heading": "An orbit serves a mission",
+      "slides": [
+        13
+      ],
+      "kind": "illustration",
+      "width": 1365,
+      "height": 2048,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image14-png.webp",
+      "displayFile": "originals/image14.png",
+      "stillFile": null,
+      "sha256": "8553b72edfa0d0c06a4d55b98431093fed138a36f1cf1616ffc94c3b2d846340",
+      "bytes": 771147
+    },
+    {
+      "id": "image27-png",
+      "filename": "image27.png",
+      "caption": "Heliocentric, Ptolemaic and Tychonic models compared",
+      "alt": "Heliocentric, Ptolemaic and Tychonic models compared",
+      "lesson": "astrodynamics-kepler-laws",
+      "heading": "From observations to laws",
+      "slides": [
+        25
+      ],
+      "kind": "illustration",
+      "width": 1946,
+      "height": 909,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image27-png.webp",
+      "displayFile": "originals/image27.png",
+      "stillFile": null,
+      "sha256": "09f1635eb1d9d487ccae235a491441003aad6e003693e42982c0ffc46960267a",
+      "bytes": 436448
+    },
+    {
+      "id": "image33-png",
+      "filename": "image33.png",
+      "caption": "Kepler’s first law: the Sun lies at one focus of the ellipse",
+      "alt": "Kepler’s first law: the Sun lies at one focus of the ellipse",
+      "lesson": "astrodynamics-kepler-laws",
+      "heading": "First law: the shape of the orbit",
+      "slides": [
+        28
+      ],
+      "kind": "illustration",
+      "width": 266,
+      "height": 222,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image33-png.webp",
+      "displayFile": "originals/image33.png",
+      "stillFile": null,
+      "sha256": "39f890d2a1c217a7ff509e98620e8d06e312b4c896d17f5f9408753658d6e169",
+      "bytes": 55927
+    },
+    {
+      "id": "image36-gif",
+      "filename": "image36.gif",
+      "caption": "Animation of equal areas swept during equal time intervals",
+      "alt": "Animation of equal areas swept during equal time intervals",
+      "lesson": "astrodynamics-kepler-laws",
+      "heading": "Second law: equal areas in equal times",
+      "slides": [
+        29
+      ],
+      "kind": "illustration",
+      "width": 715,
+      "height": 464,
+      "animated": true,
+      "frames": 28,
+      "previewFile": "originals/image36.gif",
+      "displayFile": "originals/image36.gif",
+      "stillFile": "previews/image36-gif-still.webp",
+      "sha256": "665efa43d976bfa74342ba513376ab67d8cb733124c8de63e9ddbb94311820b3",
+      "bytes": 26838
+    },
+    {
+      "id": "image38-jpg",
+      "filename": "image38.jpg",
+      "caption": "Perigee and apogee of an Earth-centered ellipse",
+      "alt": "Perigee and apogee of an Earth-centered ellipse",
+      "lesson": "astrodynamics-kepler-laws",
+      "heading": "First law: the shape of the orbit",
+      "slides": [
+        30
+      ],
+      "kind": "illustration",
+      "width": 602,
+      "height": 234,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image38-jpg.webp",
+      "displayFile": "originals/image38.jpg",
+      "stillFile": null,
+      "sha256": "2610e18014759cad664e17d4203ee1975ea8891309c99bf5cbd414cddb10ab22",
+      "bytes": 22828
+    },
+    {
+      "id": "image40-png",
+      "filename": "image40.png",
+      "caption": "Planetary orbital periods and semi-major axes on logarithmic axes",
+      "alt": "Planetary orbital periods and semi-major axes on logarithmic axes",
+      "lesson": "astrodynamics-kepler-laws",
+      "heading": "Third law: period and orbital size",
+      "slides": [
+        32
+      ],
+      "kind": "illustration",
+      "width": 1185,
+      "height": 948,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image40-png.webp",
+      "displayFile": "originals/image40.png",
+      "stillFile": null,
+      "sha256": "ee71ca1f60a57cf4ca03270adef7b40f56dda9badcffbdabf8ca143a0290fefc",
+      "bytes": 172910
+    },
+    {
+      "id": "image44-png",
+      "filename": "image44.png",
+      "caption": "Geometry of successive node crossings",
+      "alt": "Geometry of successive node crossings",
+      "lesson": "astrodynamics-orbital-periods",
+      "heading": "Anomalistic and nodal periods",
+      "slides": [
+        41
+      ],
+      "kind": "illustration",
+      "width": 225,
+      "height": 225,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image44-png.webp",
+      "displayFile": "originals/image44.png",
+      "stillFile": null,
+      "sha256": "2c43df7e63c091e33b23e6eaf259965dd23af9592554c685f346c69c4889819d",
+      "bytes": 28259
+    },
+    {
+      "id": "image47-png",
+      "filename": "image47.png",
+      "caption": "The same mass has different gravitational weights on Earth, Mars and the Moon",
+      "alt": "The same mass has different gravitational weights on Earth, Mars and the Moon",
+      "lesson": "astrodynamics-newton-laws",
+      "heading": "Mass, inertia and momentum",
+      "slides": [
+        45
+      ],
+      "kind": "illustration",
+      "width": 1000,
+      "height": 767,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image47-png.webp",
+      "displayFile": "originals/image47.png",
+      "stillFile": null,
+      "sha256": "923736ddf5579859bbf82aa5c38ff0ed7f5b38d24172b9c6fb0e549972d6891f",
+      "bytes": 72982
+    },
+    {
+      "id": "image48-jpeg",
+      "filename": "image48.jpeg",
+      "caption": "Inertia demonstration: a coin drops into a glass when the card is removed",
+      "alt": "Inertia demonstration: a coin drops into a glass when the card is removed",
+      "lesson": "astrodynamics-newton-laws",
+      "heading": "First law: uniform motion without a net force",
+      "slides": [
+        46
+      ],
+      "kind": "illustration",
+      "width": 2560,
+      "height": 1440,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image48-jpeg.webp",
+      "displayFile": "originals/image48.jpeg",
+      "stillFile": null,
+      "sha256": "9a93ef1d24b4ce13cfeedad3d8c70bbe029e2163219d0c10c8f405531d8c019e",
+      "bytes": 455996
+    },
+    {
+      "id": "image51-png",
+      "filename": "image51.png",
+      "caption": "Mutual gravitational attraction between two masses",
+      "alt": "Mutual gravitational attraction between two masses",
+      "lesson": "astrodynamics-newton-laws",
+      "heading": "Third law: forces come in pairs",
+      "slides": [
+        50
+      ],
+      "kind": "illustration",
+      "width": 364,
+      "height": 191,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image51-png.webp",
+      "displayFile": "originals/image51.png",
+      "stillFile": null,
+      "sha256": "615b0189933468d846abb1952320d5711f5dc31cc7d640e577d74cd989fd8fe0",
+      "bytes": 31517
+    },
+    {
+      "id": "image54-jpeg",
+      "filename": "image54.jpeg",
+      "caption": "Rocket exhaust and an escaping balloon illustrate action and reaction",
+      "alt": "Rocket exhaust and an escaping balloon illustrate action and reaction",
+      "lesson": "astrodynamics-newton-laws",
+      "heading": "Third law: forces come in pairs",
+      "slides": [
+        54
+      ],
+      "kind": "illustration",
+      "width": 448,
+      "height": 253,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image54-jpeg.webp",
+      "displayFile": "originals/image54.jpeg",
+      "stillFile": null,
+      "sha256": "6a149d0cfe44ed2e08524d89c573b63b94676cfd94430c46a33200ae6eff91f0",
+      "bytes": 31884
+    },
+    {
+      "id": "image57-png",
+      "filename": "image57.png",
+      "caption": "Gravitational field strength inside and outside a uniform solid sphere",
+      "alt": "Gravitational field strength inside and outside a uniform solid sphere",
+      "lesson": "astrodynamics-gravitation",
+      "heading": "Why the spherical approximation works",
+      "slides": [
+        56
+      ],
+      "kind": "illustration",
+      "width": 567,
+      "height": 471,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image57-png.webp",
+      "displayFile": "originals/image57.png",
+      "stillFile": null,
+      "sha256": "118a4de523daf4128890fe1b2b4c6d41c4c6a2285f4f967cd24887177037da85",
+      "bytes": 44250
+    },
+    {
+      "id": "image58-png",
+      "filename": "image58.png",
+      "caption": "Cavendish’s torsion-balance experiment",
+      "alt": "Cavendish’s torsion-balance experiment",
+      "lesson": "astrodynamics-gravitation",
+      "heading": "G and μ are different quantities",
+      "slides": [
+        58
+      ],
+      "kind": "illustration",
+      "width": 2913,
+      "height": 1595,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image58-png.webp",
+      "displayFile": "originals/image58.png",
+      "stillFile": null,
+      "sha256": "ffee399950f5aa94d50fcf51ec3c63563dcf0ff358337e9b2923053dd0b46bbe",
+      "bytes": 1726628
+    },
+    {
+      "id": "image67-gif",
+      "filename": "image67.gif",
+      "caption": "Animation of the exchange between kinetic and potential energy",
+      "alt": "Animation of the exchange between kinetic and potential energy",
+      "lesson": "astrodynamics-specific-energy",
+      "heading": "Energy per unit mass",
+      "slides": [
+        65
+      ],
+      "kind": "illustration",
+      "width": 176,
+      "height": 260,
+      "animated": true,
+      "frames": 24,
+      "previewFile": "originals/image67.gif",
+      "displayFile": "originals/image67.gif",
+      "stillFile": "previews/image67-gif-still.webp",
+      "sha256": "1b5f2e11fc280edc60e0ff9a5a49a257938ea554f104c45af216d4629bacfe94",
+      "bytes": 39025
+    },
+    {
+      "id": "image73-png",
+      "filename": "image73.png",
+      "caption": "Position, velocity and angular momentum vectors in an orbital plane",
+      "alt": "Position, velocity and angular momentum vectors in an orbital plane",
+      "lesson": "astrodynamics-angular-momentum",
+      "heading": "The vector perpendicular to the orbit",
+      "slides": [
+        70
+      ],
+      "kind": "illustration",
+      "width": 543,
+      "height": 469,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image73-png.webp",
+      "displayFile": "originals/image73.png",
+      "stillFile": null,
+      "sha256": "1acbd98125b4089678c370e99bac85b9aa8bcd091acbd237f30ee7b06ec9f341",
+      "bytes": 254245
+    },
+    {
+      "id": "image75-gif",
+      "filename": "image75.gif",
+      "caption": "Animated demonstration of angular momentum with a rotating bicycle wheel",
+      "alt": "Animated demonstration of angular momentum with a rotating bicycle wheel",
+      "lesson": "astrodynamics-angular-momentum",
+      "heading": "Conservation under a central force",
+      "slides": [
+        71
+      ],
+      "kind": "illustration",
+      "width": 960,
+      "height": 916,
+      "animated": true,
+      "frames": 7,
+      "previewFile": "originals/image75.gif",
+      "displayFile": "originals/image75.gif",
+      "stillFile": "previews/image75-gif-still.webp",
+      "sha256": "48c390484b0def21318b17ad3b7269dcaa3e91012e8eac3706c59c96f5aa2796",
+      "bytes": 1537377
+    },
+    {
+      "id": "image76-png",
+      "filename": "image76.png",
+      "caption": "Flight-path angle and local horizontal geometry",
+      "alt": "Flight-path angle and local horizontal geometry",
+      "lesson": "astrodynamics-angular-momentum",
+      "heading": "Equivalent formulas",
+      "slides": [
+        72
+      ],
+      "kind": "illustration",
+      "width": 346,
+      "height": 416,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image76-png.webp",
+      "displayFile": "originals/image76.png",
+      "stillFile": null,
+      "sha256": "20571a3ccb6a913382c4e43f170557e5c81a51c3f77a4b2235523cd6ef9e331b",
+      "bytes": 6621
+    },
+    {
+      "id": "image78-png",
+      "filename": "image78.png",
+      "caption": "Different orbital planes around Earth",
+      "alt": "Different orbital planes around Earth",
+      "lesson": "astrodynamics-angular-momentum",
+      "heading": "A practical consequence",
+      "slides": [
+        74
+      ],
+      "kind": "illustration",
+      "width": 624,
+      "height": 442,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image78-png.webp",
+      "displayFile": "originals/image78.png",
+      "stillFile": null,
+      "sha256": "ba8ee2303fee28f97a14fbcde60f19661303871f50c23653079f2c0123db3054",
+      "bytes": 32264
+    },
+    {
+      "id": "image80-png",
+      "filename": "image80.png",
+      "caption": "The Sun–Jupiter barycenter",
+      "alt": "The Sun–Jupiter barycenter",
+      "lesson": "astrodynamics-relative-motion",
+      "heading": "The barycenter",
+      "slides": [
+        79
+      ],
+      "kind": "illustration",
+      "width": 850,
+      "height": 377,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image80-png.webp",
+      "displayFile": "originals/image80.png",
+      "stillFile": null,
+      "sha256": "ac5324908f5d4696ca7fa50ff362cae9394d640aaaf486c55008433cc0207c89",
+      "bytes": 1330261
+    },
+    {
+      "id": "image81-png",
+      "filename": "image81.png",
+      "caption": "The Earth–Moon barycenter",
+      "alt": "The Earth–Moon barycenter",
+      "lesson": "astrodynamics-relative-motion",
+      "heading": "The barycenter",
+      "slides": [
+        79
+      ],
+      "kind": "illustration",
+      "width": 631,
+      "height": 298,
+      "animated": false,
+      "frames": 1,
+      "previewFile": "previews/image81-png.webp",
+      "displayFile": "originals/image81.png",
+      "stillFile": null,
+      "sha256": "7ac2daddb201f53bd556c9f49b538f2a1f11bafc719b301e0993cc1ff646e8e8",
+      "bytes": 125868
+    }
+  ]
+}

@@ -2,11 +2,12 @@ import { APIError, Forbidden, type CollectionConfig } from 'payload'
 import { adminOrSelf, isAdmin } from '../access'
 import { authEmailHTML, verificationSubject } from '../lib/auth-emails'
 import { validPassword } from '../lib/auth-validation'
+import { USER_SESSION_MAX_AGE } from '../lib/auth-session'
 
 export const Users: CollectionConfig = {
   slug: 'users',
   auth: {
-    tokenExpiration: 7200, maxLoginAttempts: 5, lockTime: 600000,
+    tokenExpiration: USER_SESSION_MAX_AGE, maxLoginAttempts: 5, lockTime: 600000,
     cookies: { sameSite: 'Lax', secure: process.env.NODE_ENV === 'production' },
     verify: {
       generateEmailSubject: () => verificationSubject,

@@ -1,3 +1,5 @@
+
+import { getAccountLanguage } from '@/lib/account-language'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { headers } from 'next/headers'
@@ -6,6 +8,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { DashboardShell, dashboardSections } from '@/components/DashboardShell'
 import { ProfileForm } from '@/components/ProfileForm'
+import { CourseLibrary } from '@/components/learning/CourseLibrary'
 import { loadDownloads } from '@/lib/load-downloads'
 import { isDownloadUrl } from '@/lib/download-url'
 import './dashboard.css'
@@ -30,6 +33,7 @@ function OrbitDiagram() {
 }
 
 export default async function Dashboard({ searchParams }: { searchParams: Promise<{ section?: string | string[] }> }) {
+  const { locale, t } = await getAccountLanguage()
   const payload = await getPayload({ config })
   const { user } = await payload.auth({ headers: await headers() })
   if (!user || user.collection !== 'users') redirect('/connexion')
@@ -38,27 +42,34 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
   const section = dashboardSections.find((item) => item.id === requested)?.id ?? 'overview'
   const learning = section in learningSections ? learningSections[section as keyof typeof learningSections] : null
   const downloads = section === 'downloads' ? await loadDownloads() : null
+  const librarySection = section === 'courses' || section === 'lessons' || section === 'quizzes' ? section : null
 
   return <DashboardShell section={section} name={user.name ?? ''} email={user.email}>
     {section === 'overview' && <>
-      <div className="dashboard-heading"><h1>{user.name ? `Bienvenue, ${user.name}` : 'Bienvenue dans votre espace'}</h1><p>Votre point de départ pour explorer les sciences spatiales.</p></div>
+      <div className="dashboard-heading"><h1>{user.name ? `${t("Bienvenue,")} ${user.name}` : t("Bienvenue dans votre espace")}</h1><p>{t("Votre point de départ pour explorer les sciences spatiales.")}</p></div>
       <section className="dashboard-welcome" aria-labelledby="journey-title">
-        <div><span className="dashboard-status">Espace de formation en préparation</span><h2 id="journey-title">Votre prochaine étape<br />vers les sciences spatiales.</h2><p>Explorez les formations et les ressources disponibles. Vous retrouverez bientôt ici vos cours, vos leçons et votre avancement.</p><Link className="dashboard-button" href="/courses">Découvrir les formations</Link></div><OrbitDiagram />
+        <div><span className="dashboard-status">{t("Votre espace de formation")}</span><h2 id="journey-title">{t("Votre prochaine étape")}<br />{t("vers les sciences spatiales.")}</h2><p>{t("Commencez le module Astrodynamics Laws : neuf leçons pour comprendre les lois de Kepler et de Newton, avec des exemples et un quiz d’entraînement.")}</p><Link className="dashboard-button" href="/dashboard?section=courses">{t("Ouvrir mes cours")}</Link></div><OrbitDiagram />
       </section>
       <div className="dashboard-overview-grid">
-        <section className="dashboard-panel" aria-labelledby="learning-title"><div className="dashboard-section-heading"><h2 id="learning-title">Mon apprentissage</h2><span className="dashboard-badge">À venir</span></div><p>Tout votre parcours, au même endroit.</p>
-          <div className="dashboard-learning-list">{dashboardSections.filter((item) => ['courses', 'lessons', 'progress', 'quizzes'].includes(item.id)).map((item) => <Link key={item.id} href={`/dashboard?section=${item.id}`}><strong>{item.label}</strong><span>{item.id === 'courses' ? 'Vos formations' : item.id === 'lessons' ? 'Vos prochaines étapes' : item.id === 'progress' ? 'Votre avancement' : 'Vos évaluations'}</span><span aria-hidden="true">↗</span></Link>)}</div>
+        <section className="dashboard-panel" aria-labelledby="learning-title"><div className="dashboard-section-heading"><h2 id="learning-title">{t("Mon apprentissage")}</h2><span className="dashboard-badge">{t("Premier module disponible")}</span></div><p>{t("Tout votre parcours, au même endroit.")}</p>
+          <div className="dashboard-learning-list">{dashboardSections.filter((item) => ['courses', 'lessons', 'progress', 'quizzes'].includes(item.id)).map((item) => <Link key={item.id} href={`/dashboard?section=${item.id}`}><strong>{t(item.label)}</strong><span>{item.id === 'courses' ? t("Vos formations") : item.id === 'lessons' ? t("Vos prochaines étapes") : item.id === 'progress' ? t("Votre avancement") : t("Vos évaluations")}</span><span aria-hidden="true">↗</span></Link>)}</div>
         </section>
-        <div className="dashboard-utilities"><section className="dashboard-resource-panel"><h2>De quoi explorer dès maintenant</h2><p>Notes de cours, références et outils de simulation : les ressources publiques sont déjà accessibles.</p><Link className="dashboard-text-link" href="/dashboard?section=downloads">Ouvrir les téléchargements</Link></section>
-          <section className="dashboard-account-summary"><h2>Votre compte</h2><p>{user.email}</p><Link className="dashboard-text-link" href="/dashboard?section=account">Gérer mon profil</Link></section></div>
+        <div className="dashboard-utilities"><section className="dashboard-resource-panel"><h2>{t("De quoi explorer dès maintenant")}</h2><p>{t("Notes de cours, références et outils de simulation : les ressources publiques sont déjà accessibles.")}</p><Link className="dashboard-text-link" href="/dashboard?section=downloads">{t("Ouvrir les téléchargements")}</Link></section>
+          <section className="dashboard-account-summary"><h2>{t("Votre compte")}</h2><p>{user.email}</p><Link className="dashboard-text-link" href="/dashboard?section=account">{t("Gérer mon profil")}</Link></section></div>
       </div>
     </>}
-    {learning && <><div className="dashboard-heading"><h1>{learning.title}</h1><p>{learning.description}</p></div><section className="dashboard-empty"><OrbitDiagram /><span className="dashboard-badge">À venir</span><h2>{learning.empty}</h2><p>{learning.detail}</p><div className="dashboard-actions"><Link className="dashboard-button" href="/courses">Découvrir les formations</Link><Link className="dashboard-text-link" href="/dashboard?section=downloads">Explorer les ressources</Link></div></section></>}
-    {section === 'downloads' && <><div className="dashboard-heading"><h1>Téléchargements</h1><p>Les ressources SpaceOrbitLAB pour accompagner votre apprentissage.</p></div>
-      {!downloads ? <section className="dashboard-panel" role="status"><h2>Ressources temporairement indisponibles</h2><p>Réessayez dans quelques instants.</p><Link className="dashboard-text-link" href="/dashboard?section=downloads">Réessayer</Link></section>
-        : downloads.resources.length === 0 ? <section className="dashboard-panel"><h2>Les ressources arrivent bientôt</h2><p>Les documents publiés seront regroupés dans cet espace.</p></section>
-        : <div className="dashboard-downloads">{downloads.resources.map((resource) => <article className="dashboard-download" key={resource.id}><span className="dashboard-filetype">{resource.format || 'Fichier'}</span><div><h2>{resource.title}</h2>{resource.description && <p>{resource.description}</p>}</div>{isDownloadUrl(resource.downloadUrl) ? <a className="dashboard-text-link" href={resource.downloadUrl} download>Télécharger<span className="dashboard-sr-only"> {resource.title}</span></a> : <span>Fichier indisponible</span>}</article>)}</div>}
+    {learning && <><div className="dashboard-heading"><h1>{t(learning.title)}</h1><p>{t(learning.description)}</p></div>{librarySection ? <CourseLibrary payload={payload} user={user} view={librarySection} t={t} /> : <section className="dashboard-empty"><OrbitDiagram /><span className="dashboard-badge">{t("À venir")}</span><h2>{t(learning.empty)}</h2><p>{t(learning.detail)}</p><div className="dashboard-actions"><Link className="dashboard-button" href="/dashboard?section=courses">{t("Ouvrir mes cours")}</Link><Link className="dashboard-text-link" href="/dashboard?section=downloads">{t("Explorer les ressources")}</Link></div></section>}</>}
+    {section === 'quizzes' && <section className="dashboard-panel">
+      <h2>SOL Part II - COE exercices</h2>
+      <p>{locale === 'en' ? 'Using the Orbit101 application is recommended to complete this quiz.' : 'L’utilisation de l’application Orbit101 est recommandée pour réaliser ce quiz.'}</p>
+      <p>{locale === 'en' ? '14 sections: orbital elements, orbit visualization and calculation exercises.' : '14 sections : éléments orbitaux, visualisation des orbites et exercices de calcul.'}</p>
+      <Link className="dashboard-button" href="/dashboard/quizzes/sol-part-ii-coe-exercices">{locale === 'en' ? 'Open the quiz' : 'Ouvrir le quiz'}</Link>
+    </section>}
+    {section === 'downloads' && <><div className="dashboard-heading"><h1>{t("Téléchargements")}</h1><p>{t("Les ressources SpaceOrbitLAB pour accompagner votre apprentissage.")}</p></div>
+      {!downloads ? <section className="dashboard-panel" role="status"><h2>{t("Ressources temporairement indisponibles")}</h2><p>{t("Réessayez dans quelques instants.")}</p><Link className="dashboard-text-link" href="/dashboard?section=downloads">{t("Réessayer")}</Link></section>
+        : downloads.resources.length === 0 ? <section className="dashboard-panel"><h2>{t("Les ressources arrivent bientôt")}</h2><p>{t("Les documents publiés seront regroupés dans cet espace.")}</p></section>
+        : <div className="dashboard-downloads">{downloads.resources.map((resource) => <article className="dashboard-download" key={resource.id}><span className="dashboard-filetype">{resource.format || t("Fichier")}</span><div><h2>{resource.title}</h2>{resource.description && <p>{resource.description}</p>}</div>{isDownloadUrl(resource.downloadUrl) ? <a className="dashboard-text-link" href={resource.downloadUrl} download>{t("Télécharger")}<span className="dashboard-sr-only"> {resource.title}</span></a> : <span>{t("Fichier indisponible")}</span>}</article>)}</div>}
     </>}
-    {section === 'account' && <><div className="dashboard-heading"><h1>Mon compte</h1><p>Gérez vos informations personnelles et la sécurité de votre compte.</p></div><div className="dashboard-account-grid"><section className="dashboard-panel"><h2>Informations du profil</h2><dl className="dashboard-account-details"><dt>Adresse courriel</dt><dd>{user.email}</dd></dl><ProfileForm name={user.name ?? ''} /></section><section className="dashboard-panel"><h2>Sécurité</h2><p>Pour modifier votre mot de passe, demandez un lien sécurisé envoyé à votre adresse courriel.</p><Link className="dashboard-text-link" href="/mot-de-passe-oublie">Modifier mon mot de passe</Link></section></div></>}
+    {section === 'account' && <><div className="dashboard-heading"><h1>{t("Mon compte")}</h1><p>{t("Gérez vos informations personnelles et la sécurité de votre compte.")}</p></div><div className="dashboard-account-grid"><section className="dashboard-panel"><h2>{t("Informations du profil")}</h2><dl className="dashboard-account-details"><dt>{t("Adresse courriel")}</dt><dd>{user.email}</dd></dl><ProfileForm locale={locale} name={user.name ?? ''} /></section><section className="dashboard-panel"><h2>{t("Sécurité")}</h2><p>{t("Pour modifier votre mot de passe, demandez un lien sécurisé envoyé à votre adresse courriel.")}</p><Link className="dashboard-text-link" href="/mot-de-passe-oublie">{t("Modifier mon mot de passe")}</Link></section></div></>}
   </DashboardShell>
 }

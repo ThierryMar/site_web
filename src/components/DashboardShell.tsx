@@ -1,3 +1,5 @@
+
+import { getAccountLanguage } from '@/lib/account-language'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { logout } from '@/app/(frontend)/auth-actions'
@@ -14,34 +16,35 @@ export const dashboardSections = [
 
 export type DashboardSection = typeof dashboardSections[number]['id']
 
-export function DashboardShell({ section, name, email, children }: {
+export async function DashboardShell({ section, name, email, children }: {
   section: DashboardSection; name: string; email: string; children: ReactNode
 }) {
+  const { locale, t } = await getAccountLanguage()
   const current = dashboardSections.find((item) => item.id === section)!
-  return <div className="dashboard" lang="fr">
-    <a className="dashboard-skip" href="#dashboard-content">Aller au contenu</a>
+  return <div className="dashboard" lang={locale}>
+    <a className="dashboard-skip" href="#dashboard-content">{t("Aller au contenu")}</a>
     <aside className="dashboard-sidebar">
-      <Link className="dashboard-brand" href="/" aria-label="SpaceOrbitLAB — accueil">
+      <Link className="dashboard-brand" href="/" aria-label={t("SpaceOrbitLAB — accueil")}>
         <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="5" fill="currentColor" /><ellipse cx="20" cy="20" rx="19" ry="9" transform="rotate(-35 20 20)" stroke="currentColor" strokeWidth="1.5" /></svg>
         SpaceOrbitLAB
       </Link>
-      <p className="dashboard-sidebar-caption">Mon espace de formation</p>
+      <p className="dashboard-sidebar-caption">{t("Mon espace de formation")}</p>
       <nav className="dashboard-nav" aria-label="Dashboard">
         {dashboardSections.map((item) => <Link key={item.id} href={item.id === 'overview' ? '/dashboard' : `/dashboard?section=${item.id}`} aria-current={section === item.id ? 'page' : undefined}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={item.path} /></svg>
-          {item.label}
+          {t(item.label)}
         </Link>)}
       </nav>
       <div className="dashboard-sidebar-bottom">
-        <Link href="/">Retour au site</Link>
-        <div className="dashboard-identity"><span className="dashboard-avatar" aria-hidden="true">{(name || email).slice(0, 1).toUpperCase()}</span><div><strong>{name || 'Mon compte'}</strong><span>{email}</span></div></div>
-        <form action={logout}><button className="dashboard-signout">Déconnexion de tous les appareils</button></form>
+        <Link href="/">{t("Retour au site")}</Link>
+        <div className="dashboard-identity"><span className="dashboard-avatar" aria-hidden="true">{(name || email).slice(0, 1).toUpperCase()}</span><div><strong>{name || t("Mon compte")}</strong><span>{email}</span></div></div>
+        <form action={logout}><button className="dashboard-signout">{t("Déconnexion de tous les appareils")}</button></form>
       </div>
     </aside>
     <div className="dashboard-workspace">
-      <header className="dashboard-topbar"><span>Dashboard <span aria-hidden="true">/</span> <strong>{current.label}</strong></span><Link href="/dashboard?section=account">Mon compte</Link></header>
+      <header className="dashboard-topbar"><span>Dashboard <span aria-hidden="true">/</span> <strong>{t(current.label)}</strong></span><Link href="/dashboard?section=account">{t("Mon compte")}</Link></header>
       <main id="dashboard-content" className="dashboard-content" tabIndex={-1}>{children}</main>
-      <footer className="dashboard-footer"><span>SpaceOrbitLAB</span><Link href="/contact">Besoin d’aide ?</Link></footer>
+      <footer className="dashboard-footer"><span>SpaceOrbitLAB</span><Link href="/contact">{t("Besoin d’aide ?")}</Link></footer>
     </div>
   </div>
 }

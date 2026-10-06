@@ -1,0 +1,9 @@
+.resources > article > h2 {
+  margin-bottom: 28px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.resources > article > div + div {
+  margin-top: 28px;
+}

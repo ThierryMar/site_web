@@ -1,7 +1,21 @@
 import { withPayload } from '@payloadcms/next/withPayload'
+import { readFileSync, readdirSync, statSync } from 'node:fs'
+
+const courseImageManifest = JSON.parse(readFileSync(new URL('./src/content/astrodynamics-images.json', import.meta.url), 'utf8'))
+const courseImageFiles = [...new Set(courseImageManifest.images.flatMap((image) => [image.previewFile, image.displayFile, image.stillFile].filter(Boolean)))]
+const courseImageRoot = new URL('./assets/course-images/astrodynamics-laws/', import.meta.url)
+const archivedImageFiles = readdirSync(courseImageRoot, { recursive: true })
+  .map((file) => file.replaceAll('\\', '/'))
+  .filter((file) => !courseImageFiles.includes(file) && statSync(new URL(file, courseImageRoot)).isFile())
 
 export default withPayload({
   poweredByHeader: false,
+  outputFileTracingIncludes: {
+    '/api/course-images/*': courseImageFiles.map((file) => `./assets/course-images/astrodynamics-laws/${file}`),
+  },
+  outputFileTracingExcludes: {
+    '/api/course-images/*': archivedImageFiles.map((file) => `./assets/course-images/astrodynamics-laws/${file}`),
+  },
   async rewrites() {
     return [
       { source: '/simulations', destination: '/legacy/Simulations.html' },

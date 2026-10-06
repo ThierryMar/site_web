@@ -1,23 +1,26 @@
+
+import { getAccountLanguage } from '@/lib/account-language'
 import Link from 'next/link'
 
-export default function AuthentificationLayout({ children }: { children: React.ReactNode }) {
-  return <main className="auth-page" lang="fr">
+export default async function AuthentificationLayout({ children }: { children: React.ReactNode }) {
+  const { locale, t } = await getAccountLanguage()
+  return <main className="auth-page" lang={locale}>
     <Link className="brand" href="/">SpaceOrbitLAB</Link>
     <div className="account-navigation">
-      <Link href="/">Home</Link>
+      <Link href="/">{t("Accueil")}</Link>
       <details className="account-menu">
-        <summary>Account <span aria-hidden="true">▾</span></summary>
+        <summary>{t("Compte")}{' '}<span aria-hidden="true">▾</span></summary>
         <div className="account-menu-links">
-          <Link href="/connexion">Sign in</Link>
-          <Link href="/inscription">Create an account</Link>
-          <Link href="/mon-compte">My account &amp; settings</Link>
+          <Link href="/connexion">{t("Se connecter")}</Link>
+          <Link href="/inscription">{t("Créer un compte")}</Link>
+          <Link href="/mon-compte">{t("Mon compte et paramètres")}</Link>
         </div>
       </details>
     </div>
     <section className="auth-card">
-      <p className="auth-eyebrow">VOTRE ESPACE D’EXPLORATION</p>
+      <p className="auth-eyebrow">{t("VOTRE ESPACE D’EXPLORATION")}</p>
       {children}
     </section>
-    <footer>SpaceOrbitLAB · Formation en sciences spatiales</footer>
+    <footer>{t("SpaceOrbitLAB · Formation en sciences spatiales")}</footer>
   </main>
 }

@@ -1,8 +1,14 @@
+
+import { getAccountLanguage } from '@/lib/account-language'
 import { AuthPage } from '@/components/AuthPage'
 import { AuthForm } from '@/components/AuthForm'
 
-export const metadata = { title: 'Renvoyer la confirmation', robots: { index: false, follow: false } }
+export async function generateMetadata() {
+  const { t } = await getAccountLanguage()
+  return { title: t("Renvoyer la confirmation"), robots: { index: false, follow: false } }
+}
 
-export default function Page() {
-  return <AuthPage title="Recevoir un nouveau lien" description="Saisissez l’adresse utilisée lors de votre inscription. Vérifiez aussi vos courriels indésirables."><AuthForm mode="resend" /></AuthPage>
+export default async function Page() {
+  const { locale, t } = await getAccountLanguage()
+  return <AuthPage title={t("Recevoir un nouveau lien")} description={t("Saisissez l’adresse utilisée lors de votre inscription. Vérifiez aussi vos courriels indésirables.")}><AuthForm locale={locale} mode="resend" /></AuthPage>
 }

@@ -16,8 +16,8 @@ test('downloads reject executable schemes and off-site protocol-relative paths',
   }
 })
 
-test('all five migrated downloads are byte-identical to the original public files', async () => {
-  assert.equal(legacyDownloads.length, 5)
+test('all six migrated downloads are byte-identical to the original public files', async () => {
+  assert.equal(legacyDownloads.length, 6)
   for (const resource of legacyDownloads) {
     const target = path.join('public', decodeURIComponent(legacyDownloadUrl(resource)))
     await access(target)

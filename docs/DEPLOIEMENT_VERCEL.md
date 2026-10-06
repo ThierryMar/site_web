@@ -60,3 +60,34 @@ https://spaceorbitlab.com. Accueil, Contact, Objectives et Simulations restauré
 CSS historique inchangé et correctif mobile séparé. Compilation distante et
 TypeScript réussis ; 20 tests et ESLint réussis. Détails et limites CMS :
 [Reprise du frontend historique](REPRISE_FRONTEND_HISTORIQUE.md).
+
+## Cours Astrodynamics Laws — 30 septembre 2026
+
+Publication demandée du cours préparé localement et de la sélection finale de
+20 illustrations (dont trois animations), sur `https://spaceorbitlab.com`.
+
+- Déploiement : `dpl_A1L5f1sDWBxg2jYtGBm9eMtBiZRa`, production **READY**.
+- URL immuable : `https://spaceorbitlab-6yc7nu7te-space-orbit-lab.vercel.app`.
+- Version précédente : `dpl_DeYLfaiiLHsNSFa4g7f4kJbg4Ym6` (28 septembre).
+- Source : instantané de l’application locale basée sur `9ff7397`, comprenant
+  les modifications du cours, du Dashboard, des comptes et des téléchargements
+  présentes dans cet arbre. Aucun commit ni push effectué.
+- Préparation : `D:/codex-deploy-cache/spaceorbitlab-course-1790822843868`,
+  189 fichiers, dont les 40 fichiers nécessaires aux 20 illustrations. Les
+  archives d’images écartées, fichiers `.env`, sorties de travail et notes locales
+  n’ont pas été transférés. Les empreintes sont conservées localement dans
+  `output/course-deployment-snapshot.json`.
+- Commande : `npx vercel deploy --prod --yes --archive=tgz --logs` depuis cet
+  instantané lié au projet existant. Configuration et secrets de production conservés.
+- Compilation et TypeScript réussis sur Vercel ; domaine principal et alias
+  affectés au nouveau déploiement. Aucune migration ni réimportation des contenus.
+
+Contrôles sur le domaine de production : accueil, Courses, Downloads, connexion
+et health en HTTP 200 ; aperçu enrichi et ses deux figures présents. Avec un
+compte vérifié temporaire : connexion réussie, neuf leçons accessibles, vingt
+illustrations et leurs originaux chargés, galerie filtrable, animations avec
+lecture/pause, affichage ordinateur/mobile sans débordement ni erreur navigateur.
+Les fichiers servis en grand format correspondent aux originaux du PowerPoint.
+Les images privées refusent les visiteurs anonymes et les images écartées
+renvoient 404. Le compte temporaire a été supprimé après vérification ; aucun
+courriel n’a été envoyé. Les 28 tests, lint et types avaient été validés localement.

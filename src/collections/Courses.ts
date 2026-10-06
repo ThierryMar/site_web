@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { courseAccess, courseField, titleFields, urlField } from './contentFields'
+import { readExampleCourse, readExampleMaterial } from '../access'
 
 const learning = {
   admin: { group: 'Cours', useAsTitle: 'title', defaultColumns: ['title', 'course', 'order', '_status'] },
@@ -11,6 +12,7 @@ const learning = {
 export const Courses: CollectionConfig = {
   ...learning,
   slug: 'courses',
+  access: { ...courseAccess, read: readExampleCourse },
   labels: { singular: 'Cours', plural: 'Cours' },
   admin: { ...learning.admin, defaultColumns: ['title', 'order', '_status'] },
   fields: [
@@ -29,6 +31,7 @@ export const Courses: CollectionConfig = {
 export const Lessons: CollectionConfig = {
   ...learning,
   slug: 'lessons',
+  access: { ...courseAccess, read: readExampleMaterial },
   labels: { singular: 'Leçon', plural: 'Leçons' },
   fields: [
     ...titleFields(), courseField(),
@@ -67,6 +70,7 @@ export const Exercises: CollectionConfig = {
 export const Quizzes: CollectionConfig = {
   ...learning,
   slug: 'quizzes',
+  access: { ...courseAccess, read: readExampleMaterial },
   labels: { singular: 'Quiz', plural: 'Quiz' },
   fields: [
     ...titleFields(), courseField(),

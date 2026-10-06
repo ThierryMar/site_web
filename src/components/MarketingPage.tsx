@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { connection } from 'next/server'
 import { RichText } from '@payloadcms/richtext-lexical/react'
 import { SiteHeader } from './SiteHeader'
@@ -6,6 +7,9 @@ import { SiteFooter } from './SiteFooter'
 import { loadMarketing } from '@/lib/load-marketing'
 import type { MarketingPage as PageSlug } from '@/lib/public-marketing'
 import { isDownloadUrl } from '@/lib/download-url'
+import { exampleCoursePath, exampleCourseSlug } from '@/lib/course-catalog'
+import { findCourseImage } from '@/lib/course-images'
+import './course-preview.css'
 
 export async function MarketingPage({ slug }: { slug: PageSlug }) {
   await connection()
@@ -32,6 +36,11 @@ export async function MarketingPage({ slug }: { slug: PageSlug }) {
               {'summary' in section && <p>{section.summary}</p>}
               {'subtitle' in section && section.subtitle && <p>{section.subtitle}</p>}
               {section.content && <RichText data={section.content} />}
+              {slug === 'courses' && section.slug === exampleCourseSlug && <div className="course-preview-figures">{['image33-png', 'image51-png'].map((id) => {
+                const figure = findCourseImage(id)!
+                return <figure key={id}><Image src={`/course-previews/astrodynamics-laws/${id}.webp`} alt={figure.alt} width={figure.width} height={figure.height} /><figcaption>{figure.caption}<br /><span>Source presentation, slide {figure.slides[0]}</span></figcaption></figure>
+              })}</div>}
+              {slug === 'courses' && section.slug === exampleCourseSlug && <div className="course-preview-access"><Link className="bouton bouton-principal" href={exampleCoursePath}>Open the complete module</Link><p>Available in Dashboard → My courses. Sign in or <Link href="/inscription">create an account</Link> to read the lessons.</p></div>}
               {'ctaUrl' in section && section.ctaLabel && isDownloadUrl(section.ctaUrl) && <a className="bouton bouton-principal" href={section.ctaUrl!}>{section.ctaLabel}</a>}
             </section>)}
           </article>
