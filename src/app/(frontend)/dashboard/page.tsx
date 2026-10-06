@@ -9,9 +9,9 @@ import config from '@payload-config'
 import { DashboardShell, dashboardSections } from '@/components/DashboardShell'
 import { ProfileForm } from '@/components/ProfileForm'
 import { CourseLibrary } from '@/components/learning/CourseLibrary'
+import { QuizLibrary } from '@/components/learning/QuizLibrary'
 import { loadDownloads } from '@/lib/load-downloads'
 import { isDownloadUrl } from '@/lib/download-url'
-import { readCoeResult } from '@/lib/grade-coe'
 import './dashboard.css'
 
 export const metadata: Metadata = { title: 'Dashboard', robots: { index: false, follow: false } }
@@ -43,8 +43,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
   const section = dashboardSections.find((item) => item.id === requested)?.id ?? 'overview'
   const learning = section in learningSections ? learningSections[section as keyof typeof learningSections] : null
   const downloads = section === 'downloads' ? await loadDownloads() : null
-  const librarySection = section === 'courses' || section === 'lessons' || section === 'quizzes' ? section : null
-  const coeResult = section === 'quizzes' ? readCoeResult(user.lastCoeResult) : null
+  const librarySection = section === 'courses' || section === 'lessons' ? section : null
 
   return <DashboardShell section={section} name={user.name ?? ''} email={user.email}>
     {section === 'overview' && <>
@@ -60,14 +59,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
           <section className="dashboard-account-summary"><h2>{t("Votre compte")}</h2><p>{user.email}</p><Link className="dashboard-text-link" href="/dashboard?section=account">{t("Gérer mon profil")}</Link></section></div>
       </div>
     </>}
-    {learning && <><div className="dashboard-heading"><h1>{t(learning.title)}</h1><p>{t(learning.description)}</p></div>{librarySection ? <CourseLibrary payload={payload} user={user} view={librarySection} t={t} /> : <section className="dashboard-empty"><OrbitDiagram /><span className="dashboard-badge">{t("À venir")}</span><h2>{t(learning.empty)}</h2><p>{t(learning.detail)}</p><div className="dashboard-actions"><Link className="dashboard-button" href="/dashboard?section=courses">{t("Ouvrir mes cours")}</Link><Link className="dashboard-text-link" href="/dashboard?section=downloads">{t("Explorer les ressources")}</Link></div></section>}</>}
-    {section === 'quizzes' && <section className="dashboard-panel">
-      <h2>SOL Part II - COE exercices</h2>
-      {coeResult && <p className="dashboard-quiz-score"><strong>{locale === 'en' ? 'Last result' : 'Dernier résultat'} : {coeResult.score} / {coeResult.total} — {coeResult.percentage} %</strong> · {locale === 'en' ? 'Provisional grade' : 'Note provisoire'}</p>}
-      <p>{locale === 'en' ? 'Using the Orbit101 application is recommended to complete this quiz.' : 'L’utilisation de l’application Orbit101 est recommandée pour réaliser ce quiz.'}</p>
-      <p>{locale === 'en' ? '14 sections: orbital elements, orbit visualization and calculation exercises.' : '14 sections : éléments orbitaux, visualisation des orbites et exercices de calcul.'}</p>
-      <Link className="dashboard-button" href="/dashboard/quizzes/sol-part-ii-coe-exercices">{locale === 'en' ? 'Open the quiz' : 'Ouvrir le quiz'}</Link>
-    </section>}
+    {learning && <><div className="dashboard-heading"><h1>{t(learning.title)}</h1><p>{t(learning.description)}</p></div>{section === 'quizzes' ? <QuizLibrary payload={payload} user={user} english={locale === 'en'} /> : librarySection ? <CourseLibrary payload={payload} user={user} view={librarySection} t={t} /> : <section className="dashboard-empty"><OrbitDiagram /><span className="dashboard-badge">{t("À venir")}</span><h2>{t(learning.empty)}</h2><p>{t(learning.detail)}</p><div className="dashboard-actions"><Link className="dashboard-button" href="/dashboard?section=courses">{t("Ouvrir mes cours")}</Link><Link className="dashboard-text-link" href="/dashboard?section=downloads">{t("Explorer les ressources")}</Link></div></section>}</>}
     {section === 'downloads' && <><div className="dashboard-heading"><h1>{t("Téléchargements")}</h1><p>{t("Les ressources SpaceOrbitLAB pour accompagner votre apprentissage.")}</p></div>
       {!downloads ? <section className="dashboard-panel" role="status"><h2>{t("Ressources temporairement indisponibles")}</h2><p>{t("Réessayez dans quelques instants.")}</p><Link className="dashboard-text-link" href="/dashboard?section=downloads">{t("Réessayer")}</Link></section>
         : downloads.resources.length === 0 ? <section className="dashboard-panel"><h2>{t("Les ressources arrivent bientôt")}</h2><p>{t("Les documents publiés seront regroupés dans cet espace.")}</p></section>

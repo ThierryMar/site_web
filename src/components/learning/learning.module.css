@@ -1,4 +1,6 @@
 .library { display: grid; gap: 24px; }
+.quizEntry { margin-top: 24px; padding-top: 20px; border-top: 1px solid #d9dfe5; }
+.quizEntry h3 { font-size: 20px; line-height: 1.4; }
 .courseCard { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 32px; padding: 30px; background: #fffdf8; border: 1px solid #d9dfe5; border-radius: 8px; }
 .courseMark { align-self: start; border-radius: 5px; background: #142c54; color: #9bb3d5; text-align: center; padding: 20px 0 28px; }
 .courseMark svg { display: block; width: 100%; }
